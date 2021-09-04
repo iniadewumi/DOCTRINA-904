@@ -1,0 +1,2110 @@
+<DOCTYPE html>
+	<html lang="en">
+	
+	  <head>
+		<meta charset="UTF-8">
+		<title>Nurse Questionnaire</title>
+		{% load static %}
+	
+		<script class="u-script" type="text/javascript" src="{% static 'Pages/js/Rate-Doctor.js' %}"></script>
+	
+		<link rel="stylesheet" type="text/css" href="{% static 'Pages/Rate-Doctor.css' %}">
+	
+	
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/all.css'>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Heebo:100,300,400,500,700,800,900'>
+		<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css'>
+	
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/less.js/3.10.3/less.min.js'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+	
+	  </head>
+	
+	  <body>
+		<!-- partial:index.partial.html -->
+	
+		<button id="prev"><i class="arrow up"></i></button>
+		<button id="next"><i class="arrow down"></i></button>
+	
+		<form action="/{{doctor.doctor_npi_id}}/thank_you" method="post">{% csrf_token %}
+	
+	
+		  <!--<div class="section">
+	
+				<main id=app>
+					<div id="slider">
+						<button class="s1btn">Get Values</button>
+					</div>
+	
+					<div id="slider2">
+						<input class="s21" type="number" value="0" min="0" max="5000" step="10">
+					</div>
+					<div id="slider3">
+						<input class="s22" type="number" value="0" min="0" max="5000" step="10">
+					</div>
+				</main>
+	
+			</div> -->
+		  <script src='https://cdn.jsdelivr.net/npm/svelte-range-slider-pips@1.7.0/dist/svelte-range-slider-pips.js'></script>
+		  <div class="section custom-full1">
+	
+			<div class="card">
+			  <div class="ds-top"></div>
+			  <div class="avatar-holder">
+				<img src="https://aof.org/sites/default/files/styles/aof_image_page/public/Adewumi_M%20TomiSM.jpg" alt="Dr. Tomi Adewumi">
+			  </div>
+			  <div class="name">
+				<a href="/{{doctor.doctor_npi_id}}/doctor" target="_blank">Dr. {{doctor.first_name}}
+					{{doctor.last_name}}</a>
+				<h4 id="hosp_system">{{doctor.hospital_system.hospital_name}}</h4>
+				<h5 id="title">{{doctor.area_of_expetise}}</h5><br>
+	
+				<h5 title="Raters"><i class="fas fa-users"></i> <br><span>90</span> Professional Reviews</h5>
+			  </div>
+	
+			  <div class="ds-info">
+				<div class="ds pens">
+				  <br>
+				  <h5>Average Rating</h5>
+				  <i class="fas fa-medkit checked"></i>
+				  <i class="fas fa-medkit checked"></i>
+				  <i class="fas fa-medkit checked"></i>
+				  <i class="fas fa-medkit"></i>
+				  <i class="fas fa-medkit"></i>
+				  <h5>(3)</h5>
+	
+				</div>
+			  </div>
+			  <div class="ds-skill">
+				<h6>Professional Ratings <i class="fa fa-thermometer" aria-hidden="true"></i></h6>
+				<div class="skill html">
+				  <h6><i class="fas fa-heartbeat"></i> Patient Centered Care</h6>
+				  <div class="bar bar-html">
+					<p>5%</p>
+				  </div>
+				</div>
+				<div class="skill css">
+				  <h6><i class="fas fa-user-tie"></i> Professional Skill </h6>
+				  <div class="bar bar-css">
+					<p>90%</p>
+				  </div>
+				</div>
+				<div class="skill javascript">
+				  <h6><i class="fas fa-laugh-beam"></i> Character & Conduct</h6>
+				  <div class="bar bar-js">
+					<p>75%</p>
+				  </div>
+				</div>
+			  </div>
+			</div>
+			<section id="section07" class="demo">
+			  <a id="nextb">
+				<p style="margin-top:-74px"><br><br><br> Scroll </p><span></span><span></span><span></span>
+			  </a>
+			</section>
+		  </div>
+	
+		  <div class="section">
+			<div class="testbox">
+	
+			  <br />
+			  <fieldset>
+				<legend>Reviewer's Information</legend>
+				<div class="columns">
+				  <div class="item">
+					<label for="fname">First Name<span>*</span></label>
+					<input id="fname" type="text" name="fname" placeholder="Jane" />
+				  </div>
+				  <div class="item">
+					<label for="lname"> Last Name<span>*</span></label>
+					<input id="lname" type="text" name="lname" placeholder="Doe" />
+				  </div>
+				  <div class="item">
+					<label for="job_title">Job Title<span>*</span></label>
+					<input id="job_title" type="text" name="job_title" />
+				  </div>
+	
+				  <div class="item">
+					<p>Job Class</p>
+					<select style="color:black; height:35px;" type="text" id="job_class" class="job_class">
+					  <option value="BSN/RN">BSN/RN</option>
+					  <option value="BSN/LPN">BSN/LPN</option>
+					  <option value="RN">RN</option>
+					  <option value="LPN">LPN</option>
+					  <option value="NP">NP</option>
+					  <option value="Pharmacist">Pharmacist</option>
+					  <option value="Other">Other</option>
+					  <option value="PA">PA</option>
+					</select>
+				  </div>
+				  <div class="item">
+					<p>Work Experience in years</p>
+					<select style="color:black; height:35px; width:40%" name="experience-years">
+					  <option value="1">0-1</option>
+					  <option value="3">1-2</option>
+					  <option value="5">2-5</option>
+					  <option value="10">5-10</option>
+					  <option value="11">10+</option>
+	
+					</select>
+				  </div>
+	
+				  <div class="item">
+					<p>What shift do you normally work?</p>
+					<label class="checkbox">
+					  <input type="checkbox" />
+					  <span style="color:white;">Night</span>
+					</label>
+					<label class="checkbox">
+					  <input type="checkbox" />
+					  <span style="color:white;">Day</span>
+					</label>
+	
+	
+				  </div>
+	
+	
+	
+				  <div class="item" style=width:100%>
+					<label for="department">What department do you work for?</label>
+					<input list="department-list" name="department" id="department" />
+					<datalist id="department-list">
+					  <option value="Intensive Care">
+					  <option value="Trauma">
+					  <option value="Surgery">
+					  <option value="Pediatrics">
+					  <option value="Recovery">
+					</datalist>
+	
+				  </div>
+	
+				  <div class="item">
+					<p>Have you held medical positions (other than) your current working with this doctor?</p>
+					<label class="checkbox">
+					  <input type="radio" name="other-experience">
+					  <span>Yes</span>
+					  <label class="checkbox">
+						<input type="radio" name="other-experience">
+						<span>No</span>
+					  </label>
+	
+	
+	
+					</label>
+				  </div>
+	
+				  <div class="item" style=width:100%>
+					<label for="med_positions">What medical positions have you held?</label>
+					<textarea id="med_positions" rows="3"></textarea>
+				  </div>
+			  </fieldset>
+	
+			  <br />
+	
+			</div>
+		  </div>
+	
+		  <div class="section s2 center">
+			<h3 class="cyan">Please Answer the following questions regarding Dr. Tomi Adewumi below</h3>
+			<h4 style="margin-top:10px">The questions will come in sections</h4>
+			<ol>
+			  <li>Patient Centered Care</li>
+			  <li>Character & Conduct</li>
+			  <li>Professional Skill</li>
+			  <br><br>
+			  <a id="nexta">&emsp;BEGIN&emsp;</a>
+			</ol>
+			<!-- <section id="section07" class="demo">
+					<a id="nexta">Scroll<span></span><span></span><span></span></a>
+					<h3 id="text_scroll">Scroll down to begin</h3>
+				</section> -->
+		  </div>
+		  </div>
+	
+		  <div class="section s3">
+			<div class="testbox">
+			  <fieldset>
+				<legend>Patient Centered Care</legend>
+	
+	
+				<div class="question-div">
+				  <p class="question">1. Doctor Recognizes and manages the psychosocial aspects of an illness
+					(Doctor is aware and manages
+					mental stability of patients)</p>
+				  <label class="checkbox" for=""><input name="mental_stability" type="radio"><span>True</span></label>
+				  <label class="checkbox" for=""><input name="mental_stability" type="radio"><span>False</span></label>
+				</div>
+	
+	
+				<div class="question-div">
+				  <p class="question">2. Doctor Communicates effectively withpatients</p>
+				  <label class="checkbox" for=""><input name="patient_communication" type="radio"><span>True</span></label>
+				  <label class="checkbox" for=""><input name="patient_communication" type="radio"><span>False</span></label>
+				</div>
+				<div class="question-div">
+				  <p class="question">3. Doctor displays empathy towards patients and families</p>
+				  <label class="checkbox" for=""><input name="empathy_to_family" type="radio"><span>True</span></label>
+				  <label class="checkbox" for=""><input name="empathy_to_family" type="radio"><span>False</span></label>
+				</div>
+	
+	
+				<div class="question-div">
+				  <p class="question">4. Doctor is aware of respects the rights of patients including the rights
+					of patients to make
+					informed
+					decisions</p>
+				  <label class="checkbox" for=""><input name="rights_of_patients" type="radio"><span>True</span></label>
+				  <label class="checkbox" for=""><input name="rights_of_patients" type="radio"><span>False</span></label>
+	
+				</div>
+	
+	
+				<div class="question-div">
+				  <p class="question">5. Doctor forms a good relationship with his/her patients? </p>
+				  <label class="checkbox" for=""><input name="doctor_form" type="radio"><span>True</span></label>
+				  <label class="checkbox" for=""><input name=" doctor_form" type="radio"><span>False</span></label>
+				</div>
+	
+	
+				<div class="question-div">
+				  <p class="question">6. Doctor genuinely cares about his/her patients?</p>
+				  <label class="checkbox" for=""><input name="doctor_genuinely" type="radio"><span>True</span></label>
+				  <label class="checkbox" for=""><input name="doctor_genuinely" type="radio"><span>False</span></label>
+				</div>
+			  </fieldset>
+	
+			</div>
+			<div class="banner">Page 1
+			</div>
+		  </div>
+		  <div class="section custom-full1">
+			<div class="testbox">
+	
+			  <br>
+			  <fieldset>
+	
+				<legend>Character & Conduct</legend>
+	
+	
+				<div class="question-div">
+				  <p class="question">1. Emotional Intelligence or Patient Awareness?</p>
+	
+				  <div class="input-range" style="transform: scale(0.7); margin-left:-100px">
+					<div id="range-slider" data-value="10"></div>
+					<div id="labels-list" class="labels" data-value="10"></div>
+				  </div>
+	
+				</div>
+	
+	
+				<div class="question-div">
+				  <p class="question">2. Effective Patient Communication</p>
+				  <input type="range" max="100" min="0" value="0">
+				</div>
+	
+	
+				<div class="question-div">
+				  <p class="question">3. Empathy</p>
+				  <input type="range" max="100" min="0" value=0>
+				</div>
+	
+	
+				<div class="question-div">
+				  <p class="question">4. Legal Awareness</p>
+				  <input type="range" max="100" min="0" value=0>
+	
+				</div>
+	
+	
+				<div class="question-div">
+				  <p class="question">5. Patient Relationships</p>
+				  <input type="range" max="100" min="0" value=0>
+	
+				</div>
+			</div>
+			<div class="banner">Page 2
+	
+	
+			</div>
+			</fieldset>
+	
+		  </div>
+		  <div class="section">
+			<div class="testbox">
+			  <fieldset>
+	
+				<legend>Character & Conduct (Part 2)</legend>
+	
+				<div class="question-div">
+				  <p class="question">6. Genuine Care for Patients</p>
+				  <input type="range" max="100" min="0" value=0>
+				</div>
+	
+	
+				<div class="question-div">
+				  <p class="question">7. Effective Directives</p>
+				  <input type="range" max="100" min="0" value=0>
+	
+				</div>
+	
+	
+				<div class="question-div">
+				  <p class="question">8. Resolving Problems</p>
+				  <input type="range" max="100" min="0" value=0>
+	
+				</div>
+	
+	
+				<div class="question-div">
+				  <p class="question">9. Effective Medical Professional Communication</p>
+				  <input type="range" max="100" min="0" value=0>
+				</div>
+	
+	
+				<div class="question-div">
+				  <p class="question">10. Mindful Prescribing</p>
+				  <input type="range" max="100" min="0" value=0>
+				</div>
+			  </fieldset>
+	
+			</div>
+			<div class="banner">Page 3
+			</div>
+		  </div>
+		  <div class="section custom-full2">
+			<div class="testbox">
+			  <fieldset>
+	
+				<legend>Character & Conduct (Part 3)</legend>
+	
+	
+				<div class="question-div">
+				  <p class="question">11. Trusted by Professionals</p>
+				  <input type="range" max="100" min="0" value=0>
+				</div>
+	
+	
+				<div class="question-div">
+				  <p class="question">12. Professionally Recommended</p>
+				  <input type="range" max="100" min="0" value=0>
+				</div>
+	
+	
+				<div class="question-div">
+				  <p class="question">13. Ethically Conscious/ Ethical </p>
+				  <input type="range" max="100" min="0" value=0>
+				</div>
+	
+	
+				<div class="question-div">
+				  <p class="question">14. Quality Care</p>
+				  <input type="range" max="100" min="0" value=0>
+				</div>
+	
+	
+				<div class="question-div">
+				  <p class="question">Room for Improvement?</p>
+				  <textarea name="room-for-improvement" cols="60" rows="10"></textarea>
+	
+				</div>
+	
+			  </fieldset>
+			</div>
+			<div class="banner">Page 4
+			</div>
+		  </div>
+	
+		  <div class="section custom-full1">
+			<div class="testbox">
+			  <fieldset>
+	
+				<legend>Professional Skill</legend>
+	
+				<div class="question-div">
+				  <p class="question">1. Doctor Selects diagnostic tests and recommends treatments/procedures
+					appropriately</p>
+				  <br>
+				  <label class="checkbox" for=""><input name="diagnostic_tests" type="radio"><span>True</span></label>
+				  <label class="checkbox" for=""><input name="diagnostic_tests" type="radio"><span>False</span></label>
+	
+				</div>
+	
+	
+				<div class="question-div">
+				  <p class="question">2. Doctor is effective in managing complex medical problems in high
+					stress environments -
+					(maintains
+					composure in difficult situations)</p>
+				  <br>
+				  <label class="checkbox" for=""><input name="high_stress_environments" type="radio"><span>True</span></label>
+				  <label class="checkbox" for=""><input name="high_stress_environments" type="radio"><span>False</span></label>
+				</div>
+	
+	
+				<div class="question-div">
+				  <p class="question">3. Doctor Communicates clearly to support staff</p>
+				  <br>
+				  <label class="checkbox" for=""><input name="support_staff_communication" type="radio"><span>True</span></label>
+				  <label class="checkbox" for=""><input name="support_staff_communication" type="radio"><span>False</span></label>
+				</div>
+	
+	
+				<div class="question-div">
+				  <p class="question">4. Doctor mindfully prescribes medication</p>
+				  <br>
+				  <label class="checkbox" for=""><input name="mindfull_prescription" type="radio"><span>True</span></label>
+				  <label class="checkbox" for=""><input name="mindfull_prescription" type="radio"><span>False</span></label>
+				</div>
+	
+	
+				<div class="question-div">
+				  <p class="question">5. You are likely to trust this doctor for your own professional
+					healthcare needs</p>
+				  <br>
+				  <label class="checkbox" for=""><input name="trust_for_personal_care" type="radio"><span>True</span></label>
+				  <label class="checkbox" for=""><input name="trust_for_personal_care" type="radio"><span>False</span></label>
+				</div>
+			  </fieldset>
+			</div>
+			<div class="banner">Page 5
+			</div>
+		  </div>
+	
+		  <div class="section custom-full1">
+			<div class="testbox">
+			  <fieldset>
+	
+				<legend>Unknown</legend>
+	
+	
+	
+				<div class="question-div">
+				  <p class="question">12. You would use or recommend this doctor for care regardless of
+					personality or
+					character?
+				  </p>
+				  <label class="checkbox" for=""><input name="recommend_regarless_of_personality" type="radio"><span>True</span></label>
+				  <label class="checkbox" for=""><input name="recommend_regarless_of_personality" type="radio"><span>False</span></label>
+				</div>
+	
+	
+				<div class="question-div">
+				  <p class="question">13. You believe this doctor uses ethical practices? </p>
+				  <br><label class="checkbox" for=""><input name="ethical_practices" type="radio"><span>True</span></label>
+				  <label class="checkbox" for=""><input name="ethical_practices" type="radio"><span>False</span></label>
+				</div>
+	
+	
+				<div class="question-div">
+				  <p class="question">14. You believe this doctor provides quality care to his/her patients?</p>
+				  <br><label class="checkbox" for=""><input name="quality_care" type="radio"><span>True</span></label>
+				  <label class="checkbox" for=""><input name="quality_care" type="radio"><span>False</span></label>
+				</div>
+	
+	
+				<div class="question-div">
+				  <p class="question">15. You believe this doctor should improve in providing care, why?</p>
+				  <br><label class="checkbox" for=""><input name="improve_care" type="radio" id="improve_care"><span>True</span></label>
+				  <label class="checkbox" for=""><input name="improve_care" type="radio"><span>False</span></label>
+				  <br>
+				  <div id="improve" hidden>
+					<p>Why?</p>
+					<textarea placeholder="Why should the doctor improve care?" name="improve_care2" id="" cols="60" rows="10"></textarea>
+				  </div>
+				</div>
+	
+	
+				<div class="question-div">
+				  <p class="question">16. You believe this doctor has good patient outcomes?</p>
+				  <br><label class="checkbox" for=""><input name="good_outcome" type="radio"><span>True</span></label>
+				  <label class="checkbox" for=""><input name="good_outcome" type="radio"><span>False</span></label>
+	
+				</div>
+			  </fieldset>
+			  <br>
+			</div>
+			<div class="banner">Page 6
+			</div>
+		  </div>
+	
+		  <div class="section s2">
+			<div class="testbox">
+			  <fieldset>
+	
+				<legend>Comments & Whistleblower Input</legend>
+				<div style="margin-left: 50px;">
+				  <h3>Anonymous comment for public posting</h3>
+				  <textarea style="width:65%" name="anonymous_comment" placeholder="Enter Anonymous comment here..." id="" cols="20" rows="10"></textarea>
+				  <br>
+				  <h4> <span style="color:red">*</span> If you are concerned for the safety of this doctor's
+					patients, or would like to whistle
+					blow -
+					check this box. </h4>
+				  <label class="checkbox" for=""><input name="whistle_blow" id="whistle_blow" type="radio"><span>True</span></label>
+				  <label class="checkbox" for=""><input name="whistle_blow" type="radio" id="no_whistle_blow"><span>False</span></label>
+	
+				  <div id="wb_input" hidden>
+					<textarea style="width:65%" name="wb_input" cols="20" rows="10" placeholder="Enter your input here. All information is anonymous and will not be linked to you as a user in any way."></textarea>
+				  </div>
+				  <br><br><br>
+				  <input style="width:15%" class="center" type="submit" value="Submit">
+	
+			  </fieldset>
+			</div>
+			<div class="banner">Page 7
+			</div>
+		  </div>
+	
+	
+		  <!-- partial -->
+		</form>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+		<script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+
+	  </body>
+	
+	</html>
+	
+	
+	
+	
+	<style>
+	  html,
+	  body {
+		min-height: 100%;
+	  }
+	
+	  body,
+	  div,
+	  form,
+	  input,
+	  select,
+	  textarea,
+	  label {
+		padding: 0;
+		margin: 0;
+		outline: none;
+		font-family: Roboto, Arial, sans-serif;
+		font-size: 14px;
+		color: rgb(255, 255, 255);
+		line-height: 22px;
+	  }
+	
+	  h1 {
+		position: absolute;
+		margin: 0;
+		font-size: 50px;
+		color: #fff;
+		z-index: 2;
+		line-height: 83px;
+	  }
+	
+	  legend {
+		padding: 10px;
+		font-family: Roboto, Arial, sans-serif;
+		font-size: 18px;
+		color: #fff;
+		background-color: #00aab3;
+	  }
+	
+	  textarea {
+		width: calc(100% - 20px);
+		padding: 5px;
+	  }
+	
+	  .testbox {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: inherit;
+		padding: 20px;
+	  }
+	
+	  form {
+		width: 100%;
+		/* padding: 20px; */
+		border-radius: 6px;
+		background: #fff;
+		box-shadow: 0 0 8px #00aab3;
+	  }
+	
+	  .banner {
+		position: relative;
+		background-size: cover;
+		display: flex;
+		padding-top: 10px;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		bottom: 40px;
+	  }
+	
+	  .banner::after {
+		content: "";
+		background-color: rgba(0, 0, 0, 0.4);
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	  }
+	
+	  input,
+	  select,
+	  textarea {
+		margin-bottom: 10px;
+		border: 1px solid #ccc;
+		border-radius: 3px;
+	  }
+	
+	  input {
+		width: calc(100% - 10px);
+	  }
+	
+	
+	  fieldset {
+		width: 70%;
+	  }
+	
+	  input[type="range"] {
+		width: calc(50% - 10px);
+		/* padding: -1px; */
+	  }
+	
+	  input[type="date"] {
+		padding: 4px 5px;
+	  }
+	
+	  textarea {
+		width: calc(100% - 12px);
+		padding: 5px;
+	  }
+	
+	  .item:hover p,
+	  .item:hover i,
+	  .question:hover p,
+	  .question label:hover,
+	  input:hover::placeholder {
+		color: #00aab3;
+	  }
+	
+	  .item input:hover,
+	  .item select:hover,
+	  .item textarea:hover {
+		border: 1px solid transparent;
+		box-shadow: 0 0 3px 0 #00aab3;
+		color: #00aab3;
+	  }
+	
+	  .item {
+		position: relative;
+		margin: 10px 0;
+	  }
+	
+	  .item span {
+		color: red;
+	  }
+	
+	  input[type="date"]::-webkit-inner-spin-button {
+		display: none;
+	  }
+	
+	  .item i,
+	  input[type="date"]::-webkit-calendar-picker-indicator {
+		position: absolute;
+		font-size: 20px;
+		color: #00aab3;
+	  }
+	
+	  .item i {
+		right: 1%;
+		top: 30px;
+		z-index: 1;
+	  }
+	
+	  .week {
+		display: flex;
+		justify-content: space-between;
+	  }
+	
+	  .columns {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: row;
+		flex-wrap: wrap;
+	  }
+	
+	  .columns div {
+		width: 48%;
+	  }
+	
+	  [type="date"]::-webkit-calendar-picker-indicator {
+		right: 1%;
+		z-index: 2;
+		opacity: 0;
+		cursor: pointer;
+	  }
+	
+	
+	  label.radio {
+		position: relative;
+		display: inline-block;
+		margin: 5px 20px 15px 0;
+		cursor: pointer;
+	  }
+	
+	  .question span {
+		margin-left: 30px;
+	  }
+	
+	  .question-answer label {
+		display: block;
+	  }
+	
+	  label.radio:before {
+		content: "";
+		position: absolute;
+		left: 0;
+		width: 17px;
+		height: 17px;
+		border-radius: 50%;
+		border: 2px solid #ccc;
+	  }
+	
+	  input[type=radio]:checked+label:before,
+	  label.radio:hover:before {
+		border: 2px solid #00aab3;
+	  }
+	
+	  label.radio:after {
+		content: "";
+		position: absolute;
+		top: 6px;
+		left: 5px;
+		width: 8px;
+		height: 4px;
+		border: 3px solid #00aab3;
+		border-top: none;
+		border-right: none;
+		transform: rotate(-45deg);
+		opacity: 0;
+	  }
+	
+	  input[type=radio]:checked+label:after {
+		opacity: 1;
+	  }
+	
+	  .flax {
+		display: flex;
+		justify-content: space-around;
+	  }
+	
+	  .btn-block {
+		margin-top: 10px;
+		text-align: center;
+	  }
+	
+	  button,
+	  #nexta {
+		width: 150px;
+		padding: 10px;
+		border: none;
+		border-radius: 5px;
+		background: #00aab3;
+		font-size: 16px;
+		color: #fff;
+		cursor: pointer;
+	  }
+	
+	  #nextb {
+		margin-bottom: 40px;
+	  }
+	
+	  button:hover {
+		background: #46adbd;
+	  }
+	
+	  @media (min-width: 568px) {
+	
+		.name-item,
+		.city-item {
+		  display: flex;
+		  flex-wrap: wrap;
+		  justify-content: space-between;
+		}
+	
+		.name-item input,
+		.name-item div {
+		  width: calc(50% - 20px);
+		}
+	
+		.name-item div input {
+		  width: 97%;
+		}
+	
+		.name-item div label {
+		  display: block;
+		  padding-bottom: 5px;
+		}
+	  }
+	
+	  .checkbox {
+		display: inline-flex;
+		cursor: pointer;
+		position: relative;
+	  }
+	
+	  .checkbox>span {
+		color: #eaeef1;
+		padding: 0.5rem 0.25rem;
+	  }
+	
+	  .checkbox>input {
+		height: 25px;
+		width: 25px;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		-o-appearance: none;
+		appearance: none;
+		border: 1px solid #34495E;
+		border-radius: 4px;
+		outline: none;
+		transition-duration: 0.3s;
+		background-color: #d7ddda;
+		cursor: pointer;
+	  }
+	
+	  .checkbox>input:checked {
+		border: 1px solid #ffffff;
+		background-color: #47c7c3;
+	  }
+	
+	  .checkbox>input:checked+span::before {
+		content: '\2713';
+		display: block;
+		text-align: center;
+		color: #f8f8f8;
+		position: absolute;
+		left: 0.7rem;
+		top: 0.2rem;
+	  }
+	
+	  .checkbox>input:active {
+		border: 2px solid #34495E;
+	  }
+	
+	</style>
+	
+	
+	
+	
+	<script>
+	  $(document).ready(function() {
+		slides = document.getElementsByClassName("section");
+		slides[slides.length - 1].scrollIntoView(true);
+	  });
+	
+	  $(function() {
+		$("#no_whistle_blow").click(function() {
+	
+		  if ($(this).is(':checked')) {
+			$('#wb_input').hide();
+		  } else {
+			$('#wb_input').show();
+		  }
+		});
+	  });
+	
+	  $(function() {
+		$("#whistle_blow").click(function() {
+	
+		  if ($(this).is(':checked')) {
+			$('#wb_input').show();
+		  } else {
+			$('#wb_input').hide();
+		  }
+		});
+	  });
+	
+	
+	  $(function() {
+		$("#improve_care").click(function() {
+	
+		  if ($(this).is(':checked')) {
+			$('#improve').show();
+		  } else {
+			$('#improve').hide();
+		  }
+		});
+	  });
+	
+	</script>
+	
+	
+	<script>
+	  (function($) {
+		$.fn.fullpage = function(options) {
+		  // Create some defaults, extending them with any options that were provided
+		  options = $.extend({
+			"verticalCentered": true,
+			'resize': true,
+			'slidesColor': [],
+			'anchors': [],
+			'scrollingSpeed': 700,
+			'easing': 'easeInQuart',
+			'menu': false,
+			'navigation': false,
+			'navigationPosition': 'right',
+			'navigationColor': '#000',
+			'navigationTooltips': [],
+			'slidesNavigation': false,
+			'slidesNavPosition': 'bottom',
+			'controlArrowColor': '#fff',
+			'loopBottom': false,
+			'loopTop': false,
+			'loopHorizontal': true,
+			'autoScrolling': true,
+			'scrollOverflow': false,
+			'css3': false,
+			'paddingTop': 0,
+			'paddingBottom': 0,
+			'fixedElements': null,
+			'normalScrollElements': null,
+	
+			//events
+			'afterLoad': null,
+			'onLeave': null,
+			'afterRender': null,
+			'afterSlideLoad': null,
+			'onSlideLeave': null
+		  }, options);
+	
+	
+	
+		  //Defines the delay to take place before being able to scroll to the next section
+		  //BE CAREFUL! Not recommened to change it under 400 for a good behavior in laptops and 
+		  //Apple devices (laptops, mouses...)
+		  var scrollDelay = 3000;
+	
+		  $.fn.fullpage.setAutoScrolling = function(value) {
+			options.autoScrolling = value;
+	
+			var element = $('.section.active');
+	
+			if (options.autoScrolling) {
+			  $('html, body').css({
+				'overflow': 'hidden',
+				'height': '100%'
+			  });
+	
+			  if (element.length) {
+				//moving the container up
+				if (options.css3) {
+				  var translate3d = 'translate3d(0px, -' + element.position().top + 'px, 0px)';
+				  transformContainer(translate3d, false)
+				} else {
+				  //deleting the possible negative top
+				  $('#superContainer').css('top', '-' + element.position().top + 'px');
+				}
+			  }
+	
+			} else {
+			  $('html, body').css({
+				'overflow': 'auto',
+				'height': 'auto'
+			  });
+	
+			  if (options.css3) {
+				//moving the container up
+				var translate3d = 'translate3d(0px, 0px, 0px)';
+				transformContainer(translate3d, false)
+			  } else {
+				//deleting the possible negative top
+				$('#superContainer').css('top', '0px');
+			  }
+	
+			  //scrolling the page to the section with no animation
+			  $('html, body').scrollTop(element.position().top);
+			}
+	
+		  };
+	
+	
+		  //flag to avoid very fast sliding for landscape sliders
+		  var slideMoving = false;
+	
+		  var isTablet = navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|Windows Phone)/);
+	
+		  var windowsHeight = $(window).height();
+		  var isMoving = false;
+		  var lastScrolledDestiny;
+	
+		  addScrollEvent();
+	
+		  //if css3 is not supported, it will use jQuery animations
+		  if (options.css3) {
+			options.css3 = support3d();
+		  }
+	
+		  $('body').wrapInner('<div id="superContainer" />');
+	
+		  //creating the navigation dots 
+		  if (options.navigation) {
+			$('body').append('<div id="fullPage-nav"><ul></ul></div>');
+			var nav = $('#fullPage-nav');
+	
+			nav.css('color', options.navigationColor);
+			nav.addClass(options.navigationPosition);
+		  }
+	
+	
+		  $('.section').each(function(index) {
+			var slides = $(this).find('.slide');
+			var numSlides = slides.length;
+	
+			if (!index) {
+			  $(this).addClass('active');
+			}
+	
+			$(this).css('height', windowsHeight + 'px');
+	
+			if (options.paddingTop || options.paddingBottom) {
+			  $(this).css('padding', options.paddingTop + ' 0 ' + options.paddingBottom + ' 0');
+			}
+	
+			if (typeof options.slidesColor[index] !== 'undefined') {
+			  $(this).css('background-color', options.slidesColor[index]);
+			}
+	
+			if (typeof options.anchors[index] !== 'undefined') {
+			  $(this).attr('data-anchor', options.anchors[index]);
+			}
+	
+	
+			if (options.navigation) {
+			  var link = '';
+			  if (options.anchors.length) {
+				link = options.anchors[index];
+			  }
+			  var tooltip = options.navigationTooltips[index];
+			  if (typeof tooltip === 'undefined') {
+				tooltip = '';
+			  }
+	
+			  nav.find('ul').append('<li data-tooltip="' + tooltip + '"><a href="#' + link + '"><span></span></a></li>');
+			}
+	
+			// if there's any slide
+			if (numSlides > 0) {
+			  var sliderWidth = numSlides * 100;
+			  var slideWidth = 100 / numSlides;
+	
+			  slides.wrapAll('<div class="slidesContainer" />');
+			  slides.parent().wrap('<div class="slides" />');
+	
+			  $(this).find('.slidesContainer').css('width', sliderWidth + '%');
+			  $(this).find('.slides').after('<div class="controlArrow prev"></div><div class="controlArrow next"></div>');
+			  $(this).find('.controlArrow.next').css('border-color', 'transparent transparent transparent ' + options.controlArrowColor);
+			  $(this).find('.controlArrow.prev').css('border-color', 'transparent ' + options.controlArrowColor + ' transparent transparent');
+	
+			  if (!options.loopHorizontal) {
+				$(this).find('.controlArrow.prev').hide();
+			  }
+	
+	
+			  if (options.slidesNavigation) {
+				addSlidesNavigation($(this), numSlides);
+			  }
+	
+			  slides.each(function(index) {
+				if (!index) {
+				  $(this).addClass('active');
+				}
+	
+				$(this).css('width', slideWidth + '%');
+	
+				if (options.verticalCentered) {
+				  addTableClass($(this));
+				}
+			  });
+			} else {
+			  if (options.verticalCentered) {
+				addTableClass($(this));
+			  }
+			}
+	
+	
+	
+	
+		  }).promise().done(function() {
+			$.fn.fullpage.setAutoScrolling(options.autoScrolling);
+	
+			$.isFunction(options.afterRender) && options.afterRender.call(this);
+	
+			//fixed elements need to be moved out of the plugin container due to problems with CSS3.
+			if (options.fixedElements && options.css3) {
+			  $(options.fixedElements).appendTo('body');
+			}
+	
+			//vertical centered of the navigation + first bullet active
+			if (options.navigation) {
+			  nav.css('margin-top', '-' + (nav.height() / 2) + 'px');
+			  nav.find('li').first().find('a').addClass('active');
+			}
+	
+			//moving the menu outside the main container (avoid problems with fixed positions when using CSS3 tranforms)
+			if (options.menu && options.css3) {
+			  $(options.menu).appendTo('body');
+			}
+	
+			if (options.scrollOverflow) {
+			  //after DOM and images are loaded 
+			  $(window).on('load', function() {
+	
+				$('.section').each(function() {
+				  var slides = $(this).find('.slide');
+	
+				  if (slides.length) {
+					slides.each(function() {
+					  createSlimScrolling($(this));
+					});
+				  } else {
+					createSlimScrolling($(this));
+				  }
+	
+				});
+			  });
+			}
+	
+			$(window).on('load', function() {
+			  scrollToAnchor();
+			});
+	
+		  });
+	
+		  var scrollId;
+		  var isScrolling = false;
+	
+		  //when scrolling...
+		  $(window).scroll(function(e) {
+	
+			if (!options.autoScrolling) {
+			  var currentScroll = $(window).scrollTop();
+	
+			  var scrolledSections = $('.section').map(function() {
+				if ($(this).offset().top < (currentScroll + 100)) {
+				  return $(this);
+				}
+			  });
+	
+			  //geting the last one, the current one on the screen
+			  var currentSection = scrolledSections[scrolledSections.length - 1];
+	
+			  //executing only once the first time we reach the section
+			  if (!currentSection.hasClass('active')) {
+				isScrolling = true;
+	
+				var yMovement = getYmovement(currentSection);
+	
+				$('.section.active').removeClass('active');
+				currentSection.addClass('active');
+	
+				var anchorLink = currentSection.data('anchor');
+				$.isFunction(options.onLeave) && options.onLeave.call(this, currentSection.index('.section'), yMovement);
+	
+				$.isFunction(options.afterLoad) && options.afterLoad.call(this, anchorLink, (currentSection.index('.section') + 1));
+	
+				activateMenuElement(anchorLink);
+				activateNavDots(anchorLink, 0);
+	
+	
+				if (options.anchors.length && !isMoving) {
+				  //needed to enter in hashChange event when using the menu with anchor links
+				  lastScrolledDestiny = anchorLink;
+	
+				  location.hash = anchorLink;
+				}
+	
+				//small timeout in order to avoid entering in hashChange event when scrolling is not finished yet
+				clearTimeout(scrollId);
+				scrollId = setTimeout(function() {
+				  isScrolling = false;
+				}, 100);
+			  }
+	
+			}
+		  });
+	
+	
+	
+	
+		  var touchStartY = 0;
+		  var touchStartX = 0;
+		  var touchEndY = 0;
+		  var touchEndX = 0;
+	
+		  /* Detecting touch events 
+		  
+		  * As we are changing the top property of the page on scrolling, we can not use the traditional way to detect it.
+		  * This way, the touchstart and the touch moves shows an small difference between them which is the
+		  * used one to determine the direction.
+		  */
+		  $(document).on('touchmove', function(event) {
+			if (options.autoScrolling && isTablet) {
+			  //preventing the easing on iOS devices
+			  event.preventDefault();
+			  var e = event.originalEvent;
+			  var touchMoved = false;
+			  var activeSection = $('.section.active');
+			  var scrollable;
+			  var xThreshold = 100;
+	
+			  if (!isMoving) { //if theres any #
+	
+				touchEndY = e.touches[0].pageY;
+				touchEndX = e.touches[0].pageX;
+	
+	
+				//if movement in the X axys is bigger than in the Y and the currect section has slides...
+				if (activeSection.find('.slides').length && Math.abs(touchStartX - touchEndX) > (Math.abs(touchStartY - touchEndY) + xThreshold)) {
+				  if (touchStartX > touchEndX) {
+					activeSection.find('.controlArrow.next').trigger('click');
+				  } else if (touchStartX < touchEndX) {
+					activeSection.find('.controlArrow.prev').trigger('click');
+				  }
+				}
+				//vertical scrolling
+				else {
+				  //if there are landscape slides, we check if the scrolling bar is in the current one or not
+				  if (activeSection.find('.slides').length) {
+					scrollable = activeSection.find('.slide.active').find('.scrollable');
+				  } else {
+					scrollable = activeSection.find('.scrollable');
+				  }
+	
+				  if (touchStartY > touchEndY) {
+					if (scrollable.length > 0) {
+					  //is the scrollbar at the end of the scroll?
+					  if (isScrolled('bottom', scrollable)) {
+						$.fn.fullpage.moveSectionDown();
+					  } else {
+						return true;
+					  }
+					} else {
+					  // moved down
+					  $.fn.fullpage.moveSectionDown();
+					}
+				  } else {
+	
+					if (scrollable.length > 0) {
+					  //is the scrollbar at the start of the scroll?
+					  if (isScrolled('top', scrollable)) {
+						$.fn.fullpage.moveSectionUp();
+					  } else {
+						return true;
+					  }
+					} else {
+					  // moved up
+					  $.fn.fullpage.moveSectionUp();
+					}
+				  }
+				}
+			  }
+			}
+		  });
+	
+		  $(document).on('touchstart', function(event) {
+			if (options.autoScrolling && isTablet) {
+			  var e = event.originalEvent;
+			  touchStartY = e.touches[0].pageY;
+			  touchStartX = e.touches[0].pageX;
+			}
+		  });
+	
+	
+	
+		  /**
+		   * Detecting mousewheel scrolling
+		   * 
+		   * http://blogs.sitepointstatic.com/examples/tech/mouse-wheel/index.html
+		   * http://www.sitepoint.com/html5-javascript-mouse-wheel/
+		   */
+		  function MouseWheelHandler(e) {
+			if (options.autoScrolling) {
+			  // cross-browser wheel delta
+			  e = window.event || e;
+			  var delta = Math.max(-1, Math.min(1,
+				(e.wheelDelta || -e.detail)));
+			  var scrollable;
+			  var activeSection = $('.section.active');
+	
+			  if (!isMoving) { //if theres any #
+	
+				//if there are landscape slides, we check if the scrolling bar is in the current one or not
+				if (activeSection.find('.slides').length) {
+				  scrollable = activeSection.find('.slide.active').find('.scrollable');
+				} else {
+				  scrollable = activeSection.find('.scrollable');
+				}
+	
+				//scrolling down?
+				if (delta < 0) {
+				  if (scrollable.length > 0) {
+					//is the scrollbar at the end of the scroll?
+					if (isScrolled('bottom', scrollable)) {
+					  $.fn.fullpage.moveSectionDown();
+					} else {
+					  return true; //normal scroll
+					}
+				  } else {
+					$.fn.fullpage.moveSectionDown();
+				  }
+				}
+	
+				//scrolling up?
+				else {
+				  if (scrollable.length > 0) {
+					//is the scrollbar at the start of the scroll?
+					if (isScrolled('top', scrollable)) {
+					  $.fn.fullpage.moveSectionUp();
+					} else {
+					  return true; //normal scroll
+					}
+				  } else {
+					$.fn.fullpage.moveSectionUp();
+				  }
+				}
+			  }
+	
+			  return false;
+			}
+		  }
+	
+	
+		  function addScrollEvent() {
+			if (document.addEventListener) {
+			  document.addEventListener("mousewheel", MouseWheelHandler, false); //IE9, Chrome, Safari, Oper
+			  document.addEventListener("DOMMouseScroll", MouseWheelHandler, false); //Firefox
+			} else {
+			  document.attachEvent("onmousewheel", MouseWheelHandler); //IE 6/7/8
+			}
+		  }
+	
+		  $.fn.fullpage.moveSectionUp = function() {
+			var prev = $('.section.active').prev('.section');
+	
+			//looping to the bottom if there's no more sections above
+			if (options.loopTop && !prev.length) {
+			  prev = $('.section').last();
+			}
+	
+			if (prev.length > 0 || (!prev.length && options.loopTop)) {
+			  scrollPage(prev);
+			}
+		  };
+	
+		  $.fn.fullpage.moveSectionDown = function() {
+			var next = $('.section.active').next('.section');
+	
+			//looping to the top if there's no more sections below
+			if (options.loopBottom && !next.length) {
+			  next = $('.section').first();
+			}
+	
+			if (next.length > 0 || (!next.length && options.loopBottom)) {
+			  scrollPage(next);
+			}
+		  };
+	
+		  $.fn.fullpage.moveTo = function(section, slide) {
+			var destiny = '';
+	
+			if (isNaN(section)) {
+			  destiny = $('[data-anchor="' + section + '"]');
+			} else {
+			  destiny = $('.section').eq((section - 1));
+			}
+	
+			if (slide !== 'undefined') {
+			  scrollPageAndSlide(section, slide);
+			} else if (destiny.length > 0) {
+			  scrollPage(destiny);
+			}
+		  };
+	
+		  function scrollPage(element, callback) {
+			var scrollOptions = {},
+			  scrolledElement;
+			var dest = element.position();
+			var dtop = dest !== null ? dest.top : null;
+			var yMovement = getYmovement(element);
+			var anchorLink = element.data('anchor');
+			var sectionIndex = element.index('.section');
+			var leavingSection = $('.section.active').index('.section') + 1;
+	
+			element.addClass('active').siblings().removeClass('active');
+	
+			//preventing from activating the MouseWheelHandler event
+			//more than once if the page is scrolling
+			isMoving = true;
+	
+			if (!$.isFunction(callback)) {
+			  if (typeof anchorLink !== 'undefined') {
+				location.hash = anchorLink;
+			  } else {
+				location.hash = '';
+			  }
+			}
+	
+			if (options.autoScrolling) {
+			  scrollOptions['top'] = -dtop;
+			  scrolledElement = '#superContainer';
+			} else {
+			  scrollOptions['scrollTop'] = dtop;
+			  scrolledElement = 'html, body';
+			}
+	
+			if (options.css3 && options.autoScrolling) {
+	
+	
+			  $.isFunction(options.onLeave) && options.onLeave.call(this, leavingSection, yMovement);
+	
+			  var translate3d = 'translate3d(0px, -' + dtop + 'px, 0px)';
+			  transformContainer(translate3d, true);
+	
+			  setTimeout(function() {
+				$.isFunction(options.afterLoad) && options.afterLoad.call(this, anchorLink, (sectionIndex + 1));
+	
+				setTimeout(function() {
+				  isMoving = false;
+				  $.isFunction(callback) && callback.call(this);
+				}, scrollDelay);
+			  }, options.scrollingSpeed);
+			} else {
+			  $.isFunction(options.onLeave) && options.onLeave.call(this, leavingSection, yMovement);
+	
+			  $(scrolledElement).animate(
+				scrollOptions, options.scrollingSpeed, options.easing,
+				function() {
+				  //callback
+				  $.isFunction(options.afterLoad) && options.afterLoad.call(this, anchorLink, (sectionIndex + 1));
+	
+				  setTimeout(function() {
+					isMoving = false;
+					$.isFunction(callback) && callback.call(this);
+				  }, scrollDelay);
+				});
+			}
+	
+			//flag to avoid callingn `scrollPage()` twice in case of using anchor links
+			lastScrolledDestiny = anchorLink;
+	
+			//avoid firing it twice (as it does also on scroll)
+			if (options.autoScrolling) {
+			  activateMenuElement(anchorLink);
+			  activateNavDots(anchorLink, sectionIndex);
+			}
+		  }
+	
+		  function scrollToAnchor() {
+			//getting the anchor link in the URL and deleting the `#`
+			var value = window.location.hash.replace('#', '').split('/');
+			var section = value[0];
+			var slide = value[1];
+	
+			if (section) { //if theres any #				
+			  scrollPageAndSlide(section, slide);
+			}
+		  }
+	
+		  //detecting any change on the URL to scroll to the given anchor link
+		  //(a way to detect back history button as we play with the hashes on the URL)
+		  $(window).on('hashchange', function() {
+			if (!isScrolling) {
+			  var value = window.location.hash.replace('#', '').split('/');
+			  var section = value[0];
+			  var slide = value[1];
+	
+	
+			  /*in order to call scrollpage() only once for each destination at a time
+			  It is called twice for each scroll otherwise, as in case of using anchorlinks `hashChange` 
+			  event is fired on every scroll too.*/
+			  if (section && section !== lastScrolledDestiny || (typeof slide != 'undefined' && !slideMoving)) {
+				scrollPageAndSlide(section, slide);
+			  }
+			}
+		  });
+	
+	
+		  /**
+		   * Sliding with arrow keys, both, vertical and horizontal
+		   */
+	
+		  $("#nexta").click(function(e) {
+			$.fn.fullpage.moveSectionDown();
+		  });
+		  $("#nextb").click(function(e) {
+			$.fn.fullpage.moveSectionDown();
+		  });
+		  $("#next").click(function(e) {
+			$.fn.fullpage.moveSectionDown();
+		  });
+	
+	
+	
+		  $("#prev").click(function(e) {
+			$.fn.fullpage.moveSectionUp();
+		  });
+	
+		  $(document).keydown(function(e) {
+			//Moving the mian page with the keyboard arrows
+			if (!isMoving) {
+			  switch (e.which) {
+				//up
+				case 38:
+				case 33:
+				  $.fn.fullpage.moveSectionUp();
+				  break;
+	
+				  //down
+				case 40:
+				case 34:
+				  $.fn.fullpage.moveSectionDown();
+				  break;
+	
+				  //left
+				case 37:
+				  $('.section.active').find('.controlArrow.prev').trigger('click');
+				  break;
+	
+				  //right
+				case 39:
+				  $('.section.active').find('.controlArrow.next').trigger('click');
+				  break;
+	
+				default:
+				  return; // exit this handler for other keys
+			  }
+			}
+		  });
+	
+		  //navigation action 
+		  $(document).on('click', '#fullPage-nav a', function(e) {
+			e.preventDefault();
+			var index = $(this).parent().index();
+			scrollPage($('.section').eq(index));
+		  });
+	
+		  //navigation tooltips 
+		  $(document).on({
+			mouseenter: function() {
+			  var tooltip = $(this).data('tooltip');
+			  $('<div class="fullPage-tooltip ' + options.navigationPosition + '">' + tooltip + '</div>').hide().appendTo($(this)).fadeIn(200);
+			},
+			mouseleave: function() {
+			  $(this).find('.fullPage-tooltip').fadeOut().remove();
+			}
+		  }, '#fullPage-nav li');
+	
+	
+		  if (options.normalScrollElements) {
+			$(document).on('mouseover', options.normalScrollElements, function() {
+			  if (document.addEventListener) {
+				document.removeEventListener('mousewheel', MouseWheelHandler, false); //IE9, Chrome, Safari, Oper
+				document.removeEventListener('DOMMouseScroll', MouseWheelHandler, false); //Firefox
+			  } else {
+				document.detachEvent("onmousewheel", MouseWheelHandler); //IE 6/7/8
+			  }
+			});
+	
+			$(document).on('mouseout', options.normalScrollElements, function() {
+			  addScrollEvent();
+			});
+		  }
+	
+		  /**
+		   * Scrolling horizontally when clicking on the slider controls.
+		   */
+		  $('.section').on('click', '.controlArrow', function() {
+			//not that fast my friend! :)
+			if (slideMoving) {
+			  return;
+			}
+			slideMoving = true;
+	
+			var slides = $(this).closest('.section').find('.slides');
+			var currentSlide = slides.find('.slide.active');
+			var destiny = null;
+	
+			if ($(this).hasClass('prev')) {
+			  destiny = currentSlide.prev('.slide');
+			} else {
+			  destiny = currentSlide.next('.slide');
+			}
+	
+			//is there isn't a next slide in the secuence?
+			if (!destiny.length) {
+			  //to the last
+			  if ($(this).hasClass('prev')) {
+				destiny = currentSlide.siblings(':last');
+			  } else {
+				destiny = currentSlide.siblings(':first');
+			  }
+			}
+	
+			landscapeScroll(slides, destiny);
+		  });
+	
+	
+		  /**
+		   * Scrolling horizontally when clicking on the slider controls.
+		   */
+		  $('.section').on('click', '.toSlide', function(e) {
+			e.preventDefault();
+	
+			var slides = $(this).closest('.section').find('.slides');
+			var currentSlide = slides.find('.slide.active');
+			var destiny = null;
+	
+			destiny = slides.find('.slide').eq(($(this).data('index') - 1));
+	
+			if (destiny.length > 0) {
+			  landscapeScroll(slides, destiny);
+			}
+		  });
+	
+		  /**
+		   * Scrolls horizontal sliders.
+		   */
+		  function landscapeScroll(slides, destiny) {
+			var destinyPos = destiny.position();
+			var slidesContainer = slides.find('.slidesContainer').parent();
+			var slideIndex = destiny.index();
+			var section = slides.closest('.section');
+			var sectionIndex = section.index('.section');
+			var anchorLink = section.data('anchor');
+			var slidesNav = section.find('.fullPage-slidesNav');
+			var slideAnchor = destiny.data('anchor');
+	
+			if (options.onSlideLeave) {
+			  var prevSlideIndex = section.find('.slide.active').index();
+			  var xMovement = getXmovement(prevSlideIndex, slideIndex);
+	
+			  $.isFunction(options.onSlideLeave) && options.onSlideLeave.call(this, anchorLink, (sectionIndex + 1), prevSlideIndex, xMovement);
+			}
+	
+			destiny.addClass('active').siblings().removeClass('active');
+	
+	
+			if (typeof slideAnchor === 'undefined') {
+			  slideAnchor = slideIndex;
+			}
+	
+			//only changing the URL if the slides are in the current section (not for resize re-adjusting)
+			if (section.hasClass('active')) {
+	
+			  if (!options.loopHorizontal) {
+				//hidding it for the fist slide, showing for the rest
+				section.find('.controlArrow.prev').toggle(slideIndex != 0);
+	
+				//hidding it for the last slide, showing for the rest
+				section.find('.controlArrow.next').toggle(!destiny.is(':last-child'));
+			  }
+			  //isn't it the first slide?
+			  if (slideIndex) {
+				if (typeof anchorLink !== 'undefined') {
+				  var sectionHash = anchorLink;
+				} else {
+				  var sectionHash = '';
+				}
+	
+				location.hash = sectionHash + '/' + slideAnchor;
+				//first slide
+			  } else {
+				location.hash = location.hash.split('/')[0];
+			  }
+			}
+	
+			if (options.css3) {
+			  var translate3d = 'translate3d(-' + destinyPos.left + 'px, 0px, 0px)';
+	
+			  slides.find('.slidesContainer').addClass('easing').css({
+				'-webkit-transform': translate3d,
+				'-moz-transform': translate3d,
+				'-ms-transform': translate3d,
+				'transform': translate3d
+			  });
+			  setTimeout(function() {
+				$.isFunction(options.afterSlideLoad) && options.afterSlideLoad.call(this, anchorLink, (sectionIndex + 1), slideAnchor, slideIndex);
+	
+				slideMoving = false;
+			  }, options.scrollingSpeed);
+			} else {
+			  slidesContainer.animate({
+				scrollLeft: destinyPos.left
+			  }, options.scrollingSpeed, function() {
+	
+				$.isFunction(options.afterSlideLoad) && options.afterSlideLoad.call(this, anchorLink, (sectionIndex + 1), slideAnchor, slideIndex);
+	
+				//letting them slide again
+				slideMoving = false;
+			  });
+			}
+	
+			slidesNav.find('.active').removeClass('active');
+			slidesNav.find('li').eq(slideIndex).find('a').addClass('active');
+		  }
+	
+	
+		  if (!isTablet) {
+			var resizeId;
+	
+			//when resizing the site, we adjust the heights of the sections
+			$(window).resize(function() {
+			  //in order to call the functions only when the resize is finished
+			  //http://stackoverflow.com/questions/4298612/jquery-how-to-call-resize-event-only-once-its-finished-resizing
+			  clearTimeout(resizeId);
+			  resizeId = setTimeout(doneResizing, 500);
+			});
+	
+		  }
+		  $(window).bind('orientationchange', function() {
+			doneResizing();
+		  });
+	
+		  /**
+		   * When resizing is finished, we adjust the slides sizes and positions
+		   */
+		  function doneResizing() {
+			var windowsWidth = $(window).width();
+			windowsHeight = $(window).height();
+	
+			//text and images resizing
+			if (options.resize) {
+			  resizeMe(windowsHeight, windowsWidth);
+			}
+	
+			$('.section').each(function() {
+			  var scrollHeight = windowsHeight - parseInt($(this).css('padding-bottom')) - parseInt($(this).css('padding-top'));
+	
+			  //resizing the scrolling divs
+			  if (options.scrollOverflow) {
+				var slides = $(this).find('.slide');
+	
+				if (slides.length) {
+				  slides.each(function() {
+					createSlimScrolling($(this));
+				  });
+				} else {
+				  createSlimScrolling($(this));
+				}
+	
+			  }
+	
+			  //adjusting the height of the table-cell for IE and Firefox
+			  if (options.verticalCentered) {
+				$(this).find('.tableCell').css('height', windowsHeight + 'px');
+			  }
+	
+			  $(this).css('height', windowsHeight + 'px');
+	
+			  //adjusting the position fo the FULL WIDTH slides...
+			  var slides = $(this).find('.slides');
+			  if (slides.length) {
+				landscapeScroll(slides, slides.find('.slide.active'));
+			  }
+			});
+	
+			//adjusting the position for the current section
+			var destinyPos = $('.section.active').position();
+	
+			var activeSection = $('.section.active');
+	
+			//isn't it the first section?
+			if (activeSection.index('.section')) {
+			  scrollPage(activeSection);
+			}
+		  }
+	
+		  /**
+		   * Resizing of the font size depending on the window size as well as some of the images on the site.
+		   */
+		  function resizeMe(displayHeight, displayWidth) {
+			//Standard height, for which the body font size is correct
+			var preferredHeight = 825;
+			var windowSize = displayHeight;
+	
+			/* Problem to be solved
+					
+					if (displayHeight < 825) {
+						var percentage = (windowSize * 100) / preferredHeight;
+						var newFontSize = percentage.toFixed(2);
+		
+						$("img").each(function() {
+							var newWidth = ((80 * percentage) / 100).toFixed(2);
+							$(this).css("width", newWidth + '%');
+						});
+					} else {
+						$("img").each(function() {
+							$(this).css("width", '');
+						});
+					}*/
+	
+			if (displayHeight < 825 || displayWidth < 900) {
+			  if (displayWidth < 900) {
+				windowSize = displayWidth;
+				preferredHeight = 900;
+			  }
+			  var percentage = (windowSize * 100) / preferredHeight;
+			  var newFontSize = percentage.toFixed(2);
+	
+			  $("body").css("font-size", newFontSize + '%');
+			} else {
+			  $("body").css("font-size", '100%');
+			}
+		  }
+	
+		  /**
+		   * Activating the website navigation dots according to the given slide name.
+		   */
+		  function activateNavDots(name, sectionIndex) {
+			if (options.navigation) {
+			  $('#fullPage-nav').find('.active').removeClass('active');
+			  if (name) {
+				$('#fullPage-nav').find('a[href="#' + name + '"]').addClass('active');
+			  } else {
+				$('#fullPage-nav').find('li').eq(sectionIndex).find('a').addClass('active');
+			  }
+			}
+		  }
+	
+		  /**
+		   * Activating the website main menu elements according to the given slide name.
+		   */
+		  function activateMenuElement(name) {
+			if (options.menu) {
+			  $(options.menu).find('.active').removeClass('active');
+			  $(options.menu).find('[data-menuanchor="' + name + '"]').addClass('active');
+			}
+		  }
+	
+		  /**
+		   * Return a boolean depending on whether the scrollable element is at the end or at the start of the scrolling
+		   * depending on the given type.
+		   */
+		  function isScrolled(type, scrollable) {
+			if (type === 'top') {
+			  return !scrollable.scrollTop();
+			} else if (type === 'bottom') {
+			  return scrollable.scrollTop() + scrollable.innerHeight() >= scrollable[0].scrollHeight;
+			}
+		  }
+	
+		  /**
+		   * Retuns `up` or `down` depending on the scrolling movement to reach its destination
+		   * from the current section.
+		   */
+		  function getYmovement(destiny) {
+			var fromIndex = $('.section.active').index('.section');
+			var toIndex = destiny.index('.section');
+	
+			if (fromIndex > toIndex) {
+			  return 'up';
+			}
+			return 'down';
+		  }
+	
+		  /**
+		   * Retuns `right` or `left` depending on the scrolling movement to reach its destination
+		   * from the current slide.
+		   */
+		  function getXmovement(fromIndex, toIndex) {
+			if (fromIndex > toIndex) {
+			  return 'left';
+			}
+			return 'right';
+		  }
+	
+	
+		  function createSlimScrolling(element) {
+			//needed to make `scrollHeight` work under Opera 12
+			element.css('overflow', 'hidden');
+	
+			//in case element is a slide
+			var section = element.closest('.section');
+			var scrollable = element.find('.scrollable');
+	
+			//if there was scroll, the contentHeight will be the one in the scrollable section
+			if (scrollable.length) {
+			  var contentHeight = element.find('.scrollable').get(0).scrollHeight - parseInt(section.css('padding-bottom')) - parseInt(section.css('padding-top'));
+			} else {
+			  var contentHeight = element.get(0).scrollHeight - parseInt(section.css('padding-bottom')) - parseInt(section.css('padding-top'));
+			}
+	
+			//needs scroll?
+			if (contentHeight > windowsHeight) {
+			  var scrollHeight = windowsHeight - parseInt(section.css('padding-bottom')) - parseInt(section.css('padding-top'));
+	
+			  //was there already an scroll ? Updating it
+			  if (scrollable.length) {
+				scrollable.css('height', scrollHeight + 'px').parent().css('height', scrollHeight + 'px');
+			  }
+			  //creating the scrolling
+			  else {
+				if (options.verticalCentered) {
+				  element.find('.tableCell').wrapInner('<div class="scrollable" />');
+				} else {
+				  element.wrapInner('<div class="scrollable" />');
+				}
+	
+	
+				element.find('.scrollable').slimScroll({
+				  height: scrollHeight + 'px',
+				  size: '10px',
+				  alwaysVisible: true
+				});
+			  }
+			}
+	
+			//removing the scrolling when it is not necessary anymore
+			else {
+			  element.find('.scrollable').children().first().unwrap().unwrap();
+			  element.find('.slimScrollBar').remove();
+			  element.find('.slimScrollRail').remove();
+			}
+	
+			//undo 
+			element.css('overflow', '');
+		  }
+	
+		  function addTableClass(element) {
+			element.addClass('table').wrapInner('<div class="tableCell" style="height:' + windowsHeight + 'px;" />');
+		  }
+	
+	
+		  /**
+		   * Adds a css3 transform property to the container class with or without animation depending on the animated param.
+		   */
+		  function transformContainer(translate3d, animated) {
+			$('#superContainer').toggleClass('easing', animated);
+	
+			$('#superContainer').css({
+			  '-webkit-transform': translate3d,
+			  '-moz-transform': translate3d,
+			  '-ms-transform': translate3d,
+			  'transform': translate3d
+			});
+		  }
+	
+	
+		  /**
+		   * Scrolls to the given section and slide 
+		   */
+		  function scrollPageAndSlide(destiny, slide) {
+			if (isNaN(destiny)) {
+			  var section = $('[data-anchor="' + destiny + '"]');
+			} else {
+			  var section = $('.section').eq((destiny - 1));
+			}
+	
+			//we need to scroll to the section and then to the slide
+			if (destiny !== lastScrolledDestiny) {
+			  scrollPage(section, function() {
+				scrollSlider(section, slide)
+			  });
+			}
+			//if we were already in the section
+			else {
+			  scrollSlider(section, slide);
+			}
+	
+		  }
+	
+		  /**
+		   * Scrolls the slider to the given slide destination for the given section
+		   */
+		  function scrollSlider(section, slide) {
+			if (typeof slide != 'undefined') {
+			  var slides = section.find('.slides');
+			  var destiny = slides.find('[data-anchor="' + slide + '"]');
+			  if (!destiny.length) {
+				destiny = slides.find('.slide').eq(slide);
+			  }
+	
+			  landscapeScroll(slides, destiny);
+			}
+		  }
+	
+		  /**
+		   * Creates a landscape navigation bar with dots for horizontal sliders.
+		   */
+		  function addSlidesNavigation(section, numSlides) {
+			section.append('<div class="fullPage-slidesNav"><ul></ul></div>');
+			var nav = section.find('.fullPage-slidesNav');
+	
+			//top or bottom
+			nav.addClass(options.slidesNavPosition);
+	
+			for (var i = 0; i < numSlides; i++) {
+			  nav.find('ul').append('<li><a href="#"><span></span></a></li>');
+			}
+	
+			//centering it
+			nav.css('margin-left', '-' + (nav.width() / 2) + 'px');
+	
+			nav.find('li').first().find('a').addClass('active');
+		  }
+	
+		  /**
+		   * Scrolls the slider to the given slide destination for the given section
+		   */
+		  $(document).on('click', '.fullPage-slidesNav a', function(e) {
+			e.preventDefault();
+			var slides = $(this).closest('.section').find('.slides');
+			var destiny = slides.find('.slide').eq($(this).closest('li').index());
+	
+			landscapeScroll(slides, destiny);
+		  });
+	
+	
+		  /**
+		   * Checks for translate3d support 
+		   * @return boolean
+		   * http://stackoverflow.com/questions/5661671/detecting-transform-translate3d-support
+		   */
+		  function support3d() {
+			var el = document.createElement('p'),
+			  has3d,
+			  transforms = {
+				'webkitTransform': '-webkit-transform',
+				'OTransform': '-o-transform',
+				'msTransform': '-ms-transform',
+				'MozTransform': '-moz-transform',
+				'transform': 'transform'
+			  };
+	
+			// Add it to the body to get the computed style.
+			document.body.insertBefore(el, null);
+	
+			for (var t in transforms) {
+			  if (el.style[t] !== undefined) {
+				el.style[t] = "translate3d(1px,1px,1px)";
+				has3d = window.getComputedStyle(el).getPropertyValue(transforms[t]);
+			  }
+			}
+	
+			document.body.removeChild(el);
+	
+			return (has3d !== undefined && has3d.length > 0 && has3d !== "none");
+		  }
+		};
+	  })(jQuery);
+	
+	  $(document).ready(function() {
+		$.fn.fullpage();
+	  });
+	
+	</script>
+	
