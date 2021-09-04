@@ -13,6 +13,7 @@ class UserManager(BaseUserManager):
     def create_user(self):
         pass
 #this is just a test
+#this is another test
     
 
 class Doctor(models.Model):
