@@ -31,8 +31,8 @@ class HomepageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['hospitals'] = HospitalSystem.objects.all()[:20]
-        context['doctors'] = Doctor.objects.all()[:20]
+        context['hospitals'] = HospitalSystem.objects.all()[:50]
+        context['doctors'] = Doctor.objects.all()[:50]
         # context['hospitals'] = HospitalSystem.objects.filter(practice_address__city = "Tulsa")[:20]
         # context['doctors'] = Doctor.objects.filter(practice_address__city = "Tulsa")[:20]
         print(context)

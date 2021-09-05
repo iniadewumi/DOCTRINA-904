@@ -121,8 +121,15 @@
               </h3>
               <p style="text-align: center;">
                 <span style="font-size: 0.875rem;">
-                  <span class="u-custom-font u-font-roboto-condensed">Dr. {{doctor.last_name}} is a(n) {{doctor.area_of_expertise}} who works at {{doctor.hospital_system.hospital_name}} in {{doctor.practice_address.city}}, {{doctor.practice_address.state}}. </span>
+                  <span class="u-custom-font u-font-roboto-condensed">Dr. {{doctor.last_name}} works at {{doctor.hospital_system.hospital_name}} in {{doctor.practice_address.city}}, {{doctor.practice_address.state}}. </span>
                 </span>
+              </p>
+              <div  style="text-align: left;">
+                <p style="text-align: center;">
+                Field: {{doctor.doctor_taxonomy.field_class}}<br>
+                Description: {{doctor.doctor_taxonomy.medicare_description}}<br>
+                Specialization: {{doctor.doctor_taxonomy.specialization}}<br>
+                Area of Expertise: {{doctor.doctor_taxonomy.area_of_expertise}}<br>
               </p>
             </div>
           </div>
