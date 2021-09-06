@@ -1,5 +1,7 @@
-<form action="/ThankYou" method="post">
+<form action="/{{doctor.doctor_npi_id}}/thank_you" method="post">
     {% csrf_token %}
-    {{ form }}
+    {{ form.collab }}
+
     <input type="submit" value="Submit">
+    {{user.work_experience}}
 </form>

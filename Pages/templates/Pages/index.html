@@ -72,6 +72,19 @@
         <a href="/">&nbsp; &nbsp; Doctrina <span style="font-weight: 700;"></span>
         </a>
       </h3></header>
+
+      <!-- <script>
+        //LOCATION FINDER
+        fetch("https://ipinfo.io/json?token=07231281158dd1").then(
+            (response) => response.json()
+          ).then(
+            (jsonResponse) => {
+              document.getElementById('location').value = jsonResponse.city+", "+jsonResponse.region
+              console.log(jsonResponse.city, jsonResponse.region)
+            }
+          )
+      </script> -->
+
     <section class="skrollable u-align-center u-clearfix u-image u-parallax u-shading u-section-1" id="sec-2e0a" data-image-width="1280" data-image-height="853">
       <div class="u-expanded-width u-tab-links-align-left u-tabs u-tabs-1">
         <ul class="u-border-1 u-border-grey-40 u-palette-4-base u-tab-list u-unstyled u-tab-list-1" role="tablist">
@@ -92,17 +105,18 @@
                 <form action="/search_results" method="GET" source="custom" name="form" style="padding: 30px;">
                   <div class="u-form-group u-form-name">
                     <label for="name-7f76" class="u-custom-font u-font-roboto-condensed u-label u-label-1">Find Doctor By Name</label>
-                    <input type="text" placeholder="Hippocrates Asclepiades" id="name-7f76" name="doctorname" class="u-border-1 u-border-grey-30 u-custom-font u-font-roboto-condensed u-input u-input-rectangle u-radius-5 u-white u-input-1" required="">
+                    <input type="text" placeholder="Hippocrates Asclepiades" id="name-7f76" name="doctorname" class="u-border-1 u-border-grey-30 u-custom-font u-font-roboto-condensed u-input u-input-rectangle u-radius-5 u-white u-input-1">
                   </div>
                   <div class="u-form-group u-form-select u-form-group-2">
                     <label for="select-c2af" class="u-custom-font u-font-roboto-condensed u-label u-label-2">Location</label>
                     <div class="u-form-select-wrapper">
-                      <select id="select-c2af" name="location" class="u-border-1 u-border-grey-30 u-custom-font u-font-roboto-condensed u-input u-input-rectangle u-radius-5 u-white u-input-2" autofocus="autofocus">
+                      <input type="text" name="location" value="Tulsa, OK" id="location" class="u-border-1 u-border-grey-30 u-custom-font u-font-roboto-condensed u-input u-input-rectangle u-radius-5 u-white u-input-1">
+                      <!-- <select id="select-c2af" name="location" class="u-border-1 u-border-grey-30 u-custom-font u-font-roboto-condensed u-input u-input-rectangle u-radius-5 u-white u-input-2" autofocus="autofocus">
                         <option value="">None</option>
                         <option value="Dallas, TX">Dallas, TX</option>
                         <option value="Houston, TX">Houston, TX</option>
                         <option value="Lubbock, TX">Lubbock, TX</option>
-                      </select>
+                      </select> -->
                       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
                     </div>
                   </div>
@@ -124,6 +138,12 @@
                     <div class="u-form-select-wrapper">
                       <select id="select-8268" name="aoe" class="u-border-1 u-border-grey-30 u-custom-font u-font-roboto-condensed u-input u-input-rectangle u-radius-5 u-white u-input-4">
                         <option value="None">None</option>
+
+                          {% for taxonomy in taxonomies %}
+                          <option value="{{taxonomy.specialization}}">{{ taxonomy.specialization }}</option>
+                          {% endfor %}
+
+                        <!--                         
                         <option value="Allergy and Immunology">Allergy and Immunology</option>
                         <option value="Anesthesiology">Anesthesiology</option>
                         <option value="Colon and Rectal Surgery">Colon and Rectal Surgery</option>
@@ -147,7 +167,7 @@
                         <option value="Radiology">Radiology</option>
                         <option value="Surgery">Surgery</option>
                         <option value="Thoracic Surgery">Thoracic Surgery</option>
-                        <option value="Urology">Urology</option>
+                        <option value="Urology">Urology</option> -->
                       </select>
                       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
                     </div>
@@ -176,7 +196,7 @@
                         <div class="u-container-layout u-container-layout-4">
                           <h5 class="u-custom-font u-font-roboto-condensed u-text u-text-1">Dr. {{doctor.first_name}}
                             {{doctor.last_name}}</h5>
-                          <h6 class="u-custom-font u-font-roboto-condensed u-text u-text-2">{{doctor.doctor_taxonomy.area_of_expertise}}</h6>
+                          <h6 class="u-custom-font u-font-roboto-condensed u-text u-text-2">{{doctor.doctor_taxonomy.specialization}}</h6>
                           <p class="u-custom-font u-font-roboto-condensed u-text u-text-3">{{doctor.mailing_address.city}},
                             {{doctor.mailing_address.state}}</p>
                           <div class="ddd">

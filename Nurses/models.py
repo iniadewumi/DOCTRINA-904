@@ -1,13 +1,14 @@
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 from localflavor.us.models import USStateField, USZipCodeField
-
+from django.dispatch import receiver
+from django.db.models.signals import post_save
 from django.contrib.auth.models import (
     AbstractBaseUser, BaseUserManager
     )
 
 class UserManager(BaseUserManager):
-    def create_user(self, email, first_name, last_name, job_title, license_number, license_state, password=None):
+    def create_user(self, email, first_name, last_name, job_class, license_number, license_state, password=None):
         """
         Creates and saves a User with the given email and password.
         """
@@ -20,7 +21,7 @@ class UserManager(BaseUserManager):
             last_name = last_name,
             license_number = license_number,
             license_state = license_state,
-            job_title = job_title,
+            job_class = job_class,
         )
 
         user.set_password(password)
@@ -28,7 +29,7 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_staffuser(self, email, first_name, last_name,job_title, license_number, license_state, password):
+    def create_staffuser(self, email, first_name, last_name,job_class, license_number, license_state, password):
         """
         Creates and saves a staff user with the given email and password.
         """
@@ -39,14 +40,14 @@ class UserManager(BaseUserManager):
             last_name = last_name,
             license_number = license_number,
             license_state = license_state,
-            job_title = job_title
+            job_class = job_class
         )
         user.staff = True
         user.active = True
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, first_name, last_name, job_title, license_number, license_state, password):
+    def create_superuser(self, email, first_name, last_name, job_class, license_number, license_state, password):
         """
         Creates and saves a superuser with the given email and password.
         """
@@ -57,7 +58,7 @@ class UserManager(BaseUserManager):
             last_name = last_name,
             license_number = license_number,
             license_state = license_state,
-            job_title = job_title
+            job_class = job_class
         )
         user.staff = True
         user.admin = True
@@ -78,11 +79,20 @@ class User(AbstractBaseUser):
         unique=True,
     )
 
-    job_title = models.CharField(max_length=255, blank=True, null=True)
-
     license_number = models.CharField(max_length=25, unique=True)
     license_state = USStateField(default="OK")
-    
+
+    JOB_CLASSES = (('BSN/RN', 'BSN/RN'),
+    ('BSN/LPN', 'BSN/LPN'), 
+    ('LPN', 'LPN'), 
+    ('RN', 'RN'), 
+    ('NP', 'NP'), 
+    ('PA', 'PA'),
+    ('Pharmacist', 'Pharmacist'), 
+    ('Other', 'Other'))
+    job_class = models.CharField(max_length=25, choices=JOB_CLASSES)
+
+
     created = models.DateTimeField(auto_now_add=True)
     last_updated = models.DateTimeField(auto_now=True)
     
@@ -90,16 +100,8 @@ class User(AbstractBaseUser):
     staff = models.BooleanField(default=False) # a admin user; non super-user
     admin = models.BooleanField(default=False) # a superuser
 
-    JOB_CLASSES = (('BSN/RN', 'BSN/RN'),
-    ('BSN/LPN', 'BSN/LPN'), 
-    ('RN', 'RN'), 
-    ('LPN', 'LPN'), 
-    ('NP', 'NP'), 
-    ('Pharmacist', 'Pharmacist'), 
-    ('Other', 'Other'), 
-    ('PA', 'PA'))
 
-    job_class = models.CharField(max_length=25, choices=JOB_CLASSES, blank=True, null=True)
+
 
 
     # WORK_EXPERIENCE_C = (
@@ -109,15 +111,11 @@ class User(AbstractBaseUser):
     #     (10, '5-10'),
     #     (11, '10+')        
     # ) 
-    work_experience = models.IntegerField(blank=True, null=True)
-    shift = models.CharField(max_length=10, choices=(('N', 'Night'), ("Day", "Day"), ('Both', 'Both')), blank=True, null=True)
-    department = models.CharField(max_length=250, blank=True, null=True)
-    other_positions = models.CharField(max_length=250, null=True, blank=True)
 
     # notice the absence of a "Password field", that is built in.
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['first_name', 'last_name', 'license_state', 'license_number', 'job_title'] 
+    REQUIRED_FIELDS = ['first_name', 'last_name', 'license_state', 'license_number', 'job_class'] 
     
     objects = UserManager()
     
@@ -155,7 +153,7 @@ class User(AbstractBaseUser):
 
     @property
     def is_active(self):
-        "Is the user a admin member?"
+        "Is the user an active member?"
         return self.active
     
 
@@ -163,4 +161,18 @@ class User(AbstractBaseUser):
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
-    
+    work_experience = models.IntegerField(blank=True, null=True)
+    shift = models.CharField(max_length=10, choices=(('N', 'Night'), ("Day", "Day"), ('Both', 'Both')), blank=True, null=True)
+    department = models.CharField(max_length=250, blank=True, null=True)
+    other_positions = models.CharField(max_length=250, null=True, blank=True)
+    job_title = models.CharField(max_length=255, blank=True, null=True)
+
+    def __str_(self):
+        return self.user.email
+
+
+@receiver(post_save, sender=User)
+def create_or_update(sender, instance, created, **kwargs):
+    if created:
+        Profile.objects.create(user=instance)
+    instance.profile.save()

@@ -55,7 +55,7 @@
 			<div class="card">
 			  <div class="ds-top"></div>
 			  <div class="avatar-holder">
-				<img src="https://aof.org/sites/default/files/styles/aof_image_page/public/Adewumi_M%20TomiSM.jpg" alt="Dr. Tomi Adewumi">
+				<img src="{% static 'Pages/images/medical-doctor-profile-icon-male-portrait-flat-design-EY25CP.jpg' %}" alt="">
 			  </div>
 			  <div class="name">
 				<a href="/{{doctor.doctor_npi_id}}/doctor" target="_blank">Dr. {{doctor.first_name}}
@@ -117,11 +117,11 @@
 				<div class="columns">
 				  <div class="item">
 					<label for="fname">First Name<span>*</span></label>
-					<input id="fname" type="text" name="fname" placeholder="Jane" />
+					<input id="fname" type="text" name="fname" placeholder="Jane" value={{user.first_name}} />
 				  </div>
 				  <div class="item">
 					<label for="lname"> Last Name<span>*</span></label>
-					<input id="lname" type="text" name="lname" placeholder="Doe" />
+					<input id="lname" type="text" name="lname" placeholder="Doe" value={{user.last_name}}/>
 				  </div>
 				  <div class="item">
 					<label for="job_title">Job Title<span>*</span></label>
