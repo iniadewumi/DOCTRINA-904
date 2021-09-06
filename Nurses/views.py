@@ -37,7 +37,7 @@ def login_page(request):
             messages.error(request,'Username or Password not correct')
             print("Failed!")
 
-    return render(request, "Nurses/Login.html", context)
+    return render(request, "Pages/Login.html", context)
 
 
 def registration_page(request):
@@ -58,4 +58,4 @@ def registration_page(request):
         return redirect(next_)
         
 
-    return render(request, "Nurses/Sign-Up.html", context)
+    return render(request, "Pages/Sign-Up.html", context)
