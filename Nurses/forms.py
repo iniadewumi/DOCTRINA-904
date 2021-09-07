@@ -9,8 +9,8 @@ User = get_user_model()
 
 
 class LoginForm(forms.Form):
-    email = forms.EmailField(label="Email")
-    password = forms.CharField(widget=forms.PasswordInput)
+    email = forms.EmailField(label="Email", widget=forms.TextInput(attrs={'placeholder': 'Email Address', 'class': 'u-border-1 u-border-grey-75 u-custom-font u-font-roboto-condensed u-grey-5 u-input u-input-rectangle u-radius-10'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder':'Password','class': 'u-border-1 u-border-grey-75 u-custom-font u-font-roboto-condensed u-grey-5 u-input u-input-rectangle u-radius-10'}))
     class Meta:
         model = User
         fields = ['email', 'password']
@@ -18,9 +18,13 @@ class LoginForm(forms.Form):
         username = self.cleaned_data['email']
         password = self.cleaned_data['password']
         if username and password:
+            if not User.objects.filter(email=username).exists():
+                self.add_error("email", "User does not exist")
             user = authenticate(username=username, password=password)
-            if not user:
-                raise forms.ValidationError("User does not exist")
+            print(user)
+            if user is None:
+                self.add_error("password", "Password is incorrect")
+                # raise forms.ValidationError("User does not exist")
         return super(LoginForm, self).clean(*args, **kwargs)
 
 
@@ -35,17 +39,18 @@ class RegisterForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ['email', 'first_name', 'last_name', 'license_state', 'license_number']
-        labels = {'email':"", 'first_name':"", 'last_name':"", 'license_state':"", 'license_number':"" }
+        fields = ['email', 'first_name', 'last_name', 'license_state', 'license_number', 'job_class']
+        labels = {'email':"", 'first_name':"", 'last_name':"", 'license_state':"", 'license_number':"", 'job_class':""}
     def __init__(self, *args, **kwargs):
         super(RegisterForm, self).__init__(*args, **kwargs)
-        placeholders = {'email':'Email Address', 'first_name':"First Name", 'last_name':"Last Name", 'license_state':"License State", 'license_number':"License Number", 'password':"Password", 'password_2': 'Confirm Password'}
+        placeholders = {'email':'Enter a valid email address', 'first_name':"First Name", 'last_name':"Last Name", 'license_state':"License State", 'license_number':"License Number", 'job_class':'Job Class', 'password':"Password", 'password_2': 'Confirm Password'}
 
         for field_name, field in self.fields.items():
             self.fields[field_name].widget.attrs['placeholder'] = placeholders[field_name]
         self.fields['first_name'].widget.attrs['class'] = "u-border-1 u-border-grey-30 u-custom-font u-font-roboto-condensed u-input u-input-rectangle u-radius-10 u-white"
         self.fields['last_name'].widget.attrs['class'] = "u-border-1 u-border-grey-30 u-custom-font u-font-roboto-condensed u-input u-input-rectangle u-radius-10 u-white"
         self.fields['email'].widget.attrs['class'] = "u-border-1 u-border-grey-30 u-custom-font u-font-roboto-condensed u-input u-input-rectangle u-radius-10 u-white"
+        self.fields['job_class'].widget.attrs['class'] = "u-border-1 u-border-grey-30 u-custom-font u-font-roboto-condensed u-input u-input-rectangle u-radius-10 u-white"
         self.fields['password'].widget.attrs['class'] = 'u-border-1 u-border-grey-30 u-custom-font u-font-roboto-condensed u-input u-input-rectangle u-radius-10 u-white'
         self.fields['password_2'].widget.attrs['class'] = 'u-border-1 u-border-grey-30 u-custom-font u-font-roboto-condensed u-input u-input-rectangle u-radius-10 u-white'
         self.fields['license_state'].widget.attrs['class'] = 'u-border-1 u-border-grey-30 u-custom-font u-font-roboto-condensed u-input u-input-rectangle u-radius-10 u-white'
@@ -58,7 +63,7 @@ class RegisterForm(forms.ModelForm):
         email = self.cleaned_data.get('email')
         qs = User.objects.filter(email=email)
         if qs.exists():
-            raise forms.ValidationError("email is taken")
+            raise forms.ValidationError("Email is taken")
         return email
 
     def clean(self):

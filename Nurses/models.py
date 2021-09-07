@@ -9,6 +9,7 @@ from django.contrib.auth.models import (
 
 class UserManager(BaseUserManager):
     def create_user(self, email, first_name, last_name, job_class, license_number, license_state, password=None):
+        # sourcery skip: class-extract-method
         """
         Creates and saves a User with the given email and password.
         """
@@ -82,7 +83,9 @@ class User(AbstractBaseUser):
     license_number = models.CharField(max_length=25, unique=True)
     license_state = USStateField(default="OK")
 
-    JOB_CLASSES = (('BSN/RN', 'BSN/RN'),
+    JOB_CLASSES = (
+    ('', 'Select Job Class'),
+    ('BSN/RN', 'BSN/RN'),
     ('BSN/LPN', 'BSN/LPN'), 
     ('LPN', 'LPN'), 
     ('RN', 'RN'), 

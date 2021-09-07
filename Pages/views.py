@@ -46,12 +46,11 @@ class HomepageView(TemplateView):
         #     ip_valid = False
 
         context = super().get_context_data(**kwargs)
-        context['hospitals'] = HospitalSystem.objects.all()[:50]
-        context['doctors'] = Doctor.objects.all()[:50]
+        context['hospitals'] = HospitalSystem.objects.all()[:100]
+        context['doctors'] = [x for x in Doctor.objects.filter(practice_address__city__contains="Tulsa")[:50] if x.doctor_taxonomy.specialization!= None]
         context['taxonomies'] = [ x for x in DoctorTaxonomy.objects.all() if x.specialization!=None ]
         # context['hospitals'] = HospitalSystem.objects.filter(practice_address__city = "Tulsa")[:20]
         # context['doctors'] = Doctor.objects.filter(practice_address__city = "Tulsa")[:20]
-        print(context)
         return context 
 
 
@@ -59,9 +58,9 @@ class HomepageView(TemplateView):
 class SearchResultsView(ListView):
     model = Doctor
     template_name = 'Pages/Search-Results.html'
-    paginate_by = 5
+    paginate_by = 10
 
-    def get_queryset(self, **kwargs):  # sourcery no-metrics
+    def get_queryset(self, **kwargs):  # sourcery no-metrics skip: hoist-statement-from-if, merge-comparisons, merge-else-if-into-elif
         name = self.request.GET['doctorname'].replace("  ", " ")
         expertise = self.request.GET['aoe']
         experience = self.request.GET['experience']
@@ -139,109 +138,6 @@ class SearchResultsView(ListView):
         return sorted(results, key=operator.attrgetter('practice_address.city'))
         
 
-    # paginate_by = 10
-    # def get_queryset(self):
-    #     query_set = Doctor.objects.filter(first_name__contains="John")
-
-
-
-
-
-
-
-
-    # def get_queryset(self,**kwargs):
-    #     name = self.request.POST['doctorname']
-    #     expertise = self.request.POST['aoe']
-    #     experience = self.request.POST['experience']
-
-    #     if self.request.POST['location']=="":
-    #         location = ""
-    #     if "," in self.request.POST['location']:
-    #         self.city = self.request.POST['location'].split(",")[0].strip()
-    #         self.state = self.request.POST['location'].split(",")[1].strip()
-    #     else:
-    #         self.city = self.request.POST['location'].strip()
-    #         self.state = self.request.POST['location'].strip()
-
-    #     context = super().get_context_data(**kwargs)
-    #     names = self.name_search()
-    #     loc = self.location_search()
-    #     expr = self.experience_search()
-    #     expt = self.expertise_search()
-    #     context['results'] = list(chain(names, loc, expr, expt))
-    #     return super(SearchResultsView, self).dispatch(**kwargs)
-    
-
-
-    # def experience_search(self):
-    #     if self.experience==0:
-    #         return None
-    #     elif self.experience==4:
-    #         return Doctor.objects.filter(experience__lte=5)
-    #     elif self.experience in [5, 10, 15]:
-    #         return Doctor.objects.filter(experience__gt=self.experience)
-
-    # def location_search(self):         
-    #     if self.location == "":
-    #         return None
-    #     return Doctor.objects.filter(Q(practice_address__city__icontains=self.city) | Q(practice_address__state__icontains=self.state))
-    
-    # def expertise_search(self):
-    #     if self.expertise=="None":
-    #         return None
-    #     else:
-    #         return Doctor.objects.filter(area_of_expertise__contains=self.expertise)
-
-
-
-def Signup(request):
-    return render(request, 'Pages/Sign-Up.html')
 
 def About(request):
     return render(request, 'Pages/About.html')
-
-
-# Create your views here.
-# def SearchResults(request):
-
-
-#     name = request.POST['doctorname']
-#     expertise = request.POST['aoe']
-#     experience = request.POST['experience']
-#     print(type(experience))
-
-#     if "," in request.POST['location']:
-#         city = request.POST['location'].split(",")[0].strip()
-#         state = request.POST['location'].split(",")[1].strip()
-#     else:
-#         city = request.POST['location'].strip()
-#         state = request.POST['location'].strip()
-    
-
-
-#     if expertise!="":
-#         print(expertise)
-#         expt_results = Doctor.objects.filter(area_of_expertise__contains=expertise)
-#     else:
-#         expt_results =[]
-
-#     if name !="":
-#         name_results = Doctor.objects.annotate(full_name=Concat('first_name', V(' '), 'last_name')).filter(full_name__icontains=name)
-#     else:
-#         name_results = []
-
-#     if experience!="":
-#         expr_results = Doctor.objects.filter(experience__contains=experience)
-#     else:
-#         expr_results = []
-    
-    
-    
-#     location_results = Doctor.objects.filter(Q(practice_address__city__icontains=city) | Q(practice_address__state__icontains=state))
-
-
-#     results = list(chain(Doctor.objects.filter(Q(experience__contains=experience)), name_results))
-#     context = {'results': results}
-
-#     return render(request, 'Pages/Search-Results.html', context=context)

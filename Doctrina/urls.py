@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Pages.views import HomepageView, About, Signup, SearchResultsView
+from Pages.views import HomepageView, About, SearchResultsView
 from Nurses.views import login_page, registration_page
 from Doctors.views import DoctorPage
 from Hospitals.views import HospitalPage

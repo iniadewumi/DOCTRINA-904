@@ -6,7 +6,7 @@
 		<title>Nurse Questionnaire</title>
 		{% load static %}
 	
-		<script class="u-script" type="text/javascript" src="{% static 'Pages/js/Rate-Doctor.js' %}"></script>
+		<script class="u-script" type="text/javascript" src="{% static 'Ratings/js/Rate-Doctor.js' %}"></script>
 	
 		<link rel="stylesheet" type="text/css" href="{% static 'Pages/Rate-Doctor.css' %}">
 	
@@ -49,6 +49,8 @@
 				</main>
 	
 			</div> -->
+
+			<!-- ################################################################ -->
 		  <script src='https://cdn.jsdelivr.net/npm/svelte-range-slider-pips@1.7.0/dist/svelte-range-slider-pips.js'></script>
 		  <div class="section custom-full1">
 	
@@ -121,16 +123,20 @@
 				  </div>
 				  <div class="item">
 					<label for="lname"> Last Name<span>*</span></label>
-					<input id="lname" type="text" name="lname" placeholder="Doe" value={{user.last_name}}/>
+					<input id="lname" type="text" name="lname" placeholder="Doe" value={{user.last_name}}>
 				  </div>
 				  <div class="item">
 					<label for="job_title">Job Title<span>*</span></label>
-					<input id="job_title" type="text" name="job_title" />
+					{% if user.job_title %}
+					<input id="job_title" type="text" name="job_title" value="{{user.job_title}}" required>
+					{% else %}
+					<input id="job_title" type="text" name="job_title" placeholder="Nurse" required>
+					{% endif %}
 				  </div>
 	
 				  <div class="item">
 					<p>Job Class</p>
-					<select style="color:black; height:35px;" type="text" id="job_class" class="job_class">
+					<select style="color:black; height:35px;" type="text" id="job_class" class="job_class" value={{user.job_class}}>
 					  <option value="BSN/RN">BSN/RN</option>
 					  <option value="BSN/LPN">BSN/LPN</option>
 					  <option value="RN">RN</option>
@@ -218,13 +224,10 @@
 			  <br><br>
 			  <a id="nexta">&emsp;BEGIN&emsp;</a>
 			</ol>
-			<!-- <section id="section07" class="demo">
-					<a id="nexta">Scroll<span></span><span></span><span></span></a>
-					<h3 id="text_scroll">Scroll down to begin</h3>
-				</section> -->
-		  </div>
 		  </div>
 	
+
+
 		  <div class="section s3">
 			<div class="testbox">
 			  <fieldset>
@@ -235,20 +238,17 @@
 				  <p class="question">1. Doctor Recognizes and manages the psychosocial aspects of an illness
 					(Doctor is aware and manages
 					mental stability of patients)</p>
-				  <label class="checkbox" for=""><input name="mental_stability" type="radio"><span>True</span></label>
-				  <label class="checkbox" for=""><input name="mental_stability" type="radio"><span>False</span></label>
+					{{form.recog_psychosocial}}
 				</div>
 	
 	
 				<div class="question-div">
 				  <p class="question">2. Doctor Communicates effectively withpatients</p>
-				  <label class="checkbox" for=""><input name="patient_communication" type="radio"><span>True</span></label>
-				  <label class="checkbox" for=""><input name="patient_communication" type="radio"><span>False</span></label>
+					{{form.effective_patient_communication}}
 				</div>
 				<div class="question-div">
 				  <p class="question">3. Doctor displays empathy towards patients and families</p>
-				  <label class="checkbox" for=""><input name="empathy_to_family" type="radio"><span>True</span></label>
-				  <label class="checkbox" for=""><input name="empathy_to_family" type="radio"><span>False</span></label>
+					{{form.empathy}}
 				</div>
 	
 	
@@ -257,23 +257,21 @@
 					of patients to make
 					informed
 					decisions</p>
-				  <label class="checkbox" for=""><input name="rights_of_patients" type="radio"><span>True</span></label>
-				  <label class="checkbox" for=""><input name="rights_of_patients" type="radio"><span>False</span></label>
-	
+					{{form.legal_awareness}}
 				</div>
 	
 	
 				<div class="question-div">
 				  <p class="question">5. Doctor forms a good relationship with his/her patients? </p>
-				  <label class="checkbox" for=""><input name="doctor_form" type="radio"><span>True</span></label>
-				  <label class="checkbox" for=""><input name=" doctor_form" type="radio"><span>False</span></label>
+				
+				  {{form.patient_relationship}}
 				</div>
 	
 	
 				<div class="question-div">
 				  <p class="question">6. Doctor genuinely cares about his/her patients?</p>
-				  <label class="checkbox" for=""><input name="doctor_genuinely" type="radio"><span>True</span></label>
-				  <label class="checkbox" for=""><input name="doctor_genuinely" type="radio"><span>False</span></label>
+				  {{form.genuine_patient_care}}
+				
 				</div>
 			  </fieldset>
 	
@@ -281,143 +279,8 @@
 			<div class="banner">Page 1
 			</div>
 		  </div>
-		  <div class="section custom-full1">
-			<div class="testbox">
-	
-			  <br>
-			  <fieldset>
-	
-				<legend>Character & Conduct</legend>
-	
-	
-				<div class="question-div">
-				  <p class="question">1. Emotional Intelligence or Patient Awareness?</p>
-	
-				  <div class="input-range" style="transform: scale(0.7); margin-left:-100px">
-					<div id="range-slider" data-value="10"></div>
-					<div id="labels-list" class="labels" data-value="10"></div>
-				  </div>
-	
-				</div>
-	
-	
-				<div class="question-div">
-				  <p class="question">2. Effective Patient Communication</p>
-				  <input type="range" max="100" min="0" value="0">
-				</div>
-	
-	
-				<div class="question-div">
-				  <p class="question">3. Empathy</p>
-				  <input type="range" max="100" min="0" value=0>
-				</div>
-	
-	
-				<div class="question-div">
-				  <p class="question">4. Legal Awareness</p>
-				  <input type="range" max="100" min="0" value=0>
-	
-				</div>
-	
-	
-				<div class="question-div">
-				  <p class="question">5. Patient Relationships</p>
-				  <input type="range" max="100" min="0" value=0>
-	
-				</div>
-			</div>
-			<div class="banner">Page 2
-	
-	
-			</div>
-			</fieldset>
-	
-		  </div>
-		  <div class="section">
-			<div class="testbox">
-			  <fieldset>
-	
-				<legend>Character & Conduct (Part 2)</legend>
-	
-				<div class="question-div">
-				  <p class="question">6. Genuine Care for Patients</p>
-				  <input type="range" max="100" min="0" value=0>
-				</div>
-	
-	
-				<div class="question-div">
-				  <p class="question">7. Effective Directives</p>
-				  <input type="range" max="100" min="0" value=0>
-	
-				</div>
-	
-	
-				<div class="question-div">
-				  <p class="question">8. Resolving Problems</p>
-				  <input type="range" max="100" min="0" value=0>
-	
-				</div>
-	
-	
-				<div class="question-div">
-				  <p class="question">9. Effective Medical Professional Communication</p>
-				  <input type="range" max="100" min="0" value=0>
-				</div>
-	
-	
-				<div class="question-div">
-				  <p class="question">10. Mindful Prescribing</p>
-				  <input type="range" max="100" min="0" value=0>
-				</div>
-			  </fieldset>
-	
-			</div>
-			<div class="banner">Page 3
-			</div>
-		  </div>
-		  <div class="section custom-full2">
-			<div class="testbox">
-			  <fieldset>
-	
-				<legend>Character & Conduct (Part 3)</legend>
-	
-	
-				<div class="question-div">
-				  <p class="question">11. Trusted by Professionals</p>
-				  <input type="range" max="100" min="0" value=0>
-				</div>
-	
-	
-				<div class="question-div">
-				  <p class="question">12. Professionally Recommended</p>
-				  <input type="range" max="100" min="0" value=0>
-				</div>
-	
-	
-				<div class="question-div">
-				  <p class="question">13. Ethically Conscious/ Ethical </p>
-				  <input type="range" max="100" min="0" value=0>
-				</div>
-	
-	
-				<div class="question-div">
-				  <p class="question">14. Quality Care</p>
-				  <input type="range" max="100" min="0" value=0>
-				</div>
-	
-	
-				<div class="question-div">
-				  <p class="question">Room for Improvement?</p>
-				  <textarea name="room-for-improvement" cols="60" rows="10"></textarea>
-	
-				</div>
-	
-			  </fieldset>
-			</div>
-			<div class="banner">Page 4
-			</div>
-		  </div>
-	
+
+
 		  <div class="section custom-full1">
 			<div class="testbox">
 			  <fieldset>
@@ -428,9 +291,7 @@
 				  <p class="question">1. Doctor Selects diagnostic tests and recommends treatments/procedures
 					appropriately</p>
 				  <br>
-				  <label class="checkbox" for=""><input name="diagnostic_tests" type="radio"><span>True</span></label>
-				  <label class="checkbox" for=""><input name="diagnostic_tests" type="radio"><span>False</span></label>
-	
+				  {{form.appropriate_diagnosis}}
 				</div>
 	
 	
@@ -440,24 +301,24 @@
 					(maintains
 					composure in difficult situations)</p>
 				  <br>
-				  <label class="checkbox" for=""><input name="high_stress_environments" type="radio"><span>True</span></label>
-				  <label class="checkbox" for=""><input name="high_stress_environments" type="radio"><span>False</span></label>
+				  {{form.high_stress_effectiveness}}
 				</div>
 	
 	
 				<div class="question-div">
 				  <p class="question">3. Doctor Communicates clearly to support staff</p>
 				  <br>
-				  <label class="checkbox" for=""><input name="support_staff_communication" type="radio"><span>True</span></label>
-				  <label class="checkbox" for=""><input name="support_staff_communication" type="radio"><span>False</span></label>
+
+
+				  {{form.communication_to_staff}}
+				
 				</div>
 	
 	
 				<div class="question-div">
 				  <p class="question">4. Doctor mindfully prescribes medication</p>
 				  <br>
-				  <label class="checkbox" for=""><input name="mindfull_prescription" type="radio"><span>True</span></label>
-				  <label class="checkbox" for=""><input name="mindfull_prescription" type="radio"><span>False</span></label>
+					{{form.mindful_prescription}}
 				</div>
 	
 	
@@ -465,15 +326,15 @@
 				  <p class="question">5. You are likely to trust this doctor for your own professional
 					healthcare needs</p>
 				  <br>
-				  <label class="checkbox" for=""><input name="trust_for_personal_care" type="radio"><span>True</span></label>
-				  <label class="checkbox" for=""><input name="trust_for_personal_care" type="radio"><span>False</span></label>
+					{{form.trust_for_personal_care}}
 				</div>
 			  </fieldset>
 			</div>
-			<div class="banner">Page 5
+			<div class="banner">Page 2
 			</div>
 		  </div>
 	
+
 		  <div class="section custom-full1">
 			<div class="testbox">
 			  <fieldset>
@@ -487,77 +348,159 @@
 					personality or
 					character?
 				  </p>
-				  <label class="checkbox" for=""><input name="recommend_regarless_of_personality" type="radio"><span>True</span></label>
-				  <label class="checkbox" for=""><input name="recommend_regarless_of_personality" type="radio"><span>False</span></label>
+
+				  {{form.recommend_regarless_of_personality}}
 				</div>
 	
 	
 				<div class="question-div">
 				  <p class="question">13. You believe this doctor uses ethical practices? </p>
-				  <br><label class="checkbox" for=""><input name="ethical_practices" type="radio"><span>True</span></label>
-				  <label class="checkbox" for=""><input name="ethical_practices" type="radio"><span>False</span></label>
+				  <br>
+				  {{form.ethical_practices}}
 				</div>
 	
 	
 				<div class="question-div">
 				  <p class="question">14. You believe this doctor provides quality care to his/her patients?</p>
-				  <br><label class="checkbox" for=""><input name="quality_care" type="radio"><span>True</span></label>
-				  <label class="checkbox" for=""><input name="quality_care" type="radio"><span>False</span></label>
+				{{form.quality_care}}
 				</div>
 	
 	
 				<div class="question-div">
 				  <p class="question">15. You believe this doctor should improve in providing care, why?</p>
-				  <br><label class="checkbox" for=""><input name="improve_care" type="radio" id="improve_care"><span>True</span></label>
-				  <label class="checkbox" for=""><input name="improve_care" type="radio"><span>False</span></label>
+				 
+				 {{form.improve_care}}
 				  <br>
-				  <div id="improve" hidden>
-					<p>Why?</p>
-					<textarea placeholder="Why should the doctor improve care?" name="improve_care2" id="" cols="60" rows="10"></textarea>
-				  </div>
+				  <div class="question-div">
+					
+				  <div id="improve" hidden><p class="question" style="margin-left: 30px;">Why?</p>
+					{{form.why_improve_care}}
+				
+					</div>
+					</div>
 				</div>
 	
 	
 				<div class="question-div">
 				  <p class="question">16. You believe this doctor has good patient outcomes?</p>
-				  <br><label class="checkbox" for=""><input name="good_outcome" type="radio"><span>True</span></label>
-				  <label class="checkbox" for=""><input name="good_outcome" type="radio"><span>False</span></label>
-	
+				  <br>
+				  {{form.good_patient_outcome}}
 				</div>
 			  </fieldset>
 			  <br>
 			</div>
-			<div class="banner">Page 6
+			<div class="banner">Page 3
 			</div>
 		  </div>
+	
+		 <div class="section custom-full1">
+			<div class="testbox">
+	
+			  <br>
+			  <fieldset>
+	
+				<legend>Character & Conduct</legend>
+	
+	
+				<div class="question-div">
+	
+				  <div class="input-range" style="transform: scale(0.7); margin-left:-100px">
+					<div id="range-slider" data-value="10"></div>
+					<div id="labels-list" class="labels" data-value="10"></div>
+				  </div>
+	
+				</div>
+				<div class="question-div">
+					<p class="question">16. Doctor collaborates effectively with allother medical professionals</p>
+					<br>
+					{{form.collab}}
+				  </div>
+
+				  
+				  <div class="question-div">
+					<p class="question">16. Doctor accepts responsibility for own professional actions</p>
+					<br>
+					{{form.accepts_responsibility }}
+				  </div>
+
+				  <div class="question-div">
+					<p class="question">16. Do you like this doctor as a person</p>
+					<br>
+					{{form.like_doc}}
+				  </div>
+					
+	
+			</div>
+			<div class="banner">Page 4
+	
+	
+			</div>
+			</fieldset>
+	
+		  </div>
+	<!--	  <div class="section">
+			<div class="testbox">
+			  <fieldset>
+	
+				<legend>Character & Conduct (Part 2)</legend>
+	
+			  </fieldset>
+	
+			</div>
+			<div class="banner">Page 3
+			</div>
+		  </div>
+		  <div class="section custom-full2">
+			<div class="testbox">
+			  <fieldset>
+	
+				<legend>Character & Conduct (Part 3)</legend>
+	
+	
+			  </fieldset>
+			</div>
+			<div class="banner">Page 4
+			</div>
+		  </div> -->
 	
 		  <div class="section s2">
 			<div class="testbox">
 			  <fieldset>
 	
 				<legend>Comments & Whistleblower Input</legend>
-				<div style="margin-left: 50px;">
-				  <h3>Anonymous comment for public posting</h3>
-				  <textarea style="width:65%" name="anonymous_comment" placeholder="Enter Anonymous comment here..." id="" cols="20" rows="10"></textarea>
-				  <br>
-				  <h4> <span style="color:red">*</span> If you are concerned for the safety of this doctor's
+				<!-- <div style="margin-left: 50px;"> -->
+
+					<div class="question-div">
+						<p class="question"><span style="color:red">* </span>Anonymous comment for public posting
+				  	{{form.anonymous_comment}}
+					<br></p>
+
+					</div>
+
+					<div class="question-div">
+						<p class="question"> <span style="color:red"> NOTE: </span>If you are concerned for the safety of this doctor's
 					patients, or would like to whistle
 					blow -
-					check this box. </h4>
-				  <label class="checkbox" for=""><input name="whistle_blow" id="whistle_blow" type="radio"><span>True</span></label>
-				  <label class="checkbox" for=""><input name="whistle_blow" type="radio" id="no_whistle_blow"><span>False</span></label>
-	
+					check this box. </p>
+					<label class="checkbox" for="">{{form.whistle_blow}}</label>
+					</div>
+					
 				  <div id="wb_input" hidden>
-					<textarea style="width:65%" name="wb_input" cols="20" rows="10" placeholder="Enter your input here. All information is anonymous and will not be linked to you as a user in any way."></textarea>
+					<div class="question-div">
+						<p class="question">
+					{{form.whistleblow_text}}
+					</p></div>
 				  </div>
 				  <br><br><br>
 				  <input style="width:15%" class="center" type="submit" value="Submit">
+				  <br><br>
 	
 			  </fieldset>
 			</div>
-			<div class="banner">Page 7
+			<div class="banner">Page 5
 			</div>
 		  </div>
+
 	
 	
 		  <!-- partial -->
@@ -570,7 +513,16 @@
 	</html>
 	
 	
-	
+	<script>
+		$(document).ready(function() {
+  $(window).keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+	</script>
 	
 	<style>
 	  html,
@@ -583,16 +535,18 @@
 	  form,
 	  input,
 	  select,
-	  textarea,
-	  label {
+	  textarea{
 		padding: 0;
 		margin: 0;
 		outline: none;
 		font-family: Roboto, Arial, sans-serif;
 		font-size: 14px;
-		color: rgb(255, 255, 255);
+		/* color: rgb(255, 255, 255); */
+		color:rgba(0, 0, 0);
 		line-height: 22px;
 	  }
+
+
 	
 	  h1 {
 		position: absolute;
@@ -641,6 +595,7 @@
 		align-items: center;
 		text-align: center;
 		bottom: 40px;
+		color: white;
 	  }
 	
 	  .banner::after {
@@ -654,7 +609,8 @@
 	  input,
 	  select,
 	  textarea {
-		margin-bottom: 10px;
+		margin-bottom: -10px;
+		/* margin-left: 30px; */
 		border: 1px solid #ccc;
 		border-radius: 3px;
 	  }
@@ -666,6 +622,7 @@
 	
 	  fieldset {
 		width: 70%;
+		padding-right: 70px;
 	  }
 	
 	  input[type="range"] {
@@ -756,9 +713,9 @@
 	  }
 	
 	  .question span {
-		margin-left: 30px;
+		padding-bottom: 100px;
 	  }
-	
+
 	  .question-answer label {
 		display: block;
 	  }
@@ -854,14 +811,19 @@
 		display: inline-flex;
 		cursor: pointer;
 		position: relative;
+		list-style-type: none;
 	  }
 	
-	  .checkbox>span {
-		color: #eaeef1;
+	  .checkbox span {
+		color: #6e777f;
 		padding: 0.5rem 0.25rem;
 	  }
-	
-	  .checkbox>input {
+	  
+	  .checkbox label{
+		margin-bottom: 10px;
+	  }
+
+	  .checkbox input {
 		height: 25px;
 		width: 25px;
 		-webkit-appearance: none;
@@ -876,12 +838,12 @@
 		cursor: pointer;
 	  }
 	
-	  .checkbox>input:checked {
+	  .checkbox input:checked {
 		border: 1px solid #ffffff;
 		background-color: #47c7c3;
 	  }
 	
-	  .checkbox>input:checked+span::before {
+	  .checkbox input:checked::before {
 		content: '\2713';
 		display: block;
 		text-align: center;
@@ -891,7 +853,7 @@
 		top: 0.2rem;
 	  }
 	
-	  .checkbox>input:active {
+	  .checkbox input:active {
 		border: 2px solid #34495E;
 	  }
 	
@@ -930,7 +892,7 @@
 	
 	
 	  $(function() {
-		$("#improve_care").click(function() {
+		$("#id_improve_care_0").click(function() {
 	
 		  if ($(this).is(':checked')) {
 			$('#improve').show();
@@ -940,6 +902,16 @@
 		});
 	  });
 	
+
+	  $(function() {
+		$("#id_improve_care_1").click(function() {
+	
+		  if ($(this).is(':checked')) {
+			$('#improve').hide();
+		  }
+		});
+	  });
+	  
 	</script>
 	
 	

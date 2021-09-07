@@ -36,9 +36,11 @@ def login_page(request):
         else:
             messages.error(request,'Username or Password not correct')
             print("Failed!")
-
+    elif form.errors:
+        for err in form.errors.values():
+            messages.error(request, str(err).split("li>")[1].replace("</", ""))
+            
     return render(request, "Pages/Login.html", context)
-
 
 def registration_page(request):
     form = RegisterForm(request.POST or None)
@@ -57,5 +59,7 @@ def registration_page(request):
         print("\n\nNEXT", next_)
         return redirect(next_)
         
-
+    elif form.errors:
+        for err in form.errors.values():
+            messages.error(request, str(err).split("li>")[1].replace("</", ""))
     return render(request, "Pages/Sign-Up.html", context)

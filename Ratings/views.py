@@ -6,7 +6,7 @@ from .forms import QuestionnaireForm
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 
-@login_required(login_url="/signup")
+@login_required(login_url="/login")
 def RateDoctor(request, doctor_npi_id):
     form = QuestionnaireForm(request.POST or None)
     user = User.objects.filter(email=request.user)[0]
@@ -16,7 +16,7 @@ def RateDoctor(request, doctor_npi_id):
     return render(request, 'Ratings/Rate-Doctor.html', context=context)
 
 
-@login_required(login_url="/signup")
+@login_required(login_url="/login")
 def ThankYou(request, doctor_npi_id):
     form = request.POST
     print(form)
