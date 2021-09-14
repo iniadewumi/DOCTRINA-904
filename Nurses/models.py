@@ -170,7 +170,7 @@ class Profile(models.Model):
     other_positions = models.CharField(max_length=250, null=True, blank=True)
     job_title = models.CharField(max_length=255, blank=True, null=True)
 
-    def __str_(self):
+    def __str__(self):
         return self.user.email
 
 

@@ -21,4 +21,5 @@ def ThankYou(request, doctor_npi_id):
     form = request.POST
     print(form)
     doctor = Doctor.objects.get(pk = doctor_npi_id)
+    
     return render(request, 'Ratings/ThankYou.html', context={'doctor': doctor})
