@@ -512,18 +512,6 @@
 	
 	</html>
 	
-	
-	<script>
-		$(document).ready(function() {
-  $(window).keydown(function(event){
-    if(event.keyCode == 13) {
-      event.preventDefault();
-      return false;
-    }
-  });
-});
-	</script>
-	
 	<style>
 	  html,
 	  body {
@@ -815,7 +803,7 @@
 	  }
 	
 	  .checkbox span {
-		color: #6e777f;
+		color: white;
 		padding: 0.5rem 0.25rem;
 	  }
 	  
@@ -863,6 +851,9 @@
 	
 	
 	<script>
+		window.onbeforeunload = function() {
+  return "Data will be lost if you leave the page, are you sure?";
+};
 	  $(document).ready(function() {
 		slides = document.getElementsByClassName("section");
 		slides[slides.length - 1].scrollIntoView(true);

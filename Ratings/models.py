@@ -52,6 +52,6 @@ class GeneralTenants(models.Model):
     room_for_improvement = models.TextField()
 
 class Anonymous_Comment_and_Whistelblow(models.Model):    
-    anonymous_comment = models.TextField(null=True, blank=True)
-    whistelblow = models.BooleanField(default=False)
+    anonymous_comment = models.TextField(null=True)
+    whistelblow = models.BooleanField(default=False, blank=True)
     whistleblow_text = models.TextField(null=True, blank=True)

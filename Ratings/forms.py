@@ -39,5 +39,5 @@ class QuestionnaireForm(forms.Form):
     room_for_improvement = forms.CharField(max_length=200, widget=forms.Textarea)
 
     anonymous_comment = forms.CharField(max_length=200, widget=forms.Textarea)
-    whistle_blow = forms.BooleanField(widget=forms. CheckboxInput(attrs={'id':'whistle_blow', 'class': 'checkbox'}))
-    whistleblow_text = forms.CharField(max_length=200, widget=forms.Textarea(attrs={'placeholder': "Enter your input here. All information is anonymous and will not be linked to you as a user in any way."}))
+    whistle_blow = forms.BooleanField(widget=forms. CheckboxInput(attrs={'id':'whistle_blow', 'class': 'checkbox'}), required=False)
+    whistleblow_text = forms.CharField(max_length=200, widget=forms.Textarea(attrs={'placeholder': "Enter your input here. All information is anonymous and will not be linked to you as a user in any way."}), required=False)
