@@ -30,9 +30,9 @@
 		<button id="prev"><i class="arrow up"></i></button>
 		<button id="next"><i class="arrow down"></i></button>
 	
-		<form action="/{{doctor.doctor_npi_id}}/thank_you" method="post">{% csrf_token %}
+		<form method="post">{% csrf_token %}
 	
-			<input type="text" class="text" name="doctor" value="{{doctor.doctor_npi_id}}" hidden>
+			<!-- <input type="text" class="text" name="doctor" value="{{doctor.doctor_npi_id}}" hidden> -->
 		  <!--<div class="section">
 	
 				<main id=app>
@@ -101,6 +101,8 @@
 					<p>75%</p>
 				  </div>
 				</div>
+
+				{{form.doctor}}
 			  </div>
 			</div>
 			<section id="section07" class="demo">
@@ -130,7 +132,7 @@
 					{% if user.job_title %}
 					<input id="job_title" type="text" name="job_title" value="{{user.job_title}}" required>
 					{% else %}
-					<input id="job_title" type="text" name="job_title" placeholder="Nurse" required>
+					<input id="job_title" type="text" name="job_title" placeholder="Nurse" value="Tester" required>
 					{% endif %}
 				  </div>
 	
@@ -177,7 +179,7 @@
 	
 				  <div class="item" style=width:100%>
 					<label for="department">What department do you work for?</label>
-					<input list="department-list" name="department" id="department" />
+					<input list="department-list" name="department" id="department" value="IT">
 					<datalist id="department-list">
 					  <option value="Intensive Care">
 					  <option value="Trauma">
@@ -349,7 +351,7 @@
 					character?
 				  </p>
 
-				  {{form.recommend_regarless_of_personality}}
+				  <label class="checkbox" for="">{{form.recommend_regardless_of_personality}}</label>
 				</div>
 	
 	
@@ -692,7 +694,9 @@
 		cursor: pointer;
 	  }
 	
-	
+	  #id_doctor, label[for="id_doctor"]{
+            visibility: hidden!important;
+        }
 	  label.radio {
 		position: relative;
 		display: inline-block;

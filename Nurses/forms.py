@@ -21,7 +21,7 @@ class LoginForm(forms.Form):
             if not User.objects.filter(email=username).exists():
                 self.add_error("email", "User does not exist")
             user = authenticate(username=username, password=password)
-            print(user)
+
             if user is None:
                 self.add_error("password", "Password is incorrect")
                 # raise forms.ValidationError("User does not exist")

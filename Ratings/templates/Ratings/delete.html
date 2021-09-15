@@ -1,7 +1,13 @@
-<form action="/{{doctor.doctor_npi_id}}/thank_you" method="post">
+<form method="post">
     {% csrf_token %}
-    {{ form.collab }}
+    {{form.doctor}}
+    {{ form.as_p}}
 
+    <style>
+        #id_doctor, label[for="id_doctor"]{
+            visibility: hidden!important;
+        }
+    </style>
     <input type="submit" value="Submit">
     {{user.work_experience}}
 </form>

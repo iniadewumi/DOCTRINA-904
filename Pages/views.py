@@ -48,7 +48,18 @@ class HomepageView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['hospitals'] = HospitalSystem.objects.all()[:100]
         context['doctors'] = [x for x in Doctor.objects.filter(practice_address__city__contains="Tulsa")[:50] if x.doctor_taxonomy.specialization!= None]
-        context['taxonomies'] = [ x for x in DoctorTaxonomy.objects.all() if x.specialization!=None ]
+        
+
+        if not context['doctors']:
+            context['doctors'] = Doctor.objects.filter(practice_address__city__contains="Tulsa")[:50]
+        context['taxonomies'] = [ x for x in DoctorTaxonomy.objects.all() if x.specialization!=None]
+        # print(dir(context['doctors'][0].rating_set.first))
+        
+        
+        try:
+            print(context['doctors'][0].rating_set.get_queryset())
+        except:
+            pass
         # context['hospitals'] = HospitalSystem.objects.filter(practice_address__city = "Tulsa")[:20]
         # context['doctors'] = Doctor.objects.filter(practice_address__city = "Tulsa")[:20]
         return context 

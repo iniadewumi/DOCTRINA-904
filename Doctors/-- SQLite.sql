@@ -13,7 +13,10 @@ DELETE FROM 'Taxonomy_hospitalspectaxonomy';
 DELETE FROM 'Taxonomy_hospitaltypetaxonomy';
 
 
+-- DELETE FROM 'Ratings_anonymous_comment_and_whistelblow';
+-- DELETE FROM 'Ratings_characterconductratings';
+-- DELETE FROM 'Ratings_patientcare';
 
-
-
+-- DELETE FROM 'Ratings_professionalskill'
+DELETE FROM 'Ratings_rating';
 -- DELETE FROM 'Nurses_user';
