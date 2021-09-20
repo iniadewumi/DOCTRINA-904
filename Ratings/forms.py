@@ -8,34 +8,41 @@ from django.contrib.auth import authenticate
 
 
 class QuestionnaireForm(forms.ModelForm):
-
-    collab = forms.IntegerField(widget=forms.NumberInput(attrs={'type':'range', 'step': '1', 'max':'100', 'min':'0'}))
-    accepts_responsibility = forms.IntegerField(widget=forms.NumberInput(attrs={'type':'range', 'step': '1', 'max':'100', 'min':'0'}))
-    like_doc = forms.IntegerField(widget=forms.NumberInput(attrs={'type':'range', 'step': '1', 'max':'100', 'min':'0'}))
+    CHOICES = [ 
+        (1, '1'),
+        (2, '2'), 
+        (3, '3'), 
+        (4, '4'), 
+        (5, '5')
+    ]
+    collab = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
+    accepts_responsibility = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
+    like_doc = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
     
 
-    appropriate_diagnosis = forms.IntegerField(widget=forms.NumberInput(attrs={'type':'range', 'step': '1', 'max':'100', 'min':'0'}))
-    high_stress_effectiveness = forms.IntegerField(widget=forms.NumberInput(attrs={'type':'range', 'step': '1', 'max':'100', 'min':'0'}))
-    communication_to_staff = forms.IntegerField(widget=forms.NumberInput(attrs={'type':'range', 'step': '1', 'max':'100', 'min':'0'}))
-    mindful_prescription = forms.IntegerField(widget=forms.NumberInput(attrs={'type':'range', 'step': '1', 'max':'100', 'min':'0'}))
-    trust_for_personal_care = forms.IntegerField(widget=forms.NumberInput(attrs={'type':'range', 'step': '1', 'max':'100', 'min':'0'}))
+    appropriate_diagnosis = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
+    high_stress_effectiveness = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
+    communication_to_staff = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
+    mindful_prescription = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
+    trust_for_personal_care = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
 
 
     recommend_regardless_of_personality = forms.ChoiceField(choices=[(True, 'Yes'), (False, 'No')], widget=forms.RadioSelect(attrs={'class':'checkbox'}))
-    ethical_practices = forms.IntegerField(widget=forms.NumberInput(attrs={'type':'range', 'step': '1', 'max':'100', 'min':'0'}))
-    quality_care = forms.IntegerField(widget=forms.NumberInput(attrs={'type':'range', 'step': '1', 'max':'100', 'min':'0'}))
+    ethical_practices = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
+    quality_care = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
     improve_care = forms.ChoiceField(choices=[(True, 'Yes'), (False, 'No')], widget=forms.RadioSelect(attrs={'class':'checkbox'}))
     why_improve_care = forms.CharField(max_length=200, widget=forms.Textarea, required=False)
-    good_patient_outcome = forms.IntegerField(widget=forms.NumberInput(attrs={'type':'range', 'step': '1', 'max':'100', 'min':'0'}))
+    good_patient_outcome = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
     
-    recog_psychosocial = forms.IntegerField(widget=forms.NumberInput(attrs={'type':'range', 'step': '1', 'max':'100', 'min':'0'}))   
+
+    recog_psychosocial = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
     
-    genuine_patient_care  = forms.IntegerField(widget=forms.NumberInput(attrs={'type':'range', 'step': '1', 'max':'100', 'min':'0'}))
-    # emotional_intelligence = forms.IntegerField(widget=forms.NumberInput(attrs={'type':'range', 'step': '1', 'max':'100', 'min':'0'}))
-    effective_patient_communication = forms.IntegerField(widget=forms.NumberInput(attrs={'type':'range', 'step': '1', 'max':'100', 'min':'0'}))
-    empathy  = forms.IntegerField(widget=forms.NumberInput(attrs={'type':'range', 'step': '1', 'max':'100', 'min':'0'}))
-    legal_awareness  = forms.IntegerField(widget=forms.NumberInput(attrs={'type':'range', 'step': '1', 'max':'100', 'min':'0'}))
-    patient_relationship  = forms.IntegerField(widget=forms.NumberInput(attrs={'type':'range', 'step': '1', 'max':'100', 'min':'0'}))
+    genuine_patient_care  = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
+    # emotional_intelligence = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
+    effective_patient_communication = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
+    empathy  = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
+    legal_awareness  = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
+    patient_relationship  = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
     # room_for_improvement = forms.CharField(max_length=200, widget=forms.Textarea)
 
     anonymous_comment = forms.CharField(max_length=200, widget=forms.Textarea)
@@ -44,24 +51,24 @@ class QuestionnaireForm(forms.ModelForm):
 
     class Meta:
         model = Rating
-        fields = ['doctor_obj', 'recog_psychosocial', 'effective_patient_communication', 'empathy' 
+        fields = ['doctor', 'recog_psychosocial', 'effective_patient_communication', 'empathy' 
         ,'legal_awareness', 'patient_relationship', 'genuine_patient_care' 
         ,'appropriate_diagnosis', 'high_stress_effectiveness'
         , 'communication_to_staff', 'mindful_prescription',  'trust_for_personal_care', 'ethical_practices' 
         ,'quality_care', 'improve_care', 'why_improve_care', 'good_patient_outcome', 
         'collab', 'accepts_responsibility', 'like_doc', 'anonymous_comment', 'whistleblow_text']
-        # exclude = ['doctor_obj']
+        # exclude = ['doctor']
         # fields = "__all__"
 
 
-        # fields = ['doctor_obj', 'recog_psychosocial', 'effective_patient_communication', 'empathy' 
+        # fields = ['doctor', 'recog_psychosocial', 'effective_patient_communication', 'empathy' 
         # ,'legal_awareness', 'patient_relationship', 'genuine_patient_care' 
         # ,'appropriate_diagnosis', 'high_stress_effectiveness'
         # , 'communication_to_staff', 'mindful_prescription',  'trust_for_personal_care', 'ethical_practices' 
         # ,'quality_care', 'improve_care', 'why_improve_care', 'good_patient_outcome', 
         # 'collab', 'accepts_responsibility', 'like_doc', 'anonymous_comment', 'whistleblow_text']
     # def clean(self, *args, **kwargs):
-    #     doctor_obj =self.cleaned_data['doctor_obj']
+    #     doctor =self.cleaned_data['doctor']
     #     recog_psychosocial = self.cleaned_data['recog_psychosocial']
     #     effective_patient_communication = self.cleaned_data['effective_patient_communication']
     #     empathy = self.cleaned_data['empathy']

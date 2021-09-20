@@ -612,11 +612,11 @@
   .card .ds-skill {
     position: absolute;
     margin: auto;
-    bottom: 50px;
+    top: 50px;
     right: 0;
     left: 0;
     width: 70%;
-    height: 100px;
+    height: 500px;
     animation: mvBottom 1.5s;
   }
   .card .ds-skill h6 {

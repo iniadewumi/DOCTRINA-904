@@ -119,11 +119,12 @@
               <div class="u-container-layout u-container-layout-2">
                 <h3 class="u-align-center u-custom-font u-font-roboto-condensed u-text u-text-1">Dr. {{doctor.first_name}} {{doctor.last_name}}
                 </h3>
-                <h1>{{doctor.rating_set}}</h1>
                 <h5 class="u-align-center u-custom-font u-font-roboto-condensed u-text u-text-2">{{doctor.hospital_system.hospital_name}}</h5>
                 <h6 class="u-align-center u-custom-font u-font-roboto-condensed u-text u-text-3">{{doctor.doctor_taxonomy.description}}</h6>
                 <h6 class="u-align-center u-custom-font u-font-roboto-condensed u-text u-text-4">{{doctor.mailing_address.city}}, {{doctor.mailing_address.state}}</h6>
-                <p class="u-align-center u-text u-text-5"><span class="u-icon u-icon-1"><svg class="u-svg-content" viewBox="0 0 512 512" style="width: 1em; height: 1em;">
+                <p class="u-align-center u-text u-text-5">
+                  Average Rating: &nbsp;{{doc_total_average}}<br>
+                  <span class="u-icon u-icon-1"><svg class="u-svg-content" viewBox="0 0 512 512" style="width: 1em; height: 1em;">
                       <g id="XMLID_125_">
                         <path id="XMLID_1827_" d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z"></path>
                         <path id="XMLID_1835_" d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z"></path>
@@ -131,7 +132,8 @@
                         <path id="XMLID_1837_" d="m450.751 106.927v388.521c34.884-6.988 61.249-37.849 61.249-74.76v-239.001c0-36.911-26.365-67.772-61.249-74.76z"></path>
                         <path id="XMLID_1840_" d="m420.751 105.438h-329.502v391.5h329.502zm-59.376 225.874c0 8.284-6.716 15-15 15h-45.25v45.25c0 8.284-6.716 15-15 15h-60.25c-8.284 0-15-6.716-15-15v-45.25h-45.25c-8.284 0-15-6.716-15-15v-60.25c0-8.284 6.716-15 15-15h45.25v-45.25c0-8.284 6.716-15 15-15h60.25c8.284 0 15 6.716 15 15v45.25h45.25c8.284 0 15 6.716 15 15z"></path>
                       </g>
-                    </svg><img></span><span class="u-icon u-icon-2"><svg class="u-svg-content" viewBox="0 0 512 512" style="width: 1em; height: 1em;">
+                    </svg><img></span>
+                    <span class="u-icon u-icon-2"><svg class="u-svg-content" viewBox="0 0 512 512" style="width: 1em; height: 1em;">
                       <g id="XMLID_125_">
                         <path id="XMLID_1827_" d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z"></path>
                         <path id="XMLID_1835_" d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z"></path>
@@ -139,7 +141,8 @@
                         <path id="XMLID_1837_" d="m450.751 106.927v388.521c34.884-6.988 61.249-37.849 61.249-74.76v-239.001c0-36.911-26.365-67.772-61.249-74.76z"></path>
                         <path id="XMLID_1840_" d="m420.751 105.438h-329.502v391.5h329.502zm-59.376 225.874c0 8.284-6.716 15-15 15h-45.25v45.25c0 8.284-6.716 15-15 15h-60.25c-8.284 0-15-6.716-15-15v-45.25h-45.25c-8.284 0-15-6.716-15-15v-60.25c0-8.284 6.716-15 15-15h45.25v-45.25c0-8.284 6.716-15 15-15h60.25c8.284 0 15 6.716 15 15v45.25h45.25c8.284 0 15 6.716 15 15z"></path>
                       </g>
-                    </svg><img></span><span class="u-icon u-icon-3"><svg class="u-svg-content" viewBox="0 0 512 512" style="width: 1em; height: 1em;">
+                    </svg><img></span>
+                    <span class="u-icon u-icon-3"><svg class="u-svg-content" viewBox="0 0 512 512" style="width: 1em; height: 1em;">
                       <g id="XMLID_125_">
                         <path id="XMLID_1827_" d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z"></path>
                         <path id="XMLID_1835_" d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z"></path>
@@ -147,7 +150,8 @@
                         <path id="XMLID_1837_" d="m450.751 106.927v388.521c34.884-6.988 61.249-37.849 61.249-74.76v-239.001c0-36.911-26.365-67.772-61.249-74.76z"></path>
                         <path id="XMLID_1840_" d="m420.751 105.438h-329.502v391.5h329.502zm-59.376 225.874c0 8.284-6.716 15-15 15h-45.25v45.25c0 8.284-6.716 15-15 15h-60.25c-8.284 0-15-6.716-15-15v-45.25h-45.25c-8.284 0-15-6.716-15-15v-60.25c0-8.284 6.716-15 15-15h45.25v-45.25c0-8.284 6.716-15 15-15h60.25c8.284 0 15 6.716 15 15v45.25h45.25c8.284 0 15 6.716 15 15z"></path>
                       </g>
-                    </svg><img></span><span class="u-icon u-icon-4"><svg class="u-svg-content" viewBox="0 0 512 512" style="width: 1em; height: 1em;">
+                    </svg><img></span>
+                    <span class="u-icon u-icon-4"><svg class="u-svg-content" viewBox="0 0 512 512" style="width: 1em; height: 1em;">
                       <g id="XMLID_125_">
                         <path id="XMLID_1827_" d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z"></path>
                         <path id="XMLID_1835_" d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z"></path>
@@ -155,7 +159,8 @@
                         <path id="XMLID_1837_" d="m450.751 106.927v388.521c34.884-6.988 61.249-37.849 61.249-74.76v-239.001c0-36.911-26.365-67.772-61.249-74.76z"></path>
                         <path id="XMLID_1840_" d="m420.751 105.438h-329.502v391.5h329.502zm-59.376 225.874c0 8.284-6.716 15-15 15h-45.25v45.25c0 8.284-6.716 15-15 15h-60.25c-8.284 0-15-6.716-15-15v-45.25h-45.25c-8.284 0-15-6.716-15-15v-60.25c0-8.284 6.716-15 15-15h45.25v-45.25c0-8.284 6.716-15 15-15h60.25c8.284 0 15 6.716 15 15v45.25h45.25c8.284 0 15 6.716 15 15z"></path>
                       </g>
-                    </svg><img></span><span class="u-icon u-icon-5"><svg class="u-svg-content" viewBox="0 0 512 512" style="width: 1em; height: 1em;">
+                    </svg><img></span>
+                    <span class="u-icon u-icon-5"><svg class="u-svg-content" viewBox="0 0 512 512" style="width: 1em; height: 1em;">
                       <g id="XMLID_125_">
                         <path id="XMLID_1827_" d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z"></path>
                         <path id="XMLID_1835_" d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z"></path>
@@ -163,8 +168,10 @@
                         <path id="XMLID_1837_" d="m450.751 106.927v388.521c34.884-6.988 61.249-37.849 61.249-74.76v-239.001c0-36.911-26.365-67.772-61.249-74.76z"></path>
                         <path id="XMLID_1840_" d="m420.751 105.438h-329.502v391.5h329.502zm-59.376 225.874c0 8.284-6.716 15-15 15h-45.25v45.25c0 8.284-6.716 15-15 15h-60.25c-8.284 0-15-6.716-15-15v-45.25h-45.25c-8.284 0-15-6.716-15-15v-60.25c0-8.284 6.716-15 15-15h45.25v-45.25c0-8.284 6.716-15 15-15h60.25c8.284 0 15 6.716 15 15v45.25h45.25c8.284 0 15 6.716 15 15z"></path>
                       </g>
-                    </svg><img></span> &nbsp; <br>(3) Ratings
+                    </svg><img></span> &nbsp; <br>({{ratings.count}}) Ratings
                 </p>
+
+
                 <div class="u-list u-list-1">
                   <div class="u-repeater u-repeater-1">
                     <div class="u-container-style u-list-item u-repeater-item">
@@ -190,24 +197,26 @@
         <div class="u-align-center-xs u-container-style u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-group u-palette-4-light-2 u-radius-14 u-shape-round u-group-1">
           <div class="u-container-layout u-container-layout-1">
             <div class="fr-view u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-rich-text u-text u-text-1">
-              <h3 style="text-align: center;">
+              <h3 style="text-align: left;">
                 <span style="font-size: 1.25rem;">
-                  <span class="u-custom-font u-font-roboto-condensed" style="text-decoration: underline; font-weight: 700;">About Dr. {{doctor.last_name}} </span>
+                  <span class="u-custom-font u-font-roboto-condensed" style="text-decoration: underline; font-weight: 700;">ABOUT DR. {{doctor.last_name}} </span>
                 </span>
               </h3>
-              <p style="text-align: center;">
+              <!-- <p style="text-align: center;">
                 <span style="font-size: 0.875rem;">
-                  <span class="u-custom-font u-font-roboto-condensed">Dr. {{doctor.last_name}} works at {{doctor.hospital_system.hospital_name}} in {{doctor.practice_address.city}}, {{doctor.practice_address.state}}. </span>
+                  <span class="u-custom-font u-font-roboto-condensed">Former About</span>
                 </span>
-              </p>
-              <div style="text-align: left;">
-                <p style="text-align: center;">
-                  Field: {{doctor.doctor_taxonomy.field_class}}<br>
-                  Description: {{doctor.doctor_taxonomy.medicare_description}}<br>
-                  Specialization: {{doctor.doctor_taxonomy.specialization}}<br>
-                  Area of Expertise: {{doctor.doctor_taxonomy.area_of_expertise}}<br>
-                </p>
-              </div>
+              </p> -->
+                <h4 class="u-custom-font u-font-roboto-condensed" style=" line-height:30px;">
+                  <span style="font-weight: bold;">Health System: </span> {{doctor.hospital_system.hospital_name}}<br>
+                  <span style="font-weight: bold;">Location: </span> {{doctor.practice_address.city}}, {{doctor.practice_address.state}}<br>
+                  <span style="font-weight: bold;">Field: </span> {{doctor.doctor_taxonomy.field_class}}<br>
+                  <span style="font-weight: bold;">Description: </span> {{doctor.doctor_taxonomy.medicare_description}}<br>
+                  <span style="font-weight: bold;">Specialization: </span> {{doctor.doctor_taxonomy.specialization}}<br>
+                  <span style="font-weight: bold;">Area of Expertise: </span> {{doctor.doctor_taxonomy.area_of_expertise}}<br>
+                <br>
+                </h4>
+
             </div>
           </div>
         </div>
@@ -233,8 +242,23 @@
                 <div class="u-border-2 u-border-grey-75 u-container-style u-expanded-width-sm u-expanded-width-xs u-group u-radius-5 u-shape-round u-group-1">
                   <div class="u-container-layout u-container-layout-2">
                     <div class="u-clearfix u-custom-html u-custom-html-1">
+                      
                       <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                       <script type="text/javascript">
+                      
+                        var tenants = {{tenants}};
+                        if(tenants.length>0){
+                        for (var i = 0; i < tenants.length; i++){
+                          if (tenants[i]< 1){
+                            tenants[i] = 1;
+                          }
+                        };
+                      }
+                      else{
+                        tenants = [1,1,1]
+                      }
+
+
                         google.charts.load('current', {
                           'packages': ['bar']
                         });
@@ -243,9 +267,9 @@
                         function drawChart() {
                           var data = google.visualization.arrayToDataTable([
                             ['', '{{doctor.full_name}}', 'Spec. Average', 'Overall'],
-                            ['Patient Centered Care', 70, 46, 25],
-                            ['Professional Skill', 66, 100, 30],
-                            ['Character & Conduct', 30, 54, 35]
+                            ['Patient Centered Care', tenants[0], 46, 25],
+                            ['Professional Skill', tenants[1], 100, 30],
+                            ['Character & Conduct', tenants[2], 54, 35]
                           ]);
 
 
@@ -290,8 +314,8 @@
                           var chart = new google.charts.Bar(document.getElementById('barchart_material'));
                           chart.draw(data, google.charts.Bar.convertOptions(options));
 
-                          var chart2 = new google.charts.Bar(document.getElementById('barchart_material2'));
-                          chart.draw(data1, google.charts.Bar.convertOptions(options));
+                          // var chart2 = new google.charts.Bar(document.getElementById('barchart_material2'));
+                          // chart.draw(data1, google.charts.Bar.convertOptions(options));
 
 
                           google.visualization.events.addListener(chart, 'ready', function() {
@@ -306,7 +330,6 @@
                       </script>
                       <div id="barchart_material" class="u-section-1" style="width: auto; height: 270px;"></div>
 
-                      <div id="barchart_material2" class="u-section-1" style="width: auto; height: 270px;"></div>
                     </div>
                   </div>
                 </div>
@@ -315,7 +338,6 @@
                   <div class="u-container-layout u-container-layout-3">
                     <div class="u-clearfix u-custom-html u-custom-html-2">
                       <link href="{% static 'Pages/other.css' %}" rel="stylesheet" id="bootstrap-css">
-                      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
                       <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
                       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                       <!------ Include the above in your HEAD tag ---------->
@@ -328,8 +350,6 @@
                       <link rel="icon" href="favicon.ico">
                       <title></title><!-- Bootstrap core CSS -->
                       <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">IE10 viewport hack for Surface/desktop Windows 8 bug -->
-                      <link href="https://maxcdn.bootstrapcdn.com/css/ie10-viewport-bug-workaround.css" rel="stylesheet"><!-- Custom styles for this template -->
-                      <link href="https://maxcdn.bootstrapcdn.com/css/navbar-fixed-top.css" rel="stylesheet"><!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
                       <!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
                       <script src="https://webapps1.chicago.gov/cdn/Bootstrap-4.0.0-beta.2/assets/js/ie-emulation-modes-warning.js"></script><!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
                       <!--[if lt IE 9]>
@@ -341,21 +361,21 @@
                           <div class="col-sm-3">
                             <div class="rating-block">
                               <h4>Average user rating</h4>
-                              <h2 class="bold padding-bottom-7">4.3 <small>/ 5</small>
+                              <h2 class="bold padding-bottom-7">{{doc_total_average}}<small>/ 5</small>
                               </h2>
-                              <button type="button" class="btn btn-sm btn-warning" aria-label="Left Align">
+                              <button type="button" class="btn btn-sm" aria-label="Left Align">
                                 <span class="fa fa-medkit" aria-hidden="true"></span>
                               </button>
-                              <button type="button" class="btn btn-sm btn-warning" aria-label="Left Align">
+                              <button type="button" class="btn btn-sm" aria-label="Left Align">
                                 <span class="fa fa-medkit" aria-hidden="true"></span>
                               </button>
-                              <button type="button" class="btn btn-sm btn-warning" aria-label="Left Align">
+                              <button type="button" class="btn btn-sm " aria-label="Left Align">
                                 <span class="fa fa-medkit" aria-hidden="true"></span>
                               </button>
-                              <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
+                              <button type="button" class="btn btn-sm" aria-label="Left Align">
                                 <span class="fa fa-medkit" aria-hidden="true"></span>
                               </button>
-                              <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
+                              <button type="button" class="btn btn-sm" aria-label="Left Align">
                                 <span class="fa fa-medkit" aria-hidden="true"></span>
                               </button>
                             </div>
@@ -453,7 +473,13 @@
               </div>
             </div>
             <div class="u-container-style u-palette-4-light-2 u-tab-pane u-tab-pane-2" id="tab-0f02" role="tabpanel" aria-labelledby="link-tab-0f02">
-              <div class="u-container-layout u-container-layout-4"></div>
+
+              <div class="u-container-layout u-container-layout-4">
+                <h3 class="u-align-center u-custom-font u-font-roboto-condensed u-text u-text-1">Review Breakdown</h3>
+
+              </div>
+
+              <div id="barchart_material2" class="u-section-1" style="width: auto; height: 270px;"></div>
             </div>
             <div class="u-container-style u-palette-4-light-2 u-tab-pane u-tab-pane-3" id="tab-8343" role="tabpanel" aria-labelledby="link-tab-8343">
               <div class="u-container-layout u-container-layout-5">
@@ -485,7 +511,7 @@
                   <div class="u-accordion-item u-accordion-item-1">
                     <a class="active u-accordion-link u-active-custom-color-4 u-border-1 u-border-grey-75 u-button-style u-custom-font u-font-roboto-condensed u-palette-4-light-1 u-radius-12 u-accordion-link-1" id="link-accordion-7c0e" aria-controls="accordion-7c0e" aria-selected="true">
                       <p class="u-text u-text-15">
-                        <span style="font-weight: 700; font-size: 1.5rem;">Jane Doe&nbsp;</span> -&nbsp; 25th August, 2020<br><span class="u-icon u-icon-20"><svg class="u-svg-content" viewBox="0 0 512 512">
+                        <span style="font-weight: 700; font-size: 1.5rem;"> {{ratings.0.total_average}}&nbsp;</span> -&nbsp; {{rating.0.last_updated |date:"YmdHis"}}<br><span class="u-icon u-icon-20"><svg class="u-svg-content" viewBox="0 0 512 512">
                             <g id="XMLID_125_">
                               <path id="XMLID_1827_" d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z"></path>
                               <path id="XMLID_1835_" d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z"></path>
@@ -699,6 +725,19 @@
 
     </style>
 
+                <script>
+                  var btn_sm = document.getElementsByClassName("btn-sm");
+                  var stars = document.getElementsByClassName("u-icon");
+                  for (var i = 0; i < {{doc_total_average}}; i++){
+                    
+                    btn_sm[i].classList.add("btn-warning");
+                    stars[i].style.color = "gold";
+                    
+
+                    
+                  }
+
+                </script>
 
 
 

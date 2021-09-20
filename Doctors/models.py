@@ -49,7 +49,6 @@ class Doctor(models.Model):
     experience = models.IntegerField()
     image_url = models.CharField(max_length=200, default="Doctors\static\Pages\images\medical-doctor-profile-icon-male-portrait-flat-design-EY25CP.jpg")
 
-    # doctor_rating = models.ForeignKey('Ratings.Rating', on_delete=models.DO_NOTHING)
     mailing_address = models.ForeignKey('MailingAddress', on_delete=models.DO_NOTHING, related_name='doctormailing')
     practice_address = models.ForeignKey('PracticeAddress', on_delete=models.DO_NOTHING, related_name='doctorpractice')
 
