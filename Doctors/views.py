@@ -19,7 +19,6 @@ def DoctorPage(request, doctor_npi_id):
 
     tenants  = [(sum(i)*100/(5*len(ratings))) for i in zip(*ltenants)]
 
-
     context = {'doctor': doctor, 'ratings':ratings, 'doc_total_average':doc_total_average, "tenants":tenants}
     return render(request, 'Pages/Doctor-Page.html', context=context)
 

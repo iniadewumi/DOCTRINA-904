@@ -16,7 +16,10 @@ def login_page(request):
         }
     if form.is_valid():
         email = form.cleaned_data["email"]
-        next_ = request.META.get('HTTP_REFERER', "/").split("next=")[1]
+        try:
+            next_ = request.META.get('HTTP_REFERER', "/").split("next=")[1]
+        except:
+            next_ = "/"
         password = form.cleaned_data["password"]
         if request.method =='POST':
             form = LoginForm(request.POST or None)

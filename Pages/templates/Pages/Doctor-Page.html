@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
 
-    {% load static %}
-    <meta name="keywords" content="Dr. {{doctor.full_name}}">
-    <title>Doctor Page</title>
-    <link rel="stylesheet" href="{% static 'Pages/nicepage.css' %}" media="screen">
-    <link rel="stylesheet" href="{% static 'Pages/Doctor-Page.css' %}" media="screen">
-    <script class="u-script" type="text/javascript" src="{% static 'Pages/js/jquery.js' %}" defer=""></script>
-    <script class="u-script" type="text/javascript" src="{% static 'Pages/js/nicepage.js' %}" defer=""></script>
-    <meta name="generator" content="Nicepage 3.24.3, nicepage.com">
+  {% load static %}
+  <meta name="keywords" content="Dr. {{doctor.full_name}}">
+  <title>Doctor Page</title>
+  <link rel="stylesheet" href="{% static 'Pages/nicepage.css' %}" media="screen">
+  <link rel="stylesheet" href="{% static 'Pages/Doctor-Page.css' %}" media="screen">
+  <script class="u-script" type="text/javascript" src="{% static 'Pages/js/jquery.js' %}" defer=""></script>
+  <script class="u-script" type="text/javascript" src="{% static 'Pages/js/nicepage.js' %}" defer=""></script>
+  <meta name="generator" content="Nicepage 3.24.3, nicepage.com">
 
-    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
-    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i">
+  <link id="u-theme-google-font" rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+  <link id="u-page-google-font" rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i">
 
-    <script type="application/ld+json">
+  <script type="application/ld+json">
       {
         "@context": "http://schema.org",
         "@type": "Organization",
@@ -25,164 +27,242 @@
       }
 
     </script>
-    <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="Doctor Page">
-    <meta property="og:description" content="">
-    <meta property="og:type" content="website">
-  </head>
+  <meta name="theme-color" content="#478ac9">
+  <meta property="og:title" content="Doctor Page">
+  <meta property="og:description" content="">
+  <meta property="og:type" content="website">
+</head>
 
-  <body class="u-body u-overlap u-palette-4-light-3">
-    <header class="u-align-left u-clearfix u-gradient u-header u-sticky u-sticky-cba1 u-header" id="sec-6027">
-      <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1" data-responsive-from="MD">
-        <div class="menu-collapse u-custom-font u-font-roboto-condensed" style="font-size: 1rem; letter-spacing: 0px;">
-          <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-body-alt-color u-text-hover-palette-2-base" href="#" style="padding: 4px 10px; font-size: calc(1em + 8px);">
-            <svg>
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use>
-            </svg>
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-              <defs>
-                <symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;">
-                  <rect y="1" width="16" height="2"></rect>
-                  <rect y="7" width="16" height="2"></rect>
-                  <rect y="13" width="16" height="2"></rect>
-                </symbol>
-              </defs>
-            </svg>
-          </a>
-        </div>
-        <div class="u-custom-menu u-nav-container">
-          <ul class="u-custom-font u-font-roboto-condensed u-nav u-unstyled u-nav-1">
-            <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-2-light-1 u-text-hover-palette-3-light-2 u-text-white" href="/" style="padding: 10px 20px;">Home</a>
-            </li>
-            <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-2-light-1 u-text-hover-palette-3-light-2 u-text-white" href="\about" style="padding: 10px 20px;">About</a>
-            </li>
-            <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-2-light-1 u-text-hover-palette-3-light-2 u-text-white" href="\signup" target="_blank" style="padding: 10px 20px;">Sign Up</a>
-            </li>
-            <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-2-light-1 u-text-hover-palette-3-light-2 u-text-white" href="\login" style="padding: 10px 20px;">Login</a>
-            </li>
-            <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-2-light-1 u-text-hover-palette-3-light-2 u-text-white" style="padding: 10px 20px;">Options</a>
-              <div class="u-nav-popup">
-                <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-2">
-                  <li class="u-nav-item"><a class="u-button-style u-nav-link u-white">Option1</a>
-                  </li>
-                  <li class="u-nav-item"><a class="u-button-style u-nav-link u-white">Option 2</a>
-                  </li>
-                  <li class="u-nav-item"><a class="u-button-style u-nav-link u-white">Option3</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="u-custom-menu u-nav-container-collapse">
-          <div class="u-border-4 u-border-grey-75 u-container-style u-custom-color-5 u-inner-container-layout u-sidenav">
-            <div class="u-sidenav-overflow">
-              <div class="u-menu-close"></div>
-              <ul class="u-align-center u-nav u-popupmenu-items u-spacing-21 u-text-hover-palette-4-light-2 u-unstyled u-nav-3">
-                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="\" style="padding: 10px 20px;">Home</a>
+<body class="u-body u-overlap u-palette-4-light-3">
+  <header class="u-align-left u-clearfix u-gradient u-header u-sticky u-sticky-cba1 u-header" id="sec-6027">
+    <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1" data-responsive-from="MD">
+      <div class="menu-collapse u-custom-font u-font-roboto-condensed" style="font-size: 1rem; letter-spacing: 0px;">
+        <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-body-alt-color u-text-hover-palette-2-base"
+          href="#" style="padding: 4px 10px; font-size: calc(1em + 8px);">
+          <svg>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use>
+          </svg>
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+              <symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;">
+                <rect y="1" width="16" height="2"></rect>
+                <rect y="7" width="16" height="2"></rect>
+                <rect y="13" width="16" height="2"></rect>
+              </symbol>
+            </defs>
+          </svg>
+        </a>
+      </div>
+      <div class="u-custom-menu u-nav-container">
+        <ul class="u-custom-font u-font-roboto-condensed u-nav u-unstyled u-nav-1">
+          <li class="u-nav-item"><a
+              class="u-button-style u-nav-link u-text-active-palette-2-light-1 u-text-hover-palette-3-light-2 u-text-white"
+              href="/" style="padding: 10px 20px;">Home</a>
+          </li>
+          <li class="u-nav-item"><a
+              class="u-button-style u-nav-link u-text-active-palette-2-light-1 u-text-hover-palette-3-light-2 u-text-white"
+              href="\about" style="padding: 10px 20px;">About</a>
+          </li>
+          <li class="u-nav-item"><a
+              class="u-button-style u-nav-link u-text-active-palette-2-light-1 u-text-hover-palette-3-light-2 u-text-white"
+              href="\signup" target="_blank" style="padding: 10px 20px;">Sign Up</a>
+          </li>
+          <li class="u-nav-item"><a
+              class="u-button-style u-nav-link u-text-active-palette-2-light-1 u-text-hover-palette-3-light-2 u-text-white"
+              href="\login" style="padding: 10px 20px;">Login</a>
+          </li>
+          <li class="u-nav-item"><a
+              class="u-button-style u-nav-link u-text-active-palette-2-light-1 u-text-hover-palette-3-light-2 u-text-white"
+              style="padding: 10px 20px;">Options</a>
+            <div class="u-nav-popup">
+              <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-2">
+                <li class="u-nav-item"><a class="u-button-style u-nav-link u-white">Option1</a>
                 </li>
-                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="\about" style="padding: 10px 20px;">About</a>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link u-white">Option 2</a>
                 </li>
-                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="\signup" target="_blank" style="padding: 10px 20px;">Sign Up</a>
-                </li>
-                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="\login" style="padding: 10px 20px;">Login</a>
-                </li>
-                <li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px;">Options</a>
-                  <div class="u-nav-popup">
-                    <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-4">
-                      <li class="u-nav-item"><a class="u-button-style u-nav-link">Option1</a>
-                      </li>
-                      <li class="u-nav-item"><a class="u-button-style u-nav-link">Option 2</a>
-                      </li>
-                      <li class="u-nav-item"><a class="u-button-style u-nav-link">Option3</a>
-                      </li>
-                    </ul>
-                  </div>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link u-white">Option3</a>
                 </li>
               </ul>
             </div>
+          </li>
+        </ul>
+      </div>
+      <div class="u-custom-menu u-nav-container-collapse">
+        <div class="u-border-4 u-border-grey-75 u-container-style u-custom-color-5 u-inner-container-layout u-sidenav">
+          <div class="u-sidenav-overflow">
+            <div class="u-menu-close"></div>
+            <ul
+              class="u-align-center u-nav u-popupmenu-items u-spacing-21 u-text-hover-palette-4-light-2 u-unstyled u-nav-3">
+              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="\" style="padding: 10px 20px;">Home</a>
+              </li>
+              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="\about"
+                  style="padding: 10px 20px;">About</a>
+              </li>
+              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="\signup" target="_blank"
+                  style="padding: 10px 20px;">Sign Up</a>
+              </li>
+              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="\login"
+                  style="padding: 10px 20px;">Login</a>
+              </li>
+              <li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px;">Options</a>
+                <div class="u-nav-popup">
+                  <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-4">
+                    <li class="u-nav-item"><a class="u-button-style u-nav-link">Option1</a>
+                    </li>
+                    <li class="u-nav-item"><a class="u-button-style u-nav-link">Option 2</a>
+                    </li>
+                    <li class="u-nav-item"><a class="u-button-style u-nav-link">Option3</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
           </div>
-          <div class="u-custom-color-5 u-menu-overlay u-opacity u-opacity-25"></div>
         </div>
-      </nav>
-      <h3 class="u-custom-font u-font-roboto-condensed u-headline u-text u-text-body-alt-color u-text-1">
-        <a href="/">&nbsp; &nbsp; Doctrina <span style="font-weight: 700;"></span>
-        </a>
-      </h3>
-    </header>
-    <section class="u-clearfix u-palette-4-light-2 u-section-1" id="sec-df84">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-container-style u-expanded-width u-group u-palette-4-light-2 u-radius-14 u-shape-round u-group-1">
-          <div class="u-container-layout u-container-layout-1">
-            <div class="u-align-center-xs u-image u-image-circle u-image-1" alt="" data-image-width="1300" data-image-height="1390"></div>
-            <div class="u-container-style u-expanded-width-xs u-group u-group-2">
-              <div class="u-container-layout u-container-layout-2">
-                <h3 class="u-align-center u-custom-font u-font-roboto-condensed u-text u-text-1">Dr. {{doctor.first_name}} {{doctor.last_name}}
-                </h3>
-                <h5 class="u-align-center u-custom-font u-font-roboto-condensed u-text u-text-2">{{doctor.hospital_system.hospital_name}}</h5>
-                <h6 class="u-align-center u-custom-font u-font-roboto-condensed u-text u-text-3">{{doctor.doctor_taxonomy.description}}</h6>
-                <h6 class="u-align-center u-custom-font u-font-roboto-condensed u-text u-text-4">{{doctor.mailing_address.city}}, {{doctor.mailing_address.state}}</h6>
-                <p class="u-align-center u-text u-text-5">
-                  Average Rating: &nbsp;{{doc_total_average}}<br>
-                  <span class="u-icon u-icon-1"><svg class="u-svg-content" viewBox="0 0 512 512" style="width: 1em; height: 1em;">
-                      <g id="XMLID_125_">
-                        <path id="XMLID_1827_" d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z"></path>
-                        <path id="XMLID_1835_" d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z"></path>
-                        <path id="XMLID_1836_" d="m0 181.687v239.002c0 36.91 26.365 67.771 61.249 74.759v-388.521c-34.884 6.988-61.249 37.849-61.249 74.76z"></path>
-                        <path id="XMLID_1837_" d="m450.751 106.927v388.521c34.884-6.988 61.249-37.849 61.249-74.76v-239.001c0-36.911-26.365-67.772-61.249-74.76z"></path>
-                        <path id="XMLID_1840_" d="m420.751 105.438h-329.502v391.5h329.502zm-59.376 225.874c0 8.284-6.716 15-15 15h-45.25v45.25c0 8.284-6.716 15-15 15h-60.25c-8.284 0-15-6.716-15-15v-45.25h-45.25c-8.284 0-15-6.716-15-15v-60.25c0-8.284 6.716-15 15-15h45.25v-45.25c0-8.284 6.716-15 15-15h60.25c8.284 0 15 6.716 15 15v45.25h45.25c8.284 0 15 6.716 15 15z"></path>
-                      </g>
-                    </svg><img></span>
-                    <span class="u-icon u-icon-2"><svg class="u-svg-content" viewBox="0 0 512 512" style="width: 1em; height: 1em;">
-                      <g id="XMLID_125_">
-                        <path id="XMLID_1827_" d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z"></path>
-                        <path id="XMLID_1835_" d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z"></path>
-                        <path id="XMLID_1836_" d="m0 181.687v239.002c0 36.91 26.365 67.771 61.249 74.759v-388.521c-34.884 6.988-61.249 37.849-61.249 74.76z"></path>
-                        <path id="XMLID_1837_" d="m450.751 106.927v388.521c34.884-6.988 61.249-37.849 61.249-74.76v-239.001c0-36.911-26.365-67.772-61.249-74.76z"></path>
-                        <path id="XMLID_1840_" d="m420.751 105.438h-329.502v391.5h329.502zm-59.376 225.874c0 8.284-6.716 15-15 15h-45.25v45.25c0 8.284-6.716 15-15 15h-60.25c-8.284 0-15-6.716-15-15v-45.25h-45.25c-8.284 0-15-6.716-15-15v-60.25c0-8.284 6.716-15 15-15h45.25v-45.25c0-8.284 6.716-15 15-15h60.25c8.284 0 15 6.716 15 15v45.25h45.25c8.284 0 15 6.716 15 15z"></path>
-                      </g>
-                    </svg><img></span>
-                    <span class="u-icon u-icon-3"><svg class="u-svg-content" viewBox="0 0 512 512" style="width: 1em; height: 1em;">
-                      <g id="XMLID_125_">
-                        <path id="XMLID_1827_" d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z"></path>
-                        <path id="XMLID_1835_" d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z"></path>
-                        <path id="XMLID_1836_" d="m0 181.687v239.002c0 36.91 26.365 67.771 61.249 74.759v-388.521c-34.884 6.988-61.249 37.849-61.249 74.76z"></path>
-                        <path id="XMLID_1837_" d="m450.751 106.927v388.521c34.884-6.988 61.249-37.849 61.249-74.76v-239.001c0-36.911-26.365-67.772-61.249-74.76z"></path>
-                        <path id="XMLID_1840_" d="m420.751 105.438h-329.502v391.5h329.502zm-59.376 225.874c0 8.284-6.716 15-15 15h-45.25v45.25c0 8.284-6.716 15-15 15h-60.25c-8.284 0-15-6.716-15-15v-45.25h-45.25c-8.284 0-15-6.716-15-15v-60.25c0-8.284 6.716-15 15-15h45.25v-45.25c0-8.284 6.716-15 15-15h60.25c8.284 0 15 6.716 15 15v45.25h45.25c8.284 0 15 6.716 15 15z"></path>
-                      </g>
-                    </svg><img></span>
-                    <span class="u-icon u-icon-4"><svg class="u-svg-content" viewBox="0 0 512 512" style="width: 1em; height: 1em;">
-                      <g id="XMLID_125_">
-                        <path id="XMLID_1827_" d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z"></path>
-                        <path id="XMLID_1835_" d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z"></path>
-                        <path id="XMLID_1836_" d="m0 181.687v239.002c0 36.91 26.365 67.771 61.249 74.759v-388.521c-34.884 6.988-61.249 37.849-61.249 74.76z"></path>
-                        <path id="XMLID_1837_" d="m450.751 106.927v388.521c34.884-6.988 61.249-37.849 61.249-74.76v-239.001c0-36.911-26.365-67.772-61.249-74.76z"></path>
-                        <path id="XMLID_1840_" d="m420.751 105.438h-329.502v391.5h329.502zm-59.376 225.874c0 8.284-6.716 15-15 15h-45.25v45.25c0 8.284-6.716 15-15 15h-60.25c-8.284 0-15-6.716-15-15v-45.25h-45.25c-8.284 0-15-6.716-15-15v-60.25c0-8.284 6.716-15 15-15h45.25v-45.25c0-8.284 6.716-15 15-15h60.25c8.284 0 15 6.716 15 15v45.25h45.25c8.284 0 15 6.716 15 15z"></path>
-                      </g>
-                    </svg><img></span>
-                    <span class="u-icon u-icon-5"><svg class="u-svg-content" viewBox="0 0 512 512" style="width: 1em; height: 1em;">
-                      <g id="XMLID_125_">
-                        <path id="XMLID_1827_" d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z"></path>
-                        <path id="XMLID_1835_" d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z"></path>
-                        <path id="XMLID_1836_" d="m0 181.687v239.002c0 36.91 26.365 67.771 61.249 74.759v-388.521c-34.884 6.988-61.249 37.849-61.249 74.76z"></path>
-                        <path id="XMLID_1837_" d="m450.751 106.927v388.521c34.884-6.988 61.249-37.849 61.249-74.76v-239.001c0-36.911-26.365-67.772-61.249-74.76z"></path>
-                        <path id="XMLID_1840_" d="m420.751 105.438h-329.502v391.5h329.502zm-59.376 225.874c0 8.284-6.716 15-15 15h-45.25v45.25c0 8.284-6.716 15-15 15h-60.25c-8.284 0-15-6.716-15-15v-45.25h-45.25c-8.284 0-15-6.716-15-15v-60.25c0-8.284 6.716-15 15-15h45.25v-45.25c0-8.284 6.716-15 15-15h60.25c8.284 0 15 6.716 15 15v45.25h45.25c8.284 0 15 6.716 15 15z"></path>
-                      </g>
-                    </svg><img></span> &nbsp; <br>({{ratings.count}}) Ratings
-                </p>
+        <div class="u-custom-color-5 u-menu-overlay u-opacity u-opacity-25"></div>
+      </div>
+    </nav>
+    <h3 class="u-custom-font u-font-roboto-condensed u-headline u-text u-text-body-alt-color u-text-1">
+      <a href="/">&nbsp; &nbsp; Doctrina <span style="font-weight: 700;"></span>
+      </a>
+    </h3>
+  </header>
+  <section class="u-clearfix u-palette-4-light-2 u-section-1" id="sec-df84">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div class="u-container-style u-expanded-width u-group u-palette-4-light-2 u-radius-14 u-shape-round u-group-1">
+        <div class="u-container-layout u-container-layout-1">
+          <div class="u-align-center-xs u-image u-image-circle u-image-1" alt="" data-image-width="1300"
+            data-image-height="1390"></div>
+          <div class="u-container-style u-expanded-width-xs u-group u-group-2">
+            <div class="u-container-layout u-container-layout-2">
+              <h3 class="u-align-center u-custom-font u-font-roboto-condensed u-text u-text-1">Dr. {{doctor.first_name}}
+                {{doctor.last_name}}
+              </h3>
+              <h5 class="u-align-center u-custom-font u-font-roboto-condensed u-text u-text-2">
+                {{doctor.hospital_system.hospital_name}}</h5>
+              <h6 class="u-align-center u-custom-font u-font-roboto-condensed u-text u-text-3">
+                {{doctor.doctor_taxonomy.description}}</h6>
+              <h6 class="u-align-center u-custom-font u-font-roboto-condensed u-text u-text-4">
+                {{doctor.mailing_address.city}}, {{doctor.mailing_address.state}}</h6>
+              <p class="u-align-center u-text u-text-5">
+                Average Rating: &nbsp;{{doc_total_average}}<br>
+                <span class="u-icon u-icon-1"><svg class="u-svg-content" viewBox="0 0 512 512"
+                    style="width: 1em; height: 1em;">
+                    <g id="XMLID_125_">
+                      <path id="XMLID_1827_"
+                        d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z">
+                      </path>
+                      <path id="XMLID_1835_"
+                        d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z">
+                      </path>
+                      <path id="XMLID_1836_"
+                        d="m0 181.687v239.002c0 36.91 26.365 67.771 61.249 74.759v-388.521c-34.884 6.988-61.249 37.849-61.249 74.76z">
+                      </path>
+                      <path id="XMLID_1837_"
+                        d="m450.751 106.927v388.521c34.884-6.988 61.249-37.849 61.249-74.76v-239.001c0-36.911-26.365-67.772-61.249-74.76z">
+                      </path>
+                      <path id="XMLID_1840_"
+                        d="m420.751 105.438h-329.502v391.5h329.502zm-59.376 225.874c0 8.284-6.716 15-15 15h-45.25v45.25c0 8.284-6.716 15-15 15h-60.25c-8.284 0-15-6.716-15-15v-45.25h-45.25c-8.284 0-15-6.716-15-15v-60.25c0-8.284 6.716-15 15-15h45.25v-45.25c0-8.284 6.716-15 15-15h60.25c8.284 0 15 6.716 15 15v45.25h45.25c8.284 0 15 6.716 15 15z">
+                      </path>
+                    </g>
+                  </svg><img></span>
+                <span class="u-icon u-icon-2"><svg class="u-svg-content" viewBox="0 0 512 512"
+                    style="width: 1em; height: 1em;">
+                    <g id="XMLID_125_">
+                      <path id="XMLID_1827_"
+                        d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z">
+                      </path>
+                      <path id="XMLID_1835_"
+                        d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z">
+                      </path>
+                      <path id="XMLID_1836_"
+                        d="m0 181.687v239.002c0 36.91 26.365 67.771 61.249 74.759v-388.521c-34.884 6.988-61.249 37.849-61.249 74.76z">
+                      </path>
+                      <path id="XMLID_1837_"
+                        d="m450.751 106.927v388.521c34.884-6.988 61.249-37.849 61.249-74.76v-239.001c0-36.911-26.365-67.772-61.249-74.76z">
+                      </path>
+                      <path id="XMLID_1840_"
+                        d="m420.751 105.438h-329.502v391.5h329.502zm-59.376 225.874c0 8.284-6.716 15-15 15h-45.25v45.25c0 8.284-6.716 15-15 15h-60.25c-8.284 0-15-6.716-15-15v-45.25h-45.25c-8.284 0-15-6.716-15-15v-60.25c0-8.284 6.716-15 15-15h45.25v-45.25c0-8.284 6.716-15 15-15h60.25c8.284 0 15 6.716 15 15v45.25h45.25c8.284 0 15 6.716 15 15z">
+                      </path>
+                    </g>
+                  </svg><img></span>
+                <span class="u-icon u-icon-3"><svg class="u-svg-content" viewBox="0 0 512 512"
+                    style="width: 1em; height: 1em;">
+                    <g id="XMLID_125_">
+                      <path id="XMLID_1827_"
+                        d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z">
+                      </path>
+                      <path id="XMLID_1835_"
+                        d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z">
+                      </path>
+                      <path id="XMLID_1836_"
+                        d="m0 181.687v239.002c0 36.91 26.365 67.771 61.249 74.759v-388.521c-34.884 6.988-61.249 37.849-61.249 74.76z">
+                      </path>
+                      <path id="XMLID_1837_"
+                        d="m450.751 106.927v388.521c34.884-6.988 61.249-37.849 61.249-74.76v-239.001c0-36.911-26.365-67.772-61.249-74.76z">
+                      </path>
+                      <path id="XMLID_1840_"
+                        d="m420.751 105.438h-329.502v391.5h329.502zm-59.376 225.874c0 8.284-6.716 15-15 15h-45.25v45.25c0 8.284-6.716 15-15 15h-60.25c-8.284 0-15-6.716-15-15v-45.25h-45.25c-8.284 0-15-6.716-15-15v-60.25c0-8.284 6.716-15 15-15h45.25v-45.25c0-8.284 6.716-15 15-15h60.25c8.284 0 15 6.716 15 15v45.25h45.25c8.284 0 15 6.716 15 15z">
+                      </path>
+                    </g>
+                  </svg><img></span>
+                <span class="u-icon u-icon-4"><svg class="u-svg-content" viewBox="0 0 512 512"
+                    style="width: 1em; height: 1em;">
+                    <g id="XMLID_125_">
+                      <path id="XMLID_1827_"
+                        d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z">
+                      </path>
+                      <path id="XMLID_1835_"
+                        d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z">
+                      </path>
+                      <path id="XMLID_1836_"
+                        d="m0 181.687v239.002c0 36.91 26.365 67.771 61.249 74.759v-388.521c-34.884 6.988-61.249 37.849-61.249 74.76z">
+                      </path>
+                      <path id="XMLID_1837_"
+                        d="m450.751 106.927v388.521c34.884-6.988 61.249-37.849 61.249-74.76v-239.001c0-36.911-26.365-67.772-61.249-74.76z">
+                      </path>
+                      <path id="XMLID_1840_"
+                        d="m420.751 105.438h-329.502v391.5h329.502zm-59.376 225.874c0 8.284-6.716 15-15 15h-45.25v45.25c0 8.284-6.716 15-15 15h-60.25c-8.284 0-15-6.716-15-15v-45.25h-45.25c-8.284 0-15-6.716-15-15v-60.25c0-8.284 6.716-15 15-15h45.25v-45.25c0-8.284 6.716-15 15-15h60.25c8.284 0 15 6.716 15 15v45.25h45.25c8.284 0 15 6.716 15 15z">
+                      </path>
+                    </g>
+                  </svg><img></span>
+                <span class="u-icon u-icon-5"><svg class="u-svg-content" viewBox="0 0 512 512"
+                    style="width: 1em; height: 1em;">
+                    <g id="XMLID_125_">
+                      <path id="XMLID_1827_"
+                        d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z">
+                      </path>
+                      <path id="XMLID_1835_"
+                        d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z">
+                      </path>
+                      <path id="XMLID_1836_"
+                        d="m0 181.687v239.002c0 36.91 26.365 67.771 61.249 74.759v-388.521c-34.884 6.988-61.249 37.849-61.249 74.76z">
+                      </path>
+                      <path id="XMLID_1837_"
+                        d="m450.751 106.927v388.521c34.884-6.988 61.249-37.849 61.249-74.76v-239.001c0-36.911-26.365-67.772-61.249-74.76z">
+                      </path>
+                      <path id="XMLID_1840_"
+                        d="m420.751 105.438h-329.502v391.5h329.502zm-59.376 225.874c0 8.284-6.716 15-15 15h-45.25v45.25c0 8.284-6.716 15-15 15h-60.25c-8.284 0-15-6.716-15-15v-45.25h-45.25c-8.284 0-15-6.716-15-15v-60.25c0-8.284 6.716-15 15-15h45.25v-45.25c0-8.284 6.716-15 15-15h60.25c8.284 0 15 6.716 15 15v45.25h45.25c8.284 0 15 6.716 15 15z">
+                      </path>
+                    </g>
+                  </svg><img></span> &nbsp; <br>({{ratings.count}}) Ratings
+              </p>
 
 
-                <div class="u-list u-list-1">
-                  <div class="u-repeater u-repeater-1">
-                    <div class="u-container-style u-list-item u-repeater-item">
-                      <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-3">
-                        <a href="/{{doctor.doctor_npi_id}}/ratedoctor" target="_blank" class="u-btn u-btn-round u-button-style u-custom-font u-custom-item u-font-roboto-condensed u-palette-4-dark-2 u-radius-50 u-btn-1">Rate Doctor</a>
-                      </div>
+              <div class="u-list u-list-1">
+                <div class="u-repeater u-repeater-1">
+                  <div class="u-container-style u-list-item u-repeater-item">
+                    <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-3">
+                      <a href="/{{doctor.doctor_npi_id}}/ratedoctor" target="_blank"
+                        class="u-btn u-btn-round u-button-style u-custom-font u-custom-item u-font-roboto-condensed u-palette-4-dark-2 u-radius-50 u-btn-1">Rate
+                        Doctor</a>
                     </div>
-                    <div class="u-container-style u-list-item u-repeater-item">
-                      <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-4">
-                        <a href="/signup" class="u-border-none u-btn u-btn-round u-button-style u-custom-font u-custom-item u-font-roboto-condensed u-palette-4-dark-3 u-radius-50 u-btn-2">Claim Profile</a>
-                      </div>
+                  </div>
+                  <div class="u-container-style u-list-item u-repeater-item">
+                    <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-4">
+                      <a href="/signup"
+                        class="u-border-none u-btn u-btn-round u-button-style u-custom-font u-custom-item u-font-roboto-condensed u-palette-4-dark-3 u-radius-50 u-btn-2">Claim
+                        Profile</a>
                     </div>
                   </div>
                 </div>
@@ -191,521 +271,714 @@
           </div>
         </div>
       </div>
-    </section>
-    <section class="u-clearfix u-palette-4-light-2 u-section-2" id="carousel_692b">
-      <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
-        <div class="u-align-center-xs u-container-style u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-group u-palette-4-light-2 u-radius-14 u-shape-round u-group-1">
-          <div class="u-container-layout u-container-layout-1">
-            <div class="fr-view u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-rich-text u-text u-text-1">
-              <h3 style="text-align: left;">
-                <span style="font-size: 1.25rem;">
-                  <span class="u-custom-font u-font-roboto-condensed" style="text-decoration: underline; font-weight: 700;">ABOUT DR. {{doctor.last_name}} </span>
-                </span>
-              </h3>
-              <!-- <p style="text-align: center;">
+    </div>
+  </section>
+  <section class="u-clearfix u-palette-4-light-2 u-section-2" id="carousel_692b">
+    <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
+      <div
+        class="u-align-center-xs u-container-style u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-group u-palette-4-light-2 u-radius-14 u-shape-round u-group-1">
+        <div class="u-container-layout u-container-layout-1">
+          <div
+            class="fr-view u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-rich-text u-text u-text-1">
+            <h3 style="text-align: left;">
+              <span style="font-size: 1.25rem;">
+                <span class="u-custom-font u-font-roboto-condensed"
+                  style="text-decoration: underline; font-weight: 700;">ABOUT DR. {{doctor.last_name}} </span>
+              </span>
+            </h3>
+            <!-- <p style="text-align: center;">
                 <span style="font-size: 0.875rem;">
                   <span class="u-custom-font u-font-roboto-condensed">Former About</span>
                 </span>
               </p> -->
-                <h4 class="u-custom-font u-font-roboto-condensed" style=" line-height:30px;">
-                  <span style="font-weight: bold;">Health System: </span> {{doctor.hospital_system.hospital_name}}<br>
-                  <span style="font-weight: bold;">Location: </span> {{doctor.practice_address.city}}, {{doctor.practice_address.state}}<br>
-                  <span style="font-weight: bold;">Field: </span> {{doctor.doctor_taxonomy.field_class}}<br>
-                  <span style="font-weight: bold;">Description: </span> {{doctor.doctor_taxonomy.medicare_description}}<br>
-                  <span style="font-weight: bold;">Specialization: </span> {{doctor.doctor_taxonomy.specialization}}<br>
-                  <span style="font-weight: bold;">Area of Expertise: </span> {{doctor.doctor_taxonomy.area_of_expertise}}<br>
-                <br>
-                </h4>
+            <h4 class="u-custom-font u-font-roboto-condensed" style=" line-height:30px;">
+              <span style="font-weight: bold;">Health System: </span> {{doctor.hospital_system.hospital_name}}<br>
+              <span style="font-weight: bold;">Location: </span> {{doctor.practice_address.city}},
+              {{doctor.practice_address.state}}<br>
+              <span style="font-weight: bold;">Field: </span> {{doctor.doctor_taxonomy.field_class}}<br>
+              <span style="font-weight: bold;">Description: </span> {{doctor.doctor_taxonomy.medicare_description}}<br>
+              <span style="font-weight: bold;">Specialization: </span> {{doctor.doctor_taxonomy.specialization}}<br>
+              <span style="font-weight: bold;">Area of Expertise: </span>
+              {{doctor.doctor_taxonomy.area_of_expertise}}<br>
+              <br>
+            </h4>
 
-            </div>
           </div>
         </div>
-    </section>
-    <section class="u-clearfix u-palette-4-light-2 u-section-3" id="sec-434c">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="tabs-3 u-expanded-width u-tab-links-align-center u-tabs u-tabs-1" style="border-radius: 12px; padding: 20px; background-color: #adf6f2; box-shadow: 0 0 8px 0 rgb(128 128 128);">
-          <ul class="u-border-2 u-border-grey-75 u-palette-4-light-2 u-spacing-3 u-tab-list u-unstyled u-tab-list-1" role="tablist">
-            <li class="u-tab-item" role="presentation">
-              <a class="active u-active-custom-color-5 u-button-style u-custom-font u-font-roboto-condensed u-hover-palette-3-base u-palette-4-dark-1 u-radius-25 u-tab-link u-tab-link-1" id="link-tab-b13b" href="#tab-b13b" role="tab" aria-controls="tab-b13b" aria-selected="true">PROFESSIONAL RATING</a>
-            </li>
-            <li class="u-tab-item" role="presentation">
-              <a class="u-active-custom-color-5 u-button-style u-custom-font u-font-roboto-condensed u-hover-palette-3-base u-palette-4-dark-1 u-radius-25 u-tab-link u-tab-link-2" id="link-tab-0f02" href="#tab-0f02" role="tab" aria-controls="tab-0f02" aria-selected="false">Review breakdown</a>
-            </li>
-            <li class="u-tab-item" role="presentation">
-              <a class="u-active-custom-color-5 u-button-style u-custom-font u-font-roboto-condensed u-hover-palette-3-base u-palette-4-dark-1 u-radius-25 u-tab-link u-tab-link-3" id="link-tab-8343" href="#tab-8343" role="tab" aria-controls="tab-8343" aria-selected="false">BIG DATA METRICS</a>
-            </li>
-          </ul>
-          <div class="u-tab-content">
-            <div class="u-container-style u-palette-4-light-2 u-tab-active u-tab-pane u-tab-pane-1" id="tab-b13b" role="tabpanel" aria-labelledby="link-tab-b13b">
-              <div class="u-container-layout u-container-layout-1">
-                <h3 class="u-align-center u-custom-font u-font-roboto-condensed u-text u-text-1">Professional Metric​​ Summary</h3>
-                <div class="u-border-2 u-border-grey-75 u-container-style u-expanded-width-sm u-expanded-width-xs u-group u-radius-5 u-shape-round u-group-1">
-                  <div class="u-container-layout u-container-layout-2">
-                    <div class="u-clearfix u-custom-html u-custom-html-1">
-                      
-                      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-                      <script type="text/javascript">
-                      
-                        var tenants = {{tenants}};
-                        if(tenants.length>0){
-                        for (var i = 0; i < tenants.length; i++){
-                          if (tenants[i]< 1){
+      </div>
+  </section>
+  <section class="u-clearfix u-palette-4-light-2 u-section-3" id="sec-434c">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div class="tabs-3 u-expanded-width u-tab-links-align-center u-tabs u-tabs-1"
+        style="border-radius: 12px; padding: 20px; background-color: #adf6f2; box-shadow: 0 0 8px 0 rgb(128 128 128);">
+        <ul class="u-border-2 u-border-grey-75 u-palette-4-light-2 u-spacing-3 u-tab-list u-unstyled u-tab-list-1"
+          role="tablist">
+          <li class="u-tab-item" role="presentation">
+            <a class="active u-active-custom-color-5 u-button-style u-custom-font u-font-roboto-condensed u-hover-palette-3-base u-palette-4-dark-1 u-radius-25 u-tab-link u-tab-link-1"
+              id="link-tab-b13b" href="#tab-b13b" role="tab" aria-controls="tab-b13b" aria-selected="true">PROFESSIONAL
+              RATING</a>
+          </li>
+          <li class="u-tab-item" role="presentation">
+            <a class="u-active-custom-color-5 u-button-style u-custom-font u-font-roboto-condensed u-hover-palette-3-base u-palette-4-dark-1 u-radius-25 u-tab-link u-tab-link-2"
+              id="link-tab-0f02" href="#tab-0f02" role="tab" aria-controls="tab-0f02" aria-selected="false">Review
+              breakdown</a>
+          </li>
+          <li class="u-tab-item" role="presentation">
+            <a class="u-active-custom-color-5 u-button-style u-custom-font u-font-roboto-condensed u-hover-palette-3-base u-palette-4-dark-1 u-radius-25 u-tab-link u-tab-link-3"
+              id="link-tab-8343" href="#tab-8343" role="tab" aria-controls="tab-8343" aria-selected="false">BIG DATA
+              METRICS</a>
+          </li>
+        </ul>
+        <div class="u-tab-content">
+          <div class="u-container-style u-palette-4-light-2 u-tab-active u-tab-pane u-tab-pane-1" id="tab-b13b"
+            role="tabpanel" aria-labelledby="link-tab-b13b">
+            <div class="u-container-layout u-container-layout-1">
+              <h3 class="u-align-center u-custom-font u-font-roboto-condensed u-text u-text-1">Professional Metric​​ Summary</h3>
+              <div
+                class="u-border-2 u-border-grey-75 u-container-style u-expanded-width-sm u-expanded-width-xs u-group u-radius-5 u-shape-round u-group-1">
+                <div class="u-container-layout u-container-layout-2">
+                  <div class="u-clearfix u-custom-html u-custom-html-1">
+
+                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                    <script type="text/javascript">
+
+                      var tenants = {{ tenants }};
+                      if (tenants.length > 0) {
+                        for (var i = 0; i < tenants.length; i++) {
+                          if (tenants[i] < 1) {
                             tenants[i] = 1;
                           }
                         };
                       }
-                      else{
-                        tenants = [1,1,1]
+                      else {
+                        tenants = [1, 1, 1]
                       }
 
 
-                        google.charts.load('current', {
-                          'packages': ['bar']
-                        });
-                        google.charts.setOnLoadCallback(drawChart);
+                      google.charts.load('current', {
+                        'packages': ['bar']
+                      });
+                      google.charts.setOnLoadCallback(drawChart);
 
-                        function drawChart() {
-                          var data = google.visualization.arrayToDataTable([
-                            ['', '{{doctor.full_name}}', 'Spec. Average', 'Overall'],
-                            ['Patient Centered Care', tenants[0], 46, 25],
-                            ['Professional Skill', tenants[1], 100, 30],
-                            ['Character & Conduct', tenants[2], 54, 35]
-                          ]);
+                      function drawChart() {
+                        var data = google.visualization.arrayToDataTable([
+                          ['', '{{doctor.full_name}}', 'Spec. Average', 'Overall'],
+                          ['Patient Centered Care', tenants[0], 46, 25],
+                          ['Professional Skill', tenants[1], 100, 30],
+                          ['Character & Conduct', tenants[2], 54, 35]
+                        ]);
 
 
-                          var data1 = google.visualization.arrayToDataTable([
-                            ['', '{{doctor.full_name}}', 'Specialty Average'],
-                            ['Rate of Complications', 70, 46],
-                            ['Patient Outcome', 66, 100],
-                            ['Number of Board Actions', 30, 54],      
-                            ['Doctor Cost', 70, 46],
-                            ['Number of Lawsuits Filed', 66, 100],
-                            ['Number of Malpractice Cases', 30, 54]
-                          ]);
-                          var options = {
-                            chartArea: {
-                              backgroundColor: {
-                                fillOpacity: 0.1
-                              },
+                        var data1 = google.visualization.arrayToDataTable([
+                          ['', '{{doctor.full_name}}', 'Specialty Average'],
+                          ['Rate of Complications', 70, 46],
+                          ['Patient Outcome', 66, 100],
+                          ['Number of Board Actions', 30, 54],
+                          ['Doctor Cost', 70, 46],
+                          ['Number of Lawsuits Filed', 66, 100],
+                          ['Number of Malpractice Cases', 30, 54]
+                        ]);
+                        var options = {
+                          chartArea: {
+                            backgroundColor: {
+                              fillOpacity: 0.1
                             },
-                            
-                            legend: {
-                              position: 'none'
-                            },
-                            backgroundColor: 'none',
-                            colors: ['#02ada2', '#4afff2', 'purple'],
-                            chart: {
-                              title: 'Dr. {{doctor.first_name}} {{doctor.last_name}}',
-                              subtitle: 'Most Recent Score Card',
-                            },
-                            hAxis: {
-                              minValue: 0,
-                              maxValue: 100,
-                              format: '#\'%\'',
-                              minValue: 0,
-                              textPosition: 'none',
-                              gridlines: {
-                                count: 0
-                              }
-                            },
-                            bars: 'horizontal' // Required for Material Bar Charts.
-                          };
+                          },
 
-                          var chart = new google.charts.Bar(document.getElementById('barchart_material'));
-                          chart.draw(data, google.charts.Bar.convertOptions(options));
-
-                          // var chart2 = new google.charts.Bar(document.getElementById('barchart_material2'));
-                          // chart.draw(data1, google.charts.Bar.convertOptions(options));
-
-
-                          google.visualization.events.addListener(chart, 'ready', function() {
-                            var labels = document.getElementsByTagName('text');
-                            for (var i = 0; i < labels.length; i++) {
-                              labels[i].style.fill = 'black';
+                          legend: {
+                            position: 'none'
+                          },
+                          backgroundColor: 'none',
+                          colors: ['#02ada2', '#4afff2', 'purple'],
+                          chart: {
+                            title: 'Dr. {{doctor.first_name}} {{doctor.last_name}}',
+                            subtitle: 'Most Recent Score Card',
+                          },
+                          hAxis: {
+                            minValue: 0,
+                            maxValue: 100,
+                            format: '#\'%\'',
+                            minValue: 0,
+                            textPosition: 'none',
+                            gridlines: {
+                              count: 0
                             }
-                          });
+                          },
+                          bars: 'horizontal' // Required for Material Bar Charts.
+                        };
 
-                        }
+                        var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+                        chart.draw(data, google.charts.Bar.convertOptions(options));
 
-                      </script>
-                      <div id="barchart_material" class="u-section-1" style="width: auto; height: 270px;"></div>
+                        // var chart2 = new google.charts.Bar(document.getElementById('barchart_material2'));
+                        // chart.draw(data1, google.charts.Bar.convertOptions(options));
 
-                    </div>
+
+                        google.visualization.events.addListener(chart, 'ready', function () {
+                          var labels = document.getElementsByTagName('text');
+                          for (var i = 0; i < labels.length; i++) {
+                            labels[i].style.fill = 'black';
+                          }
+                        });
+
+                      }
+
+                    </script>
+                    <div id="barchart_material" class="u-section-1" style="width: auto; height: 270px;"></div>
+
                   </div>
                 </div>
-                <h3 class="u-align-center u-custom-font u-font-roboto-condensed u-text u-text-2">Professional Rating​​ Summary</h3>
-                <div class="u-border-2 u-border-grey-75 u-container-style u-expanded-width-sm u-expanded-width-xs u-group u-radius-5 u-shape-round u-group-2">
-                  <div class="u-container-layout u-container-layout-3">
-                    <div class="u-clearfix u-custom-html u-custom-html-2">
-                      <link href="{% static 'Pages/other.css' %}" rel="stylesheet" id="bootstrap-css">
-                      <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-                      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                      <!------ Include the above in your HEAD tag ---------->
-                      <meta charset="utf-8">
-                      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                      <meta name="viewport" content="width=device-width, initial-scale=1"><!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-                      <meta name="description" content="">
-                      <meta name="page_type" content="np-template-header-footer-from-plugin">
-                      <meta name="author" content="">
-                      <link rel="icon" href="favicon.ico">
-                      <title></title><!-- Bootstrap core CSS -->
-                      <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">IE10 viewport hack for Surface/desktop Windows 8 bug -->
-                      <!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-                      <script src="https://webapps1.chicago.gov/cdn/Bootstrap-4.0.0-beta.2/assets/js/ie-emulation-modes-warning.js"></script><!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-                      <!--[if lt IE 9]>
+              </div>
+              <h3 class="u-align-center u-custom-font u-font-roboto-condensed u-text u-text-2">Professional Rating​​ Summary</h3>
+              <div
+                class="u-border-2 u-border-grey-75 u-container-style u-expanded-width-sm u-expanded-width-xs u-group u-radius-5 u-shape-round u-group-2">
+                <div class="u-container-layout u-container-layout-3">
+                  <div class="u-clearfix u-custom-html u-custom-html-2">
+                    <link href="{% static 'Pages/other.css' %}" rel="stylesheet" id="bootstrap-css">
+                    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+                    <link rel="stylesheet"
+                      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                    <!------ Include the above in your HEAD tag ---------->
+                    <meta charset="utf-8">
+                    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                    <meta name="viewport" content="width=device-width, initial-scale=1">
+                    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+                    <meta name="description" content="">
+                    <meta name="page_type" content="np-template-header-footer-from-plugin">
+                    <meta name="author" content="">
+                    <link rel="icon" href="favicon.ico">
+                    <title></title><!-- Bootstrap core CSS -->
+                    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">IE10 viewport hack for Surface/desktop Windows 8 bug -->
+                    <!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+                    <script
+                      src="https://webapps1.chicago.gov/cdn/Bootstrap-4.0.0-beta.2/assets/js/ie-emulation-modes-warning.js"></script>
+                    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+                    <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
-                      <div class="container">
-                        <div class="row">
-                          <div class="col-sm-3">
-                            <div class="rating-block">
-                              <h4>Average user rating</h4>
-                              <h2 class="bold padding-bottom-7">{{doc_total_average}}<small>/ 5</small>
-                              </h2>
-                              <button type="button" class="btn btn-sm" aria-label="Left Align">
-                                <span class="fa fa-medkit" aria-hidden="true"></span>
-                              </button>
-                              <button type="button" class="btn btn-sm" aria-label="Left Align">
-                                <span class="fa fa-medkit" aria-hidden="true"></span>
-                              </button>
-                              <button type="button" class="btn btn-sm " aria-label="Left Align">
-                                <span class="fa fa-medkit" aria-hidden="true"></span>
-                              </button>
-                              <button type="button" class="btn btn-sm" aria-label="Left Align">
-                                <span class="fa fa-medkit" aria-hidden="true"></span>
-                              </button>
-                              <button type="button" class="btn btn-sm" aria-label="Left Align">
-                                <span class="fa fa-medkit" aria-hidden="true"></span>
-                              </button>
-                            </div>
-                          </div>
-                          <div class="col-sm-3">
-                            <h4>Rating breakdown</h4>
-                            <div class="pull-left">
-                              <div class="pull-left" style="width:35px; line-height:1;">
-                                <div style="height:9px; margin:5px 0;">5 <span class="fa fa-medkit"></span>
-                                </div>
-                              </div>
-                              <div class="pull-left" style="width:180px;">
-                                <div class="progress" style="height:9px; margin:8px 0;">
-                                  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="5" style="width: 1000%">
-                                    <span class="sr-only">80% Complete (danger)</span>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="pull-right" style="margin-left:10px;">1</div>
-                            </div>
-                            <div class="pull-left">
-                              <div class="pull-left" style="width:35px; line-height:1;">
-                                <div style="height:9px; margin:5px 0;">4 <span class="fa fa-medkit"></span>
-                                </div>
-                              </div>
-
-
-                              <div class="pull-left" style="width:180px;">
-                                <div class="progress" style="height:9px; margin:8px 0;">
-                                  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5" style="width: 80%">
-                                    <span class="sr-only">80% Complete (danger)</span>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="pull-right" style="margin-left:10px;">1</div>
-                            </div>
-                            <div class="pull-left">
-                              <div class="pull-left" style="width:35px; line-height:1;">
-                                <div style="height:9px; margin:5px 0;">3 <span class="fa fa-medkit"></span>
-                                </div>
-                              </div>
-                              <div class="pull-left" style="width:180px;">
-                                <div class="progress" style="height:9px; margin:8px 0;">
-                                  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="5" style="width: 60%">
-                                    <span class="sr-only">80% Complete (danger)</span>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="pull-right" style="margin-left:10px;">0</div>
-                            </div>
-                            <div class="pull-left">
-                              <div class="pull-left" style="width:35px; line-height:1;">
-                                <div style="height:9px; margin:5px 0;">2 <span class="fa fa-medkit"></span>
-                                </div>
-                              </div>
-                              <div class="pull-left" style="width:180px;">
-                                <div class="progress" style="height:9px; margin:8px 0;">
-                                  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="5" style="width: 40%">
-                                    <span class="sr-only">80% Complete (danger)</span>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="pull-right" style="margin-left:10px;">0</div>
-                            </div>
-                            <div class="pull-left">
-                              <div class="pull-left" style="width:35px; line-height:1;">
-                                <div style="height:9px; margin:5px 0;">1 <span class="fa fa-medkit"></span>
-                                </div>
-                              </div>
-                              <div class="pull-left" style="width:180px;">
-                                <div class="progress" style="height:9px; margin:8px 0;">
-                                  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="5" style="width: 20%">
-                                    <span class="sr-only">80% Complete (danger)</span>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="pull-right" style="margin-left:10px;">0</div>
-                            </div>
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <div class="rating-block">
+                            <h4>Average user rating</h4>
+                            <h2 class="bold padding-bottom-7">{{doc_total_average}}<small>/ 5</small>
+                            </h2>
+                            <button type="button" class="btn btn-sm" aria-label="Left Align">
+                              <span class="fa fa-medkit" aria-hidden="true"></span>
+                            </button>
+                            <button type="button" class="btn btn-sm" aria-label="Left Align">
+                              <span class="fa fa-medkit" aria-hidden="true"></span>
+                            </button>
+                            <button type="button" class="btn btn-sm " aria-label="Left Align">
+                              <span class="fa fa-medkit" aria-hidden="true"></span>
+                            </button>
+                            <button type="button" class="btn btn-sm" aria-label="Left Align">
+                              <span class="fa fa-medkit" aria-hidden="true"></span>
+                            </button>
+                            <button type="button" class="btn btn-sm" aria-label="Left Align">
+                              <span class="fa fa-medkit" aria-hidden="true"></span>
+                            </button>
                           </div>
                         </div>
-                        <!-- Bootstrap core JavaScript
+                        <div class="col-sm-3">
+                          <h4>Rating breakdown</h4>
+                          <div class="pull-left">
+                            <div class="pull-left" style="width:35px; line-height:1;">
+                              <div style="height:9px; margin:5px 0;">5 <span class="fa fa-medkit"></span>
+                              </div>
+                            </div>
+                            <div class="pull-left" style="width:180px;">
+                              <div class="progress" style="height:9px; margin:8px 0;">
+                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="5"
+                                  aria-valuemin="0" aria-valuemax="5" style="width: 1000%">
+                                  <span class="sr-only">80% Complete (danger)</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="pull-right" style="margin-left:10px;">1</div>
+                          </div>
+                          <div class="pull-left">
+                            <div class="pull-left" style="width:35px; line-height:1;">
+                              <div style="height:9px; margin:5px 0;">4 <span class="fa fa-medkit"></span>
+                              </div>
+                            </div>
+
+
+                            <div class="pull-left" style="width:180px;">
+                              <div class="progress" style="height:9px; margin:8px 0;">
+                                <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="4"
+                                  aria-valuemin="0" aria-valuemax="5" style="width: 80%">
+                                  <span class="sr-only">80% Complete (danger)</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="pull-right" style="margin-left:10px;">1</div>
+                          </div>
+                          <div class="pull-left">
+                            <div class="pull-left" style="width:35px; line-height:1;">
+                              <div style="height:9px; margin:5px 0;">3 <span class="fa fa-medkit"></span>
+                              </div>
+                            </div>
+                            <div class="pull-left" style="width:180px;">
+                              <div class="progress" style="height:9px; margin:8px 0;">
+                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="3"
+                                  aria-valuemin="0" aria-valuemax="5" style="width: 60%">
+                                  <span class="sr-only">80% Complete (danger)</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="pull-right" style="margin-left:10px;">0</div>
+                          </div>
+                          <div class="pull-left">
+                            <div class="pull-left" style="width:35px; line-height:1;">
+                              <div style="height:9px; margin:5px 0;">2 <span class="fa fa-medkit"></span>
+                              </div>
+                            </div>
+                            <div class="pull-left" style="width:180px;">
+                              <div class="progress" style="height:9px; margin:8px 0;">
+                                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="2"
+                                  aria-valuemin="0" aria-valuemax="5" style="width: 40%">
+                                  <span class="sr-only">80% Complete (danger)</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="pull-right" style="margin-left:10px;">0</div>
+                          </div>
+                          <div class="pull-left">
+                            <div class="pull-left" style="width:35px; line-height:1;">
+                              <div style="height:9px; margin:5px 0;">1 <span class="fa fa-medkit"></span>
+                              </div>
+                            </div>
+                            <div class="pull-left" style="width:180px;">
+                              <div class="progress" style="height:9px; margin:8px 0;">
+                                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="1"
+                                  aria-valuemin="0" aria-valuemax="5" style="width: 20%">
+                                  <span class="sr-only">80% Complete (danger)</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="pull-right" style="margin-left:10px;">0</div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Bootstrap core JavaScript
   ================================================== -->
-                        <!-- Placed at the end of the document so the pages load faster -->
-                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+                      <!-- Placed at the end of the document so the pages load faster -->
+                      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+                      <script>
+                        window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')
+
+                      </script>
+                      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+                      <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+                      <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="u-container-style u-palette-4-light-2 u-tab-pane u-tab-pane-2" id="tab-0f02" role="tabpanel"
+            aria-labelledby="link-tab-0f02">
+
+            <div class="u-container-layout u-container-layout-4">
+              <h3 class="u-align-center u-custom-font u-font-roboto-condensed u-text u-text-1">Review Breakdown</h3>
+
+            </div>
+
+            <div id="barchart_material2" class="u-section-1" style="width: auto; height: 270px;"></div>
+          </div>
+          <div class="u-container-style u-palette-4-light-2 u-tab-pane u-tab-pane-3" id="tab-8343" role="tabpanel"
+            aria-labelledby="link-tab-8343">
+            <div class="u-container-layout u-container-layout-5">
+              <div id="barchart_material2" class="u-section-2" style="width: auto; height: 270px;"></div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-palette-4-light-2 u-section-4" id="carousel_273f">
+    <div class="u-clearfix u-sheet u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+      <div class="tabs-2 u-expanded-width u-tab-links-align-center u-tabs u-tabs-1">
+        <ul class="u-border-2 u-border-grey-75 u-palette-4-light-2 u-spacing-3 u-tab-list u-unstyled u-tab-list-1"
+          role="tablist">
+          <li class="u-tab-item" role="presentation">
+            <a class="active u-active-custom-color-5 u-button-style u-custom-font u-font-roboto-condensed u-hover-palette-3-base u-palette-4-dark-1 u-radius-25 u-tab-link u-tab-link-1"
+              id="link-tab-17ab" href="#tab-17ab" role="tab" aria-controls="tab-17ab" aria-selected="true">PROFESSIONAL
+              Reviews</a>
+          </li>
+          <li class="u-tab-item" role="presentation">
+            <a class="u-active-custom-color-5 u-button-style u-custom-font u-font-roboto-condensed u-hover-palette-3-base u-palette-4-dark-1 u-radius-25 u-tab-link u-tab-link-2"
+              id="link-tab-144b" href="#tab-144b" role="tab" aria-controls="tab-144b" aria-selected="false">Doc's
+              PATIENT REVIEWS</a>
+          </li>
+        </ul>
+        <div class="u-tab-content">
+          <div class="u-container-style u-palette-4-light-2 u-tab-active u-tab-pane u-tab-pane-1" id="tab-17ab"
+            role="tabpanel" aria-labelledby="link-tab-17ab">
+            <div class="u-container-layout u-container-layout-1">
+              <h3 class="u-align-center u-custom-font u-font-roboto-condensed u-text u-text-1">Latest Professional
+                Reviews</h3>
+              <div class="u-accordion u-spacing-2 u-accordion-1">
+                {%for rating in ratings %}
+                <div class="u-accordion-item u-accordion-item-1" id=rating{{rating.rating_id}}>
+                  <a class="active u-accordion-link u-active-custom-color-4 u-border-1 u-border-grey-75 u-button-style u-custom-font u-font-roboto-condensed u-palette-4-light-1 u-radius-12 u-accordion-link-1"
+                    id="link-accordion-7c0e" aria-controls="accordion-7c0e" aria-selected="true">
+                    <p class="u-text u-text-15">
+                      <span><strong>Overall Rating:
+                          {{rating.total_average |floatformat:1}}</strong>&nbsp;</span><br>Last Updated: {{rating.last_updated |date:"Y-m-d"}} </span> ({{rating.last_updated |date:"H:i"}})<br>
+
+                          <span
+                        class="u-icon u-icon-20"><svg class="u-svg-content" viewBox="0 0 512 512">
+                          <g id="XMLID_125_">
+                            <path id="XMLID_1827_"
+                              d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z">
+                            </path>
+                            <path id="XMLID_1835_"
+                              d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z">
+                            </path>
+                            <path id="XMLID_1836_"
+                              d="m0 181.687v239.002c0 36.91 26.365 67.771 61.249 74.759v-388.521c-34.884 6.988-61.249 37.849-61.249 74.76z">
+                            </path>
+                            <path id="XMLID_1837_"
+                              d="m450.751 106.927v388.521c34.884-6.988 61.249-37.849 61.249-74.76v-239.001c0-36.911-26.365-67.772-61.249-74.76z">
+                            </path>
+                            <path id="XMLID_1840_"
+                              d="m420.751 105.438h-329.502v391.5h329.502zm-59.376 225.874c0 8.284-6.716 15-15 15h-45.25v45.25c0 8.284-6.716 15-15 15h-60.25c-8.284 0-15-6.716-15-15v-45.25h-45.25c-8.284 0-15-6.716-15-15v-60.25c0-8.284 6.716-15 15-15h45.25v-45.25c0-8.284 6.716-15 15-15h60.25c8.284 0 15 6.716 15 15v45.25h45.25c8.284 0 15 6.716 15 15z">
+                            </path>
+                          </g>
+                        </svg><img></span>
+
+                      <span class="u-icon u-icon-21"><svg class="u-svg-content" viewBox="0 0 512 512">
+                          <g id="XMLID_125_">
+                            <path id="XMLID_1827_"
+                              d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z">
+                            </path>
+                            <path id="XMLID_1835_"
+                              d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z">
+                            </path>
+                            <path id="XMLID_1836_"
+                              d="m0 181.687v239.002c0 36.91 26.365 67.771 61.249 74.759v-388.521c-34.884 6.988-61.249 37.849-61.249 74.76z">
+                            </path>
+                            <path id="XMLID_1837_"
+                              d="m450.751 106.927v388.521c34.884-6.988 61.249-37.849 61.249-74.76v-239.001c0-36.911-26.365-67.772-61.249-74.76z">
+                            </path>
+                            <path id="XMLID_1840_"
+                              d="m420.751 105.438h-329.502v391.5h329.502zm-59.376 225.874c0 8.284-6.716 15-15 15h-45.25v45.25c0 8.284-6.716 15-15 15h-60.25c-8.284 0-15-6.716-15-15v-45.25h-45.25c-8.284 0-15-6.716-15-15v-60.25c0-8.284 6.716-15 15-15h45.25v-45.25c0-8.284 6.716-15 15-15h60.25c8.284 0 15 6.716 15 15v45.25h45.25c8.284 0 15 6.716 15 15z">
+                            </path>
+                          </g>
+                        </svg><img></span>
+                      <span class="u-icon u-icon-22"><svg class="u-svg-content" viewBox="0 0 512 512">
+                          <g id="XMLID_125_">
+                            <path id="XMLID_1827_"
+                              d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z">
+                            </path>
+                            <path id="XMLID_1835_"
+                              d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z">
+                            </path>
+                            <path id="XMLID_1836_"
+                              d="m0 181.687v239.002c0 36.91 26.365 67.771 61.249 74.759v-388.521c-34.884 6.988-61.249 37.849-61.249 74.76z">
+                            </path>
+                            <path id="XMLID_1837_"
+                              d="m450.751 106.927v388.521c34.884-6.988 61.249-37.849 61.249-74.76v-239.001c0-36.911-26.365-67.772-61.249-74.76z">
+                            </path>
+                            <path id="XMLID_1840_"
+                              d="m420.751 105.438h-329.502v391.5h329.502zm-59.376 225.874c0 8.284-6.716 15-15 15h-45.25v45.25c0 8.284-6.716 15-15 15h-60.25c-8.284 0-15-6.716-15-15v-45.25h-45.25c-8.284 0-15-6.716-15-15v-60.25c0-8.284 6.716-15 15-15h45.25v-45.25c0-8.284 6.716-15 15-15h60.25c8.284 0 15 6.716 15 15v45.25h45.25c8.284 0 15 6.716 15 15z">
+                            </path>
+                          </g>
+                        </svg><img></span>
+                      <span class="u-icon u-icon-22">
+                        <svg class="u-svg-content" viewBox="0 0 512 512">
+                          <g id="XMLID_125_">
+                            <path id="XMLID_1827_"
+                              d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z">
+                            </path>
+                            <path id="XMLID_1835_"
+                              d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z">
+                            </path>
+                            <path id="XMLID_1836_"
+                              d="m0 181.687v239.002c0 36.91 26.365 67.771 61.249 74.759v-388.521c-34.884 6.988-61.249 37.849-61.249 74.76z">
+                            </path>
+                            <path id="XMLID_1837_"
+                              d="m450.751 106.927v388.521c34.884-6.988 61.249-37.849 61.249-74.76v-239.001c0-36.911-26.365-67.772-61.249-74.76z">
+                            </path>
+                            <path id="XMLID_1840_"
+                              d="m420.751 105.438h-329.502v391.5h329.502zm-59.376 225.874c0 8.284-6.716 15-15 15h-45.25v45.25c0 8.284-6.716 15-15 15h-60.25c-8.284 0-15-6.716-15-15v-45.25h-45.25c-8.284 0-15-6.716-15-15v-60.25c0-8.284 6.716-15 15-15h45.25v-45.25c0-8.284 6.716-15 15-15h60.25c8.284 0 15 6.716 15 15v45.25h45.25c8.284 0 15 6.716 15 15z">
+                            </path>
+                          </g>
+                        </svg><img></span>
+                      <span class="u-icon u-icon-22">
+                        <svg class="u-svg-content" viewBox="0 0 512 512">
+                          <g id="XMLID_125_">
+                            <path id="XMLID_1827_"
+                              d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z">
+                            </path>
+                            <path id="XMLID_1835_"
+                              d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z">
+                            </path>
+                            <path id="XMLID_1836_"
+                              d="m0 181.687v239.002c0 36.91 26.365 67.771 61.249 74.759v-388.521c-34.884 6.988-61.249 37.849-61.249 74.76z">
+                            </path>
+                            <path id="XMLID_1837_"
+                              d="m450.751 106.927v388.521c34.884-6.988 61.249-37.849 61.249-74.76v-239.001c0-36.911-26.365-67.772-61.249-74.76z">
+                            </path>
+                            <path id="XMLID_1840_"
+                              d="m420.751 105.438h-329.502v391.5h329.502zm-59.376 225.874c0 8.284-6.716 15-15 15h-45.25v45.25c0 8.284-6.716 15-15 15h-60.25c-8.284 0-15-6.716-15-15v-45.25h-45.25c-8.284 0-15-6.716-15-15v-60.25c0-8.284 6.716-15 15-15h45.25v-45.25c0-8.284 6.716-15 15-15h60.25c8.284 0 15 6.716 15 15v45.25h45.25c8.284 0 15 6.716 15 15z">
+                            </path>
+                          </g>
+                        </svg><img></span>
+
+                                                 
                         <script>
-                          window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')
-
+                            rating_object = document.getElementById("rating{{rating.rating_id}}");
+                            icons = rating_object.getElementsByClassName("u-icon");                            
+                            for (var i = 0; i<{{rating.total_average |floatformat:1}}; i++){
+                                  icons[i].style.color = "gold";
+                                  console.log(icons[i]);
+                              }
                         </script>
-                        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script><!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-                        <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
-                      </div>
+
+                      <br>
+                    </p>
+
+
+                  </a>
+                  <div
+                    class="u-accordion-active u-accordion-pane u-align-left u-container-style u-palette-4-light-2 u-accordion-pane-1"
+                    id="accordion-7c0e" aria-labelledby="link-accordion-7c0e">
+                    <div class="u-container-layout u-container-layout-2">
+                      <p class="u-custom-font u-font-roboto-condensed u-text u-text-2">General Ratings</p>
+                      <ul class="u-custom-font u-custom-list u-font-roboto-condensed u-text u-text-3">
+                        <li>
+                          <div class="class u-list-icon">
+                            <div xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              version="1.1" xml:space="preserve" class="u-svg-content">–</div>
+                          </div>Patient Centered Care: {{rating.patient_centered_care | floatformat:1}}
+                        </li>
+                        <li>
+                          <div class="class u-list-icon">
+                            <div xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              version="1.1" xml:space="preserve" class="u-svg-content">–</div>
+                          </div>Professional Skill: {{rating.professional_skill | floatformat:1}}
+                        </li>
+                        <li>
+                          <div class="class u-list-icon">
+                            <div xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              version="1.1" xml:space="preserve" class="u-svg-content">–</div>
+                          </div>Character and Conduct: {{rating.character_and_conduct | floatformat:1}}
+                        </li>
+                        <li>
+                          <div class="class u-list-icon">
+                            <div xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              version="1.1" xml:space="preserve" class="u-svg-content"></div>
+                          </div> <strong> Total Average Rating: {{rating.total_average | floatformat:1}}</strong>
+                        </li>
+                      </ul>
+                      <br>
+                      <p class="u-custom-font u-font-roboto-condensed u-text u-text-2">Comments</p>
+                      <ul class="u-custom-font u-custom-list u-font-roboto-condensed u-text u-text-3">
+                        <li>
+                          <div class="class u-list-icon">
+                            <div xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              version="1.1" xml:space="preserve" class="u-svg-content"></div>
+                          </div>Anonymous Comment: {{rating.anonymous_comment}}
+                        </li>
+                        <li>
+                          <div class="class u-list-icon">
+                            <div xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              version="1.1" xml:space="preserve" class="u-svg-content"></div>
+                          </div>Whsitle-Blower Comments: {{rating.whistlelow_text}}
+                        </li>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="u-container-style u-palette-4-light-2 u-tab-pane u-tab-pane-2" id="tab-0f02" role="tabpanel" aria-labelledby="link-tab-0f02">
+                {% endfor %}
+                <!-- <div class="u-accordion-item u-accordion-item-4">
+                  <a class="u-accordion-link u-active-custom-color-4 u-border-1 u-border-grey-75 u-button-style u-custom-font u-font-roboto-condensed u-palette-4-light-1 u-radius-12 u-accordion-link-4"
+                    id="link-accordion-a6bb" aria-controls="accordion-a6bb" aria-selected="false">
+                    <p class="u-text u-text-15">
+                      <span style="font-weight: 700; font-size: 1.5rem;">Jane Doe&nbsp;</span> -&nbsp; 25th August,
+                      2020<br>
+                      <span class="u-icon u-icon-20">
+                        <svg class="u-svg-content" viewBox="0 0 512 512">
+                          <g id="XMLID_125_">
+                            <path id="XMLID_1827_"
+                              d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z">
+                            </path>
+                            <path id="XMLID_1835_"
+                              d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z">
+                            </path>
+                            <path id="XMLID_1836_"
+                              d="m0 181.687v239.002c0 36.91 26.365 67.771 61.249 74.759v-388.521c-34.884 6.988-61.249 37.849-61.249 74.76z">
+                            </path>
+                            <path id="XMLID_1837_"
+                              d="m450.751 106.927v388.521c34.884-6.988 61.249-37.849 61.249-74.76v-239.001c0-36.911-26.365-67.772-61.249-74.76z">
+                            </path>
+                            <path id="XMLID_1840_"
+                              d="m420.751 105.438h-329.502v391.5h329.502zm-59.376 225.874c0 8.284-6.716 15-15 15h-45.25v45.25c0 8.284-6.716 15-15 15h-60.25c-8.284 0-15-6.716-15-15v-45.25h-45.25c-8.284 0-15-6.716-15-15v-60.25c0-8.284 6.716-15 15-15h45.25v-45.25c0-8.284 6.716-15 15-15h60.25c8.284 0 15 6.716 15 15v45.25h45.25c8.284 0 15 6.716 15 15z">
+                            </path>
+                          </g>
+                        </svg><img></span>
+                      <span class="u-icon u-icon-21">
+                        <svg class="u-svg-content" viewBox="0 0 512 512">
+                          <g id="XMLID_125_">
+                            <path id="XMLID_1827_"
+                              d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z">
+                            </path>
+                            <path id="XMLID_1835_"
+                              d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z">
+                            </path>
+                            <path id="XMLID_1836_"
+                              d="m0 181.687v239.002c0 36.91 26.365 67.771 61.249 74.759v-388.521c-34.884 6.988-61.249 37.849-61.249 74.76z">
+                            </path>
+                            <path id="XMLID_1837_"
+                              d="m450.751 106.927v388.521c34.884-6.988 61.249-37.849 61.249-74.76v-239.001c0-36.911-26.365-67.772-61.249-74.76z">
+                            </path>
+                            <path id="XMLID_1840_"
+                              d="m420.751 105.438h-329.502v391.5h329.502zm-59.376 225.874c0 8.284-6.716 15-15 15h-45.25v45.25c0 8.284-6.716 15-15 15h-60.25c-8.284 0-15-6.716-15-15v-45.25h-45.25c-8.284 0-15-6.716-15-15v-60.25c0-8.284 6.716-15 15-15h45.25v-45.25c0-8.284 6.716-15 15-15h60.25c8.284 0 15 6.716 15 15v45.25h45.25c8.284 0 15 6.716 15 15z">
+                            </path>
+                          </g>
+                        </svg><img></span>
+                      <span class="u-icon u-icon-22">
+                        <svg class="u-svg-content" viewBox="0 0 512 512">
+                          <g id="XMLID_125_">
+                            <path id="XMLID_1827_"
+                              d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z">
+                            </path>
+                            <path id="XMLID_1835_"
+                              d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z">
+                            </path>
+                            <path id="XMLID_1836_"
+                              d="m0 181.687v239.002c0 36.91 26.365 67.771 61.249 74.759v-388.521c-34.884 6.988-61.249 37.849-61.249 74.76z">
+                            </path>
+                            <path id="XMLID_1837_"
+                              d="m450.751 106.927v388.521c34.884-6.988 61.249-37.849 61.249-74.76v-239.001c0-36.911-26.365-67.772-61.249-74.76z">
+                            </path>
+                            <path id="XMLID_1840_"
+                              d="m420.751 105.438h-329.502v391.5h329.502zm-59.376 225.874c0 8.284-6.716 15-15 15h-45.25v45.25c0 8.284-6.716 15-15 15h-60.25c-8.284 0-15-6.716-15-15v-45.25h-45.25c-8.284 0-15-6.716-15-15v-60.25c0-8.284 6.716-15 15-15h45.25v-45.25c0-8.284 6.716-15 15-15h60.25c8.284 0 15 6.716 15 15v45.25h45.25c8.284 0 15 6.716 15 15z">
+                            </path>
+                          </g>
+                        </svg><img></span>
+                      <span class="u-icon u-icon-22">
+                        <svg class="u-svg-content" viewBox="0 0 512 512">
+                          <g id="XMLID_125_">
+                            <path id="XMLID_1827_"
+                              d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z">
+                            </path>
+                            <path id="XMLID_1835_"
+                              d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z">
+                            </path>
+                            <path id="XMLID_1836_"
+                              d="m0 181.687v239.002c0 36.91 26.365 67.771 61.249 74.759v-388.521c-34.884 6.988-61.249 37.849-61.249 74.76z">
+                            </path>
+                            <path id="XMLID_1837_"
+                              d="m450.751 106.927v388.521c34.884-6.988 61.249-37.849 61.249-74.76v-239.001c0-36.911-26.365-67.772-61.249-74.76z">
+                            </path>
+                            <path id="XMLID_1840_"
+                              d="m420.751 105.438h-329.502v391.5h329.502zm-59.376 225.874c0 8.284-6.716 15-15 15h-45.25v45.25c0 8.284-6.716 15-15 15h-60.25c-8.284 0-15-6.716-15-15v-45.25h-45.25c-8.284 0-15-6.716-15-15v-60.25c0-8.284 6.716-15 15-15h45.25v-45.25c0-8.284 6.716-15 15-15h60.25c8.284 0 15 6.716 15 15v45.25h45.25c8.284 0 15 6.716 15 15z">
+                            </path>
+                          </g>
+                        </svg><img></span>
+                      <span class="u-icon u-icon-22">
+                        <svg class="u-svg-content" viewBox="0 0 512 512">
+                          <g id="XMLID_125_">
+                            <path id="XMLID_1827_"
+                              d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z">
+                            </path>
+                            <path id="XMLID_1835_"
+                              d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z">
+                            </path>
+                            <path id="XMLID_1836_"
+                              d="m0 181.687v239.002c0 36.91 26.365 67.771 61.249 74.759v-388.521c-34.884 6.988-61.249 37.849-61.249 74.76z">
+                            </path>
+                            <path id="XMLID_1837_"
+                              d="m450.751 106.927v388.521c34.884-6.988 61.249-37.849 61.249-74.76v-239.001c0-36.911-26.365-67.772-61.249-74.76z">
+                            </path>
+                            <path id="XMLID_1840_"
+                              d="m420.751 105.438h-329.502v391.5h329.502zm-59.376 225.874c0 8.284-6.716 15-15 15h-45.25v45.25c0 8.284-6.716 15-15 15h-60.25c-8.284 0-15-6.716-15-15v-45.25h-45.25c-8.284 0-15-6.716-15-15v-60.25c0-8.284 6.716-15 15-15h45.25v-45.25c0-8.284 6.716-15 15-15h60.25c8.284 0 15 6.716 15 15v45.25h45.25c8.284 0 15 6.716 15 15z">
+                            </path>
+                          </g>
+                        </svg><img></span>
+                      <br>
+                    </p>
 
-              <div class="u-container-layout u-container-layout-4">
-                <h3 class="u-align-center u-custom-font u-font-roboto-condensed u-text u-text-1">Review Breakdown</h3>
-
-              </div>
-
-              <div id="barchart_material2" class="u-section-1" style="width: auto; height: 270px;"></div>
-            </div>
-            <div class="u-container-style u-palette-4-light-2 u-tab-pane u-tab-pane-3" id="tab-8343" role="tabpanel" aria-labelledby="link-tab-8343">
-              <div class="u-container-layout u-container-layout-5">
-                <div id="barchart_material2" class="u-section-2" style="width: auto; height: 270px;"></div>
-
-
+                  </a>
+                  <div class="u-accordion-pane u-container-style u-palette-4-light-2 u-accordion-pane-4"
+                    id="accordion-a6bb" aria-labelledby="link-accordion-a6bb">
+                    <div class="u-container-layout u-container-layout-5">
+                      <p class="u-custom-font u-font-roboto-condensed u-text u-text-8">Interdum velit euismod in
+                        pellentesque massa placerat duis. Tristique et egestas quis ipsum suspendisse ultrices gravida
+                        dictum fusce. Nibh nisl condimentum.</p>
+                      <ul class="u-custom-font u-custom-list u-font-roboto-condensed u-text u-text-9">
+                        <li>
+                          <div class="class u-list-icon">
+                            <div xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              version="1.1" xml:space="preserve" class="u-svg-content">–</div>
+                          </div> Mattis nunc sed blandit libero volutpat.
+                        </li>
+                        <li>
+                          <div class="class u-list-icon">
+                            <div xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              version="1.1" xml:space="preserve" class="u-svg-content">–</div>
+                          </div> Tortor at risus viverra adipiscing at in tellus.
+                        </li>
+                        <li>
+                          <div class="class u-list-icon">
+                            <div xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              version="1.1" xml:space="preserve" class="u-svg-content">–</div>
+                          </div> Purus ut faucibus pulvinar elementum.
+                        </li>
+                        <li>
+                          <div class="class u-list-icon">
+                            <div xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              version="1.1" xml:space="preserve" class="u-svg-content">–</div>
+                          </div> Blandit turpis cursus in hac habitasse.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div> -->
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-    <section class="u-clearfix u-palette-4-light-2 u-section-4" id="carousel_273f">
-      <div class="u-clearfix u-sheet u-valign-middle-sm u-valign-middle-xs u-sheet-1">
-        <div class="tabs-2 u-expanded-width u-tab-links-align-center u-tabs u-tabs-1">
-          <ul class="u-border-2 u-border-grey-75 u-palette-4-light-2 u-spacing-3 u-tab-list u-unstyled u-tab-list-1" role="tablist">
-            <li class="u-tab-item" role="presentation">
-              <a class="active u-active-custom-color-5 u-button-style u-custom-font u-font-roboto-condensed u-hover-palette-3-base u-palette-4-dark-1 u-radius-25 u-tab-link u-tab-link-1" id="link-tab-17ab" href="#tab-17ab" role="tab" aria-controls="tab-17ab" aria-selected="true">PROFESSIONAL Reviews</a>
-            </li>
-            <li class="u-tab-item" role="presentation">
-              <a class="u-active-custom-color-5 u-button-style u-custom-font u-font-roboto-condensed u-hover-palette-3-base u-palette-4-dark-1 u-radius-25 u-tab-link u-tab-link-2" id="link-tab-144b" href="#tab-144b" role="tab" aria-controls="tab-144b" aria-selected="false">Doc's PATIENT REVIEWS</a>
-            </li>
-          </ul>
-          <div class="u-tab-content">
-            <div class="u-container-style u-palette-4-light-2 u-tab-active u-tab-pane u-tab-pane-1" id="tab-17ab" role="tabpanel" aria-labelledby="link-tab-17ab">
-              <div class="u-container-layout u-container-layout-1">
-                <h3 class="u-align-center u-custom-font u-font-roboto-condensed u-text u-text-1">Latest Professional Reviews</h3>
-                <div class="u-accordion u-spacing-2 u-accordion-1">
-                  <div class="u-accordion-item u-accordion-item-1">
-                    <a class="active u-accordion-link u-active-custom-color-4 u-border-1 u-border-grey-75 u-button-style u-custom-font u-font-roboto-condensed u-palette-4-light-1 u-radius-12 u-accordion-link-1" id="link-accordion-7c0e" aria-controls="accordion-7c0e" aria-selected="true">
-                      <p class="u-text u-text-15">
-                        <span style="font-weight: 700; font-size: 1.5rem;"> {{ratings.0.total_average}}&nbsp;</span> -&nbsp; {{rating.0.last_updated |date:"YmdHis"}}<br><span class="u-icon u-icon-20"><svg class="u-svg-content" viewBox="0 0 512 512">
-                            <g id="XMLID_125_">
-                              <path id="XMLID_1827_" d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z"></path>
-                              <path id="XMLID_1835_" d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z"></path>
-                              <path id="XMLID_1836_" d="m0 181.687v239.002c0 36.91 26.365 67.771 61.249 74.759v-388.521c-34.884 6.988-61.249 37.849-61.249 74.76z"></path>
-                              <path id="XMLID_1837_" d="m450.751 106.927v388.521c34.884-6.988 61.249-37.849 61.249-74.76v-239.001c0-36.911-26.365-67.772-61.249-74.76z"></path>
-                              <path id="XMLID_1840_" d="m420.751 105.438h-329.502v391.5h329.502zm-59.376 225.874c0 8.284-6.716 15-15 15h-45.25v45.25c0 8.284-6.716 15-15 15h-60.25c-8.284 0-15-6.716-15-15v-45.25h-45.25c-8.284 0-15-6.716-15-15v-60.25c0-8.284 6.716-15 15-15h45.25v-45.25c0-8.284 6.716-15 15-15h60.25c8.284 0 15 6.716 15 15v45.25h45.25c8.284 0 15 6.716 15 15z"></path>
-                            </g>
-                          </svg><img></span>
-                          
-                          <span class="u-icon u-icon-21"><svg class="u-svg-content" viewBox="0 0 512 512">
-                            <g id="XMLID_125_">
-                              <path id="XMLID_1827_" d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z"></path>
-                              <path id="XMLID_1835_" d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z"></path>
-                              <path id="XMLID_1836_" d="m0 181.687v239.002c0 36.91 26.365 67.771 61.249 74.759v-388.521c-34.884 6.988-61.249 37.849-61.249 74.76z"></path>
-                              <path id="XMLID_1837_" d="m450.751 106.927v388.521c34.884-6.988 61.249-37.849 61.249-74.76v-239.001c0-36.911-26.365-67.772-61.249-74.76z"></path>
-                              <path id="XMLID_1840_" d="m420.751 105.438h-329.502v391.5h329.502zm-59.376 225.874c0 8.284-6.716 15-15 15h-45.25v45.25c0 8.284-6.716 15-15 15h-60.25c-8.284 0-15-6.716-15-15v-45.25h-45.25c-8.284 0-15-6.716-15-15v-60.25c0-8.284 6.716-15 15-15h45.25v-45.25c0-8.284 6.716-15 15-15h60.25c8.284 0 15 6.716 15 15v45.25h45.25c8.284 0 15 6.716 15 15z"></path>
-                            </g>
-                          </svg><img></span>
-                          <span class="u-icon u-icon-22"><svg class="u-svg-content" viewBox="0 0 512 512">
-                            <g id="XMLID_125_">
-                              <path id="XMLID_1827_" d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z"></path>
-                              <path id="XMLID_1835_" d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z"></path>
-                              <path id="XMLID_1836_" d="m0 181.687v239.002c0 36.91 26.365 67.771 61.249 74.759v-388.521c-34.884 6.988-61.249 37.849-61.249 74.76z"></path>
-                              <path id="XMLID_1837_" d="m450.751 106.927v388.521c34.884-6.988 61.249-37.849 61.249-74.76v-239.001c0-36.911-26.365-67.772-61.249-74.76z"></path>
-                              <path id="XMLID_1840_" d="m420.751 105.438h-329.502v391.5h329.502zm-59.376 225.874c0 8.284-6.716 15-15 15h-45.25v45.25c0 8.284-6.716 15-15 15h-60.25c-8.284 0-15-6.716-15-15v-45.25h-45.25c-8.284 0-15-6.716-15-15v-60.25c0-8.284 6.716-15 15-15h45.25v-45.25c0-8.284 6.716-15 15-15h60.25c8.284 0 15 6.716 15 15v45.25h45.25c8.284 0 15 6.716 15 15z"></path>
-                            </g>
-                          </svg><img></span>
-                          <span class="u-icon u-icon-22">
-                            <svg class="u-svg-content" viewBox="0 0 512 512">
-                            <g id="XMLID_125_">
-                              <path id="XMLID_1827_" d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z"></path>
-                              <path id="XMLID_1835_" d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z"></path>
-                              <path id="XMLID_1836_" d="m0 181.687v239.002c0 36.91 26.365 67.771 61.249 74.759v-388.521c-34.884 6.988-61.249 37.849-61.249 74.76z"></path>
-                              <path id="XMLID_1837_" d="m450.751 106.927v388.521c34.884-6.988 61.249-37.849 61.249-74.76v-239.001c0-36.911-26.365-67.772-61.249-74.76z"></path>
-                              <path id="XMLID_1840_" d="m420.751 105.438h-329.502v391.5h329.502zm-59.376 225.874c0 8.284-6.716 15-15 15h-45.25v45.25c0 8.284-6.716 15-15 15h-60.25c-8.284 0-15-6.716-15-15v-45.25h-45.25c-8.284 0-15-6.716-15-15v-60.25c0-8.284 6.716-15 15-15h45.25v-45.25c0-8.284 6.716-15 15-15h60.25c8.284 0 15 6.716 15 15v45.25h45.25c8.284 0 15 6.716 15 15z"></path>
-                            </g>
-                          </svg><img></span>
-                          <span class="u-icon u-icon-22">
-                            <svg class="u-svg-content" viewBox="0 0 512 512">
-                            <g id="XMLID_125_">
-                              <path id="XMLID_1827_" d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z"></path>
-                              <path id="XMLID_1835_" d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z"></path>
-                              <path id="XMLID_1836_" d="m0 181.687v239.002c0 36.91 26.365 67.771 61.249 74.759v-388.521c-34.884 6.988-61.249 37.849-61.249 74.76z"></path>
-                              <path id="XMLID_1837_" d="m450.751 106.927v388.521c34.884-6.988 61.249-37.849 61.249-74.76v-239.001c0-36.911-26.365-67.772-61.249-74.76z"></path>
-                              <path id="XMLID_1840_" d="m420.751 105.438h-329.502v391.5h329.502zm-59.376 225.874c0 8.284-6.716 15-15 15h-45.25v45.25c0 8.284-6.716 15-15 15h-60.25c-8.284 0-15-6.716-15-15v-45.25h-45.25c-8.284 0-15-6.716-15-15v-60.25c0-8.284 6.716-15 15-15h45.25v-45.25c0-8.284 6.716-15 15-15h60.25c8.284 0 15 6.716 15 15v45.25h45.25c8.284 0 15 6.716 15 15z"></path>
-                            </g>
-                          </svg><img></span>
-
-                        <br>
-                      </p>
-
-
-                    </a>
-                    <div class="u-accordion-active u-accordion-pane u-align-left u-container-style u-palette-4-light-2 u-accordion-pane-1" id="accordion-7c0e" aria-labelledby="link-accordion-7c0e">
-                      <div class="u-container-layout u-container-layout-2">
-                        <p class="u-custom-font u-font-roboto-condensed u-text u-text-2">Interdum velit euismod in pellentesque massa placerat duis. Tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce. Nibh nisl condimentum.</p>
-                        <ul class="u-custom-font u-custom-list u-font-roboto-condensed u-text u-text-3">
-                          <li>
-                            <div class="class u-list-icon">
-                              <div xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content">–</div>
-                            </div> Mattis nunc sed blandit libero volutpat.
-                          </li>
-                          <li>
-                            <div class="class u-list-icon">
-                              <div xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content">–</div>
-                            </div> Tortor at risus viverra adipiscing at in tellus.
-                          </li>
-                          <li>
-                            <div class="class u-list-icon">
-                              <div xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content">–</div>
-                            </div> Purus ut faucibus pulvinar elementum.
-                          </li>
-                          <li>
-                            <div class="class u-list-icon">
-                              <div xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content">–</div>
-                            </div> Blandit turpis cursus in hac habitasse.
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="u-accordion-item u-accordion-item-4">
-                    <a class="u-accordion-link u-active-custom-color-4 u-border-1 u-border-grey-75 u-button-style u-custom-font u-font-roboto-condensed u-palette-4-light-1 u-radius-12 u-accordion-link-4" id="link-accordion-a6bb" aria-controls="accordion-a6bb" aria-selected="false">
-                      <p class="u-text u-text-15">
-                        <span style="font-weight: 700; font-size: 1.5rem;">Jane Doe&nbsp;</span> -&nbsp; 25th August, 2020<br>
-                        <span class="u-icon u-icon-20">
-                          <svg class="u-svg-content" viewBox="0 0 512 512">
-                            <g id="XMLID_125_">
-                              <path id="XMLID_1827_" d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z"></path>
-                              <path id="XMLID_1835_" d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z"></path>
-                              <path id="XMLID_1836_" d="m0 181.687v239.002c0 36.91 26.365 67.771 61.249 74.759v-388.521c-34.884 6.988-61.249 37.849-61.249 74.76z"></path>
-                              <path id="XMLID_1837_" d="m450.751 106.927v388.521c34.884-6.988 61.249-37.849 61.249-74.76v-239.001c0-36.911-26.365-67.772-61.249-74.76z"></path>
-                              <path id="XMLID_1840_" d="m420.751 105.438h-329.502v391.5h329.502zm-59.376 225.874c0 8.284-6.716 15-15 15h-45.25v45.25c0 8.284-6.716 15-15 15h-60.25c-8.284 0-15-6.716-15-15v-45.25h-45.25c-8.284 0-15-6.716-15-15v-60.25c0-8.284 6.716-15 15-15h45.25v-45.25c0-8.284 6.716-15 15-15h60.25c8.284 0 15 6.716 15 15v45.25h45.25c8.284 0 15 6.716 15 15z"></path>
-                            </g>
-                          </svg><img></span>
-                          <span class="u-icon u-icon-21">
-                            <svg class="u-svg-content" viewBox="0 0 512 512">
-                            <g id="XMLID_125_">
-                              <path id="XMLID_1827_" d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z"></path>
-                              <path id="XMLID_1835_" d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z"></path>
-                              <path id="XMLID_1836_" d="m0 181.687v239.002c0 36.91 26.365 67.771 61.249 74.759v-388.521c-34.884 6.988-61.249 37.849-61.249 74.76z"></path>
-                              <path id="XMLID_1837_" d="m450.751 106.927v388.521c34.884-6.988 61.249-37.849 61.249-74.76v-239.001c0-36.911-26.365-67.772-61.249-74.76z"></path>
-                              <path id="XMLID_1840_" d="m420.751 105.438h-329.502v391.5h329.502zm-59.376 225.874c0 8.284-6.716 15-15 15h-45.25v45.25c0 8.284-6.716 15-15 15h-60.25c-8.284 0-15-6.716-15-15v-45.25h-45.25c-8.284 0-15-6.716-15-15v-60.25c0-8.284 6.716-15 15-15h45.25v-45.25c0-8.284 6.716-15 15-15h60.25c8.284 0 15 6.716 15 15v45.25h45.25c8.284 0 15 6.716 15 15z"></path>
-                            </g>
-                          </svg><img></span>
-                          <span class="u-icon u-icon-22">
-                            <svg class="u-svg-content" viewBox="0 0 512 512">
-                            <g id="XMLID_125_">
-                              <path id="XMLID_1827_" d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z"></path>
-                              <path id="XMLID_1835_" d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z"></path>
-                              <path id="XMLID_1836_" d="m0 181.687v239.002c0 36.91 26.365 67.771 61.249 74.759v-388.521c-34.884 6.988-61.249 37.849-61.249 74.76z"></path>
-                              <path id="XMLID_1837_" d="m450.751 106.927v388.521c34.884-6.988 61.249-37.849 61.249-74.76v-239.001c0-36.911-26.365-67.772-61.249-74.76z"></path>
-                              <path id="XMLID_1840_" d="m420.751 105.438h-329.502v391.5h329.502zm-59.376 225.874c0 8.284-6.716 15-15 15h-45.25v45.25c0 8.284-6.716 15-15 15h-60.25c-8.284 0-15-6.716-15-15v-45.25h-45.25c-8.284 0-15-6.716-15-15v-60.25c0-8.284 6.716-15 15-15h45.25v-45.25c0-8.284 6.716-15 15-15h60.25c8.284 0 15 6.716 15 15v45.25h45.25c8.284 0 15 6.716 15 15z"></path>
-                            </g>
-                          </svg><img></span>
-                          <span class="u-icon u-icon-22">
-                            <svg class="u-svg-content" viewBox="0 0 512 512">
-                            <g id="XMLID_125_">
-                              <path id="XMLID_1827_" d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z"></path>
-                              <path id="XMLID_1835_" d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z"></path>
-                              <path id="XMLID_1836_" d="m0 181.687v239.002c0 36.91 26.365 67.771 61.249 74.759v-388.521c-34.884 6.988-61.249 37.849-61.249 74.76z"></path>
-                              <path id="XMLID_1837_" d="m450.751 106.927v388.521c34.884-6.988 61.249-37.849 61.249-74.76v-239.001c0-36.911-26.365-67.772-61.249-74.76z"></path>
-                              <path id="XMLID_1840_" d="m420.751 105.438h-329.502v391.5h329.502zm-59.376 225.874c0 8.284-6.716 15-15 15h-45.25v45.25c0 8.284-6.716 15-15 15h-60.25c-8.284 0-15-6.716-15-15v-45.25h-45.25c-8.284 0-15-6.716-15-15v-60.25c0-8.284 6.716-15 15-15h45.25v-45.25c0-8.284 6.716-15 15-15h60.25c8.284 0 15 6.716 15 15v45.25h45.25c8.284 0 15 6.716 15 15z"></path>
-                            </g>
-                          </svg><img></span>
-                          <span class="u-icon u-icon-22">
-                            <svg class="u-svg-content" viewBox="0 0 512 512">
-                            <g id="XMLID_125_">
-                              <path id="XMLID_1827_" d="m310.374 15.062h-108.748c-28.26 0-51.251 22.991-51.251 51.251v9.124h30v-9.124c0-11.718 9.533-21.251 21.251-21.251h108.748c11.718 0 21.251 9.533 21.251 21.251v9.124h30v-9.124c0-28.259-22.991-51.251-51.251-51.251z"></path>
-                              <path id="XMLID_1835_" d="m271.125 271.062v-45.25h-30.25v45.25c0 8.284-6.716 15-15 15h-45.25v30.25h45.25c8.284 0 15 6.716 15 15v45.25h30.25v-45.25c0-8.284 6.716-15 15-15h45.25v-30.25h-45.25c-8.284 0-15-6.715-15-15z"></path>
-                              <path id="XMLID_1836_" d="m0 181.687v239.002c0 36.91 26.365 67.771 61.249 74.759v-388.521c-34.884 6.988-61.249 37.849-61.249 74.76z"></path>
-                              <path id="XMLID_1837_" d="m450.751 106.927v388.521c34.884-6.988 61.249-37.849 61.249-74.76v-239.001c0-36.911-26.365-67.772-61.249-74.76z"></path>
-                              <path id="XMLID_1840_" d="m420.751 105.438h-329.502v391.5h329.502zm-59.376 225.874c0 8.284-6.716 15-15 15h-45.25v45.25c0 8.284-6.716 15-15 15h-60.25c-8.284 0-15-6.716-15-15v-45.25h-45.25c-8.284 0-15-6.716-15-15v-60.25c0-8.284 6.716-15 15-15h45.25v-45.25c0-8.284 6.716-15 15-15h60.25c8.284 0 15 6.716 15 15v45.25h45.25c8.284 0 15 6.716 15 15z"></path>
-                            </g>
-                          </svg><img></span>
-                        <br>
-                      </p>
-
-                    </a>
-                    <div class="u-accordion-pane u-container-style u-palette-4-light-2 u-accordion-pane-4" id="accordion-a6bb" aria-labelledby="link-accordion-a6bb">
-                      <div class="u-container-layout u-container-layout-5">
-                        <p class="u-custom-font u-font-roboto-condensed u-text u-text-8">Interdum velit euismod in pellentesque massa placerat duis. Tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce. Nibh nisl condimentum.</p>
-                        <ul class="u-custom-font u-custom-list u-font-roboto-condensed u-text u-text-9">
-                          <li>
-                            <div class="class u-list-icon">
-                              <div xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content">–</div>
-                            </div> Mattis nunc sed blandit libero volutpat.
-                          </li>
-                          <li>
-                            <div class="class u-list-icon">
-                              <div xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content">–</div>
-                            </div> Tortor at risus viverra adipiscing at in tellus.
-                          </li>
-                          <li>
-                            <div class="class u-list-icon">
-                              <div xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content">–</div>
-                            </div> Purus ut faucibus pulvinar elementum.
-                          </li>
-                          <li>
-                            <div class="class u-list-icon">
-                              <div xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content">–</div>
-                            </div> Blandit turpis cursus in hac habitasse.
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="u-container-style u-palette-4-light-2 u-tab-pane u-tab-pane-2" id="tab-144b" role="tabpanel" aria-labelledby="link-tab-144b">
-              <div class="u-container-layout u-container-layout-6">
-                <h3 class="u-align-center u-custom-font u-font-roboto-condensed u-text u-text-10">Top Patient Reviews</h3>
-                <div class="u-expanded-width-sm u-expanded-width-xs u-layout-grid u-list u-list-1">
-                  <div class="u-repeater u-repeater-1">
-                    <div class="u-container-style u-custom-color-4 u-custom-item u-list-item u-opacity u-opacity-45 u-radius-25 u-repeater-item u-shape-round">
-                      <div class="u-container-layout u-similar-container u-container-layout-7">
-                        <div class="u-container-style u-group u-group-1">
-                          <div class="u-container-layout">
-                            <h5 class="u-text u-text-body-alt-color u-text-11">Celia Almeda</h5>
-                            <p class="u-custom-font u-font-roboto-condensed u-text u-text-body-alt-color u-text-default-lg u-text-default-xl u-text-12">Proin sed libero enim sed faucibus turpis. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Ut sem nulla pharetra diam sit amet nisl.&nbsp;</p>
-                            <div alt="" class="u-image u-image-circle u-image-1" data-image-width="494" data-image-height="750"></div>
-                          </div>
+          <div class="u-container-style u-palette-4-light-2 u-tab-pane u-tab-pane-2" id="tab-144b" role="tabpanel"
+            aria-labelledby="link-tab-144b">
+            <div class="u-container-layout u-container-layout-6">
+              <h3 class="u-align-center u-custom-font u-font-roboto-condensed u-text u-text-10">Top Patient Reviews</h3>
+              <div class="u-expanded-width-sm u-expanded-width-xs u-layout-grid u-list u-list-1">
+                <div class="u-repeater u-repeater-1">
+                  <div
+                    class="u-container-style u-custom-color-4 u-custom-item u-list-item u-opacity u-opacity-45 u-radius-25 u-repeater-item u-shape-round">
+                    <div class="u-container-layout u-similar-container u-container-layout-7">
+                      <div class="u-container-style u-group u-group-1">
+                        <div class="u-container-layout">
+                          <h5 class="u-text u-text-body-alt-color u-text-11">Celia Almeda</h5>
+                          <p
+                            class="u-custom-font u-font-roboto-condensed u-text u-text-body-alt-color u-text-default-lg u-text-default-xl u-text-12">
+                            Proin sed libero enim sed faucibus turpis. At imperdiet dui accumsan sit amet nulla facilisi
+                            morbi tempus. Ut sem nulla pharetra diam sit amet nisl.&nbsp;</p>
+                          <div alt="" class="u-image u-image-circle u-image-1" data-image-width="494"
+                            data-image-height="750"></div>
                         </div>
                       </div>
                     </div>
-                    <div class="u-container-style u-custom-color-5 u-custom-item u-list-item u-opacity u-opacity-45 u-radius-25 u-repeater-item u-shape-round">
-                      <div class="u-container-layout u-similar-container u-container-layout-9">
-                        <div class="u-container-style u-group u-group-2">
-                          <div class="u-container-layout">
-                            <h5 class="u-text u-text-body-alt-color u-text-13">Celia Almeda</h5>
-                            <p class="u-custom-font u-font-roboto-condensed u-text u-text-body-alt-color u-text-default-lg u-text-default-xl u-text-14">Proin sed libero enim sed faucibus turpis. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Ut sem nulla pharetra diam sit amet nisl.&nbsp;</p>
-                            <div alt="" class="u-image u-image-circle u-image-2" data-image-width="494" data-image-height="750"></div>
-                          </div>
+                  </div>
+                  <div
+                    class="u-container-style u-custom-color-5 u-custom-item u-list-item u-opacity u-opacity-45 u-radius-25 u-repeater-item u-shape-round">
+                    <div class="u-container-layout u-similar-container u-container-layout-9">
+                      <div class="u-container-style u-group u-group-2">
+                        <div class="u-container-layout">
+                          <h5 class="u-text u-text-body-alt-color u-text-13">Celia Almeda</h5>
+                          <p
+                            class="u-custom-font u-font-roboto-condensed u-text u-text-body-alt-color u-text-default-lg u-text-default-xl u-text-14">
+                            Proin sed libero enim sed faucibus turpis. At imperdiet dui accumsan sit amet nulla facilisi
+                            morbi tempus. Ut sem nulla pharetra diam sit amet nisl.&nbsp;</p>
+                          <div alt="" class="u-image u-image-circle u-image-2" data-image-width="494"
+                            data-image-height="750"></div>
                         </div>
                       </div>
                     </div>
@@ -716,41 +989,44 @@
           </div>
         </div>
       </div>
-    </section>
-    <style class="u-overlap-style">
-      .u-overlap:not(.u-sticky-scroll) .u-header {
-        background-color: #adf6f2 !important;
-        background-image: linear-gradient(#2c8291, #41807c) !important
-      }
+    </div>
+  </section>
+  <style class="u-overlap-style">
+    .u-overlap:not(.u-sticky-scroll) .u-header {
+      background-color: #adf6f2 !important;
+      background-image: linear-gradient(#2c8291, #41807c) !important
+    }
+  </style>
 
-    </style>
+  <script>
+    var btn_sm = document.getElementsByClassName("btn-sm");
+    var stars = document.getElementsByClassName("u-icon");
+    for (var i = 0; i < {{ doc_total_average }}; i++) {
 
-                <script>
-                  var btn_sm = document.getElementsByClassName("btn-sm");
-                  var stars = document.getElementsByClassName("u-icon");
-                  for (var i = 0; i < {{doc_total_average}}; i++){
-                    
-                    btn_sm[i].classList.add("btn-warning");
-                    stars[i].style.color = "gold";
-                    
-
-                    
-                  }
-
-                </script>
+      btn_sm[i].classList.add("btn-warning");
+      stars[i].style.color = "gold";
 
 
 
-    <footer class="u-align-center u-clearfix u-footer u-palette-4-light-2" id="sec-69e4">
-      <div class="u-align-left u-clearfix u-sheet u-sheet-1"></div>
-    </footer><span style="height: 64px; width: 64px; margin-left: 0px; margin-right: auto; margin-top: 0px; background-image: none; right: 20px; bottom: 20px" class="u-back-to-top u-custom-color-4 u-icon u-icon-circle u-opacity u-opacity-85 u-spacing-15" data-href="#">
-      <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 551.13 551.13">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-1d98"></use>
-      </svg>
-      <svg class="u-svg-content" enable-background="new 0 0 551.13 551.13" viewBox="0 0 551.13 551.13" xmlns="http://www.w3.org/2000/svg" id="svg-1d98">
-        <path d="m275.565 189.451 223.897 223.897h51.668l-275.565-275.565-275.565 275.565h51.668z"></path>
-      </svg>
-    </span>
-  </body>
+    }
+
+  </script>
+
+
+
+  <footer class="u-align-center u-clearfix u-footer u-palette-4-light-2" id="sec-69e4">
+    <div class="u-align-left u-clearfix u-sheet u-sheet-1"></div>
+  </footer><span
+    style="height: 64px; width: 64px; margin-left: 0px; margin-right: auto; margin-top: 0px; background-image: none; right: 20px; bottom: 20px"
+    class="u-back-to-top u-custom-color-4 u-icon u-icon-circle u-opacity u-opacity-85 u-spacing-15" data-href="#">
+    <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 551.13 551.13">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-1d98"></use>
+    </svg>
+    <svg class="u-svg-content" enable-background="new 0 0 551.13 551.13" viewBox="0 0 551.13 551.13"
+      xmlns="http://www.w3.org/2000/svg" id="svg-1d98">
+      <path d="m275.565 189.451 223.897 223.897h51.668l-275.565-275.565-275.565 275.565h51.668z"></path>
+    </svg>
+  </span>
+</body>
 
 </html>
