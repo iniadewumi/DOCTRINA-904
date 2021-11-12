@@ -14,7 +14,7 @@ from pathlib import Path
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR =  os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-i4soukp$vg%!o7!h)ok*w2^dg60qesjy=_ze7_3f6d2=5%&jzy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [" Doctrina.eba-rctnpm6q.us-west-2.elasticbeanstalk.com", "localhost"]
 
 
 # Application definition
@@ -120,9 +120,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
+
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'US/Pacific'
 
 USE_I18N = True
 
@@ -135,7 +136,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = 'static'
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 
 
 # Default primary key field type
