@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-i4soukp$vg%!o7!h)ok*w2^dg60qesjy=_ze7_3f6d2=5%&jzy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
-ALLOWED_HOSTS = ["*", "doctrina-904.eba-cn4tg2yc.us-west-2.elasticbeanstalk.com"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -93,7 +93,7 @@ WSGI_APPLICATION = 'Doctrina.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': str(os.path.join(BASE_DIR, "db.sqlite3")),
     }
 }
 
