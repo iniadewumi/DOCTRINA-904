@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-i4soukp$vg%!o7!h)ok*w2^dg60qesjy=_ze7_3f6d2=5%&jzy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*", "doctrina-904.eba-cn4tg2yc.us-west-2.elasticbeanstalk.com"]
 
 
 # Application definition
@@ -135,7 +135,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = 'static'
 
 
 # Default primary key field type
