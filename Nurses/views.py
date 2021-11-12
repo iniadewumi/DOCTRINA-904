@@ -59,6 +59,8 @@ def registration_page(request):
         except IndexError:
             next_ = "/"
 
+
+        next_ = "/authenticate"
         print("\n\nNEXT", next_)
         return redirect(next_)
         
@@ -66,3 +68,8 @@ def registration_page(request):
         for err in form.errors.values():
             messages.error(request, str(err).split("li>")[1].replace("</", ""))
     return render(request, "Pages/Sign-Up.html", context)
+
+def authenticate(request):
+    return render(request, "Pages/Authenticate.html")
+def auth2(request):
+    return render(request, 'Pages/auth2.html')

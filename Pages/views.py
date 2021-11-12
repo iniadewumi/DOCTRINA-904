@@ -106,7 +106,7 @@ class SearchResultsView(ListView):
             else:
                 city = location.strip()
                 state = location.strip()
-            if len(name_results)<20:
+            if len(name_results)<50:
                     location_results = Doctor.objects.filter(Q(practice_address__city__icontains=city) | Q(practice_address__state__icontains=state))
                     location_results = list(chain(location_results, location_results))
             else:
@@ -115,14 +115,14 @@ class SearchResultsView(ListView):
         if expertise=="None" or expertise=="":
             expertise_result = location_results
         else:
-            if len(location_results)<20:
+            if len(location_results)<50:
                 expertise_result = list(chain(Doctor.objects.filter(doctor_taxonomy__area_of_expertise__contains=expertise), location_results))
             else:
                 for doc in location_results:
                     location_results = [x for x in location_results if x.doctor_taxonomy.area_of_expertise!=None]
                     expertise_result = [x for x in location_results if expertise.lower() in x.doctor_taxonomy.area_of_expertise.lower()]
 
-        if len(expertise_result)<20:
+        if len(expertise_result)<50:
             if experience==4:
                 experience_result = Doctor.objects.filter(experience__lte=5)
             elif experience in [5, 10, 15]:
@@ -152,3 +152,4 @@ class SearchResultsView(ListView):
 
 def About(request):
     return render(request, 'Pages/About.html')
+

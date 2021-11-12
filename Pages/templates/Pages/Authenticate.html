@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Dr. {{doctor.full_name}}">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Authentication Page</title>
+    {% load static %}
+    <script class="u-script" type="text/javascript" src="{% static 'Pages/js/jquery.js' %}"></script>
+    <script class="u-script" type="text/javascript" src="{% static 'Pages/js/nicepage.js' %}" defer=""></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'Pages/nicepage.css' %}">
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'Pages/Home.css' %}"> -->
+    <link rel="stylesheet" type="text/css" href="{% static 'Pages/Login.css' %}">
+    <meta name="generator" content="Nicepage 3.24.3, nicepage.com">
+
+    <link id="u-theme-google-font" rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i">
+
+
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "Site2"
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Authentication Page">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+</head>
+
+<body data-Authentication Page-page="Authentication Page.html" data-Authentication Page-page-title="Authentication Page"
+    class="u-body u-overlap u-overlap-contrast">
+    <header class="u-align-left u-clearfix u-gradient u-header u-sticky u-sticky-cba1 u-header" id="sec-6027">
+        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1" data-responsive-from="MD">
+            <div class="menu-collapse u-custom-font u-font-roboto-condensed"
+                style="font-size: 1rem; letter-spacing: 0px;">
+                <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-body-alt-color u-text-hover-palette-2-base"
+                    href="#" style="padding: 4px 10px; font-size: calc(1em + 8px);">
+                    <svg>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use>
+                    </svg>
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <defs>
+                            <symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;">
+                                <rect y="1" width="16" height="2"></rect>
+                                <rect y="7" width="16" height="2"></rect>
+                                <rect y="13" width="16" height="2"></rect>
+                            </symbol>
+                        </defs>
+                    </svg>
+                </a>
+            </div>
+            <div class="u-custom-menu u-nav-container">
+                <ul class="u-custom-font u-font-roboto-condensed u-nav u-unstyled u-nav-1">
+                    <li class="u-nav-item"><a
+                            class="u-button-style u-nav-link u-text-active-palette-2-light-1 u-text-hover-palette-3-light-2 u-text-white"
+                            href="" style="padding: 10px 20px;">Authentication Page</a>
+                    </li>
+                    <li class="u-nav-item"><a
+                            class="u-button-style u-nav-link u-text-active-palette-2-light-1 u-text-hover-palette-3-light-2 u-text-white"
+                            href="about" style="padding: 10px 20px;">About</a>
+                    </li>
+                    <li class="u-nav-item"><a
+                            class="u-button-style u-nav-link u-text-active-palette-2-light-1 u-text-hover-palette-3-light-2 u-text-white"
+                            href="signup" target="_blank" style="padding: 10px 20px;">Sign Up</a>
+                    </li>
+                    <li class="u-nav-item"><a
+                            class="u-button-style u-nav-link u-text-active-palette-2-light-1 u-text-hover-palette-3-light-2 u-text-white"
+                            href="login" style="padding: 10px 20px;">Login</a>
+                    </li>
+                    <li class="u-nav-item"><a
+                            class="u-button-style u-nav-link u-text-active-palette-2-light-1 u-text-hover-palette-3-light-2 u-text-white"
+                            style="padding: 10px 20px;">Options</a>
+                        <div class="u-nav-popup">
+                            <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-2">
+                                <li class="u-nav-item"><a class="u-button-style u-nav-link u-white">Option1</a>
+                                </li>
+                                <li class="u-nav-item"><a class="u-button-style u-nav-link u-white">Option 2</a>
+                                </li>
+                                <li class="u-nav-item"><a class="u-button-style u-nav-link u-white">Option3</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="u-custom-menu u-nav-container-collapse">
+                <div
+                    class="u-border-4 u-border-grey-75 u-container-style u-custom-color-5 u-inner-container-layout u-sidenav">
+                    <div class="u-sidenav-overflow">
+                        <div class="u-menu-close"></div>
+                        <ul
+                            class="u-align-center u-nav u-popupmenu-items u-spacing-21 u-text-hover-palette-4-light-2 u-unstyled u-nav-3">
+                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href=""
+                                    style="padding: 10px 20px;">Authentication Page</a>
+                            </li>
+                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="about"
+                                    style="padding: 10px 20px;">About</a>
+                            </li>
+                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="signup" target="_blank"
+                                    style="padding: 10px 20px;">Sign Up</a>
+                            </li>
+                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="login"
+                                    style="padding: 10px 20px;">Login</a>
+                            </li>
+                            <li class="u-nav-item"><a class="u-button-style u-nav-link"
+                                    style="padding: 10px 20px;">Options</a>
+                                <div class="u-nav-popup">
+                                    <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-4">
+                                        <li class="u-nav-item"><a class="u-button-style u-nav-link">Option1</a>
+                                        </li>
+                                        <li class="u-nav-item"><a class="u-button-style u-nav-link">Option 2</a>
+                                        </li>
+                                        <li class="u-nav-item"><a class="u-button-style u-nav-link">Option3</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="u-custom-color-5 u-menu-overlay u-opacity u-opacity-25"></div>
+            </div>
+        </nav>
+        <h3 class="u-custom-font u-font-roboto-condensed u-headline u-text u-text-body-alt-color u-text-1">
+            <a href="/">&nbsp; &nbsp; Doctrina <span style="font-weight: 700;"></span>
+            </a>
+        </h3>
+    </header>
+
+    <!-- <script>
+        //LOCATION FINDER
+        fetch("https://ipinfo.io/json?token=07231281158dd1").then(
+            (response) => response.json()
+          ).then(
+            (jsonResponse) => {
+              document.getElementById('location').value = jsonResponse.city+", "+jsonResponse.region
+              console.log(jsonResponse.city, jsonResponse.region)
+            }
+          )
+      </script> -->
+
+    <section class="skrollable u-align-center u-clearfix u-image u-parallax u-shading u-section-1" id="sec-2e0a"
+        data-image-width="1280" data-image-height="853">
+        <div class="u-expanded-width u-tab-links-align-left u-tabs u-tabs-1">
+            <ul class="u-border-1 u-border-grey-40 u-palette-4-base u-tab-list u-unstyled u-tab-list-1" role="tablist">
+                <li class="u-tab-item" role="presentation">
+                    <a class="active u-active-palette-4-dark-1 u-border-5 u-border-active-white u-border-hover-grey-15 u-border-no-left u-border-no-right u-border-no-top u-button-style u-custom-font u-font-roboto-condensed u-palette-4-base u-radius-2 u-tab-link u-text-active-palette-3-light-3 u-text-palette-4-light-3 u-tab-link-1"
+                        id="link-tab-c3f7" href="#tab-c3f7" role="tab" aria-controls="tab-c3f7"
+                        aria-selected="true">Authentication Page</a>
+                </li>
+            </ul>
+            <div class="u-tab-content">
+
+                <div class="u-align-left u-container-style u-tab-active u-tab-pane u-tab-pane-1" id="tab-c3f7" role="tabpanel" aria-labelledby="link-tab-c3f7">
+                    <div class="u-container-layout u-container-layout-1">
+                        <section class="u-clearfix u-palette-4-light-3 u-section-1" id="sec-2dbd">
+                            <div class="u-align-left u-clearfix u-sheet u-valign-middle u-sheet-1">
+                              <div class="u-container-style u-group u-palette-4-light-2 u-radius-25 u-shape-round u-group-1" data-animation-name="zoomIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="Down">
+                                <div class="u-container-layout u-container-layout-1"><span class="u-icon u-icon-circle u-text-palette-4-dark-3 u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 45.532 45.532" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-ea1e"></use></svg><svg class="u-svg-content" viewBox="0 0 45.532 45.532" x="0px" y="0px" id="svg-ea1e" style="enable-background:new 0 0 45.532 45.532;"><g><path d="M22.766,0.001C10.194,0.001,0,10.193,0,22.766s10.193,22.765,22.766,22.765c12.574,0,22.766-10.192,22.766-22.765   S35.34,0.001,22.766,0.001z M22.766,6.808c4.16,0,7.531,3.372,7.531,7.53c0,4.159-3.371,7.53-7.531,7.53   c-4.158,0-7.529-3.371-7.529-7.53C15.237,10.18,18.608,6.808,22.766,6.808z M22.761,39.579c-4.149,0-7.949-1.511-10.88-4.012   c-0.714-0.609-1.126-1.502-1.126-2.439c0-4.217,3.413-7.592,7.631-7.592h8.762c4.219,0,7.619,3.375,7.619,7.592   c0,0.938-0.41,1.829-1.125,2.438C30.712,38.068,26.911,39.579,22.761,39.579z"></path>
+                      </g></svg></span>
+                                  <h3 class="u-align-center u-custom-font u-font-roboto-condensed u-text u-text-default u-text-palette-4-dark-3 u-text-1">OBN Authentication</h3>
+                                  <h5 class="u-align-center u-custom-font u-font-roboto-condensed u-text u-text-default u-text-palette-4-dark-3 u-text-1" style="font-size: 15px;">Please enter your OBN Details to complete signup process</h5>
+                                  <div class="u-expanded-width u-form u-login-control u-form-1">
+                                    <style>
+                                      .close {
+                                        color: red;
+                                      }
+                                    </style>
+                                    
+                        
+                                    <div class="alert alert-success">
+                                      {% for message in messages %}
+                                      <a class="close" href="#" data-dismiss="alert">×</a>
+                                      {{ message }}<br>
+                                      {% endfor %}
+                                    </div>
+                        
+
+                        <form method="GET" action="/auth2" class="u-clearfix u-form-custom-backend u-form-spacing-35 u-form-vertical u-inner-form" source="custom" name="form-2" style="padding: 10px;">
+
+                            {% csrf_token %}
+                            <div class="u-form-group u-form-name">
+                              <label for="username-708d" class="u-custom-font u-font-roboto-condensed u-form-control-hidden u-label"></label>
+                              <input type="text" name="email" placeholder="License Number or Email Address" class="u-border-1 u-border-grey-75 u-custom-font u-font-roboto-condensed u-grey-5 u-input u-input-rectangle u-radius-10" required="" id="id_email">
+                            </div>
+                            <div class="u-form-group u-form-password">
+                              <label for="password-708d" class="u-custom-font u-font-roboto-condensed u-form-control-hidden u-label"></label>
+                                <input type="password" name="password" placeholder="OBN Pin" class="u-border-1 u-border-grey-75 u-custom-font u-font-roboto-condensed u-grey-5 u-input u-input-rectangle u-radius-10" required="" id="id_password">
+                            </div>
+                            <div class="u-form-group u-form-password">
+                                <label for="password-708d" class="u-custom-font u-font-roboto-condensed u-form-control-hidden u-label"></label>
+                                  <input type="password" name="password" placeholder="Confirm OBN Pin" class="u-border-1 u-border-grey-75 u-custom-font u-font-roboto-condensed u-grey-5 u-input u-input-rectangle u-radius-10" required="" id="id_password">
+                              </div>
+                            </div>
+                            
+                            <input type="hidden" name="next" value="{{request.path}}">
+                                                                
+                            <div class="u-align-center u-form-group u-form-submit">
+                              <input type="submit" value="Authenticate" class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-color-4 u-custom-font u-font-roboto-condensed u-hover-custom-color-5 u-radius-17 u-btn-1">
+                            </div>
+                            <input type="hidden" value="" name="recaptchaResponse">
+                          </form>
+            
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </section>
+    <style class="u-overlap-style">
+        .u-overlap:not(.u-sticky-scroll) .u-header {
+            background-image: linear-gradient(#2c8291, #41807c) !important
+        }
+    </style>
+
+
+    <span
+        style="height: 64px; width: 64px; margin-left: 0px; margin-right: auto; margin-top: 0px; background-image: none; right: 20px; bottom: 20px"
+        class="u-back-to-top u-custom-color-4 u-icon u-icon-circle u-opacity u-opacity-85 u-spacing-15" data-href="#">
+        <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 551.13 551.13">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-1d98"></use>
+        </svg>
+        <svg class="u-svg-content" enable-background="new 0 0 551.13 551.13" viewBox="0 0 551.13 551.13"
+            xmlns="http://www.w3.org/2000/svg" id="svg-1d98">
+            <path d="m275.565 189.451 223.897 223.897h51.668l-275.565-275.565-275.565 275.565h51.668z"></path>
+        </svg>
+    </span>
+</body>
+
+</html>

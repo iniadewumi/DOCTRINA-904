@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Pages.views import HomepageView, About, SearchResultsView
-from Nurses.views import login_page, registration_page
+from Nurses.views import login_page, registration_page, authenticate, auth2
 from Doctors.views import DoctorPage
 from Hospitals.views import HospitalPage
 from Ratings.views import RateDoctor, ThankYou
@@ -35,4 +35,7 @@ urlpatterns = [
     path('<int:doctor_npi_id>/doctor/', DoctorPage),
     path('<int:doctor_npi_id>/ratedoctor/', RateDoctor),
     path('<int:doctor_npi_id>/thank_you', ThankYou),
+    path('authenticate', authenticate),
+    path("auth2/", auth2)
 ]
+
