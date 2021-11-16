@@ -22,6 +22,9 @@ from Doctors.views import DoctorPage
 from Hospitals.views import HospitalPage
 from Ratings.views import RateDoctor, ThankYou
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path('', HomepageView.as_view(), name="Home"),
     path('admin/', admin.site.urls),
@@ -38,6 +41,5 @@ urlpatterns = [
     path('<int:doctor_npi_id>/thank_you', ThankYou),
     path('nurse_authenticate', nurse_authenticate),
     path("auth2/", auth2)
-]
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
-urlpatterns += staticfiles_urlpatterns()
