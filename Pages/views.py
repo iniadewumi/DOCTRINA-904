@@ -83,46 +83,55 @@ class SearchResultsView(ListView):
 
         terms = [term for term in [name, expertise, experience, location] if term!=""]
         if not terms:
+            print("\n\nNo search terms...")
             return Doctor.objects.all()[:100]
 
-
-        if " " in name:
-            first_name = name.split(" ")[0]
-            last_name = name.split(" ")[1]
-            name_results = Doctor.objects.filter(Q(first_name__icontains =first_name) | Q(last_name__icontains =last_name))
-
-        elif name=="":
-            name_results = []
-        else:
-            name_results = Doctor.objects.filter(Q(first_name__icontains =name) | Q(last_name__icontains =name))
-
-
-        if location=="":
-            location_results = name_results
-        else:
+        if location!="":
             if "," in location:
-                city = location.split(",")[0].strip()
-                state = location.split(",")[1].strip()
+                city, state = location.split(",")
             else:
-                city = location.strip()
-                state = location.strip()
-            if len(name_results)<50:
-                    location_results = Doctor.objects.filter(Q(practice_address__city__icontains=city) | Q(practice_address__state__icontains=state))
-                    location_results = list(chain(location_results, location_results))
-            else:
-                location_results =[x for x in name_results if city.lower() in x.practice_address.city.lower()]
+                state = city = location.strip()
+                
+            location_results = Doctor.objects.filter(Q(practice_address__city__icontains=city) | Q(practice_address__state__icontains=state))
+        else:
+            location_results = Doctor.objects.all()
+
+        
+        
+        if " " in name:
+            first_name, last_name = name.split(" ")
+            name_results = [obj for obj in location_results if first_name.lower() in obj.first_name.lower() or last_name.lower() in obj.last_name.lower()]
+        elif name=="":
+            name_results = location_results
+        else:
+            name_results = [obj for obj in location_results if name.lower() in obj.first_name.lower() or name.lower() in obj.last_name.lower()]
+        print("\n\n",name_results, "\n\n")
+        # if location=="":
+        #     location_results = name_results
+        # else:
+        #     if "," in location:
+        #         city = location.split(",")[0].strip()
+        #         state = location.split(",")[1].strip()
+        #     else:
+        #         city = location.strip()
+        #         state = location.strip()
+        #     if len(name_results)<5:
+        #             location_results = Doctor.objects.filter(Q(practice_address__city__icontains=city) | Q(practice_address__state__icontains=state))
+        #             location_results = list(chain(location_results, location_results))
+        #     else:
+        #         location_results =[x for x in name_results if city.lower() in x.practice_address.city.lower()]
         
         if expertise=="None" or expertise=="":
-            expertise_result = location_results
+            expertise_result = name_results
         else:
-            if len(location_results)<50:
+            if len(location_results)<5:
                 expertise_result = list(chain(Doctor.objects.filter(doctor_taxonomy__area_of_expertise__contains=expertise), location_results))
             else:
                 for doc in location_results:
                     location_results = [x for x in location_results if x.doctor_taxonomy.area_of_expertise!=None]
                     expertise_result = [x for x in location_results if expertise.lower() in x.doctor_taxonomy.area_of_expertise.lower()]
 
-        if len(expertise_result)<50:
+        if len(expertise_result)<5:
             if experience==4:
                 experience_result = Doctor.objects.filter(experience__lte=5)
             elif experience in [5, 10, 15]:

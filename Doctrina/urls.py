@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import path
 from Pages.views import HomepageView, About, SearchResultsView
-from Nurses.views import login_page, registration_page, authenticate, auth2
+from Nurses.views import login_page, registration_page, nurse_authenticate, auth2
 from Doctors.views import DoctorPage
 from Hospitals.views import HospitalPage
 from Ratings.views import RateDoctor, ThankYou
@@ -36,7 +36,7 @@ urlpatterns = [
     path('<int:doctor_npi_id>/doctor/', DoctorPage),
     path('<int:doctor_npi_id>/ratedoctor/', RateDoctor),
     path('<int:doctor_npi_id>/thank_you', ThankYou),
-    path('authenticate', authenticate),
+    path('nurse_authenticate', nurse_authenticate),
     path("auth2/", auth2)
 ]
 

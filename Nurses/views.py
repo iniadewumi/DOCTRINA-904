@@ -60,7 +60,7 @@ def registration_page(request):
             next_ = "/"
 
 
-        next_ = "/authenticate"
+        next_ = "/nurse_authenticate"
         print("\n\nNEXT", next_)
         return redirect(next_)
         
@@ -69,7 +69,7 @@ def registration_page(request):
             messages.error(request, str(err).split("li>")[1].replace("</", ""))
     return render(request, "Pages/Sign-Up.html", context)
 
-def authenticate(request):
+def nurse_authenticate(request):
     return render(request, "Pages/Authenticate.html")
 def auth2(request):
     return render(request, 'Pages/auth2.html')
