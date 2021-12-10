@@ -27,7 +27,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', HomepageView.as_view(), name="Home"),
-    path('admin/', admin.site.urls),
+    path('this-is-doctrina-admin21/', admin.site.urls),
     path('home/', HomepageView.as_view()),
 
     path('about/', About),
